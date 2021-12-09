@@ -1,14 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import {Overview} from './components/Overview.js';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" >
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Yeah :)
-        </p>
+          <Overview />
       </header>
     </div>
   );
