@@ -1,14 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
-import {Overview} from './components/Overview.js';
+import { Portfolio } from './pages/3-ProjectPage.js';
 
 function App() {
   return (
-    <div className="App" >
-      <header className="App-header">
-          <Overview />
+      <>
+    <div className="background" >
+      <header className="background-specs">
+          <Portfolio />
       </header>
+        <div>
+
+        </div>
     </div>
+      </>
+
   );
 }
 

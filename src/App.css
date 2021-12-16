@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
- .App {
+ .background {
    text-align: center;
   background-image: url("./assets/Overview.png");
   background-size: cover;
@@ -17,7 +17,7 @@
   }
 }
 
-.App-header {
+.background-specs {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -25,6 +25,10 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.puddle-overlay {
+
 }
 
 .App-link {
