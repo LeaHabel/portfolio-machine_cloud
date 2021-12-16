@@ -1,14 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
-import { Overview } from './pages/Overview.js';
+
+import BGsimple from "./assets/BGsimple.png";
+import puddle from "./assets/puddle.png";
 
 function App() {
   return (
-    <div className="App" >
-      <header className="App-header">
-        <Overview />
-      </header>
-    </div>
+    <>
+      <div className="background">
+        <header>
+          <img className="background-specs" src={BGsimple} alt="Water Background" />
+          <img className="puddle-overlay" src={puddle} alt="Puddle Mask" />
+        </header>
+      </div>
+    </>
+
   );
 }
 
