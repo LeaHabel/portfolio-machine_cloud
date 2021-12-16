@@ -1,6 +1,6 @@
 import React from "react";
 import './Overview.css';
-import {Person} from "./Person";
+import {Person} from "../components/Person";
 import CloudIcon from "../assets/cloudiIcon.png";
 import frame from "../assets/frame.png";
 
