@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import {Overview} from './components/Overview.js';
-import {Idle} from './components/Idle.js';
+import {Idle} from './components/0-Idle.js';
 
 function App() {
   return (
