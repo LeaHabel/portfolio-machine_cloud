@@ -1,22 +1,18 @@
 import React from "react";
 import './Overview.css';
+import {Person} from "./Person";
+import CloudIcon from "../assets/cloudiIcon.png";
+
 
  export function Overview (){
 
         return (
             <div className="component-display">
-               <div className="person">
-                   <div id="personName">
-                    <h1>Nicolas Saavedra-Rueda</h1>
-                   <h2>Interaction Design</h2>
-                   </div>
-                   <button onClick={props.addTrip}>Add a trip</button>
-                   <div className="personImage">
-                       <img src="/assets/img1.png"/>
-                       <img src={'./assets/img1.png'}/>
-                       <img src="/src/assets/img1.png"/>
-                   </div>
-               </div>
+                <div id="majorButton">
+                    <img className="icon" src={CloudIcon}/>
+                    <h4>Major</h4>
+                </div>
+                <Person/>
             </div>
         );
 
