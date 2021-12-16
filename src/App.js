@@ -5,12 +5,17 @@ import puddle from "./assets/puddle.png";
 function App() {
   return (
     <>
-      <div className="background">
-        <content>
-          <img className="background-specs" src={BGsimple} alt="Water Background" />
-          <img className="puddle-overlay" src={puddle} alt="Puddle Mask" />
-        </content>
-      </div>
+      <content>
+        <img className="background" src={BGsimple} alt="Water Background" />
+
+        {/* As long as we don't have buttons to navigate from Idle to > Overview to > Search and so on: 
+        While working on your branch you can add the component you are currently working on here. 
+        For example: 
+        <MyComponent />
+        Don't forget to import your component. As soon as we have the routing/links through our pages we can do it "correctly" */}
+
+        <img className="puddle-overlay" src={puddle} alt="Puddle Mask" />
+      </content>
     </>
 
   );
