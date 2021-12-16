@@ -1,3 +1,7 @@
+/* This is our global CSS file */
+
+/* ------ App.js ------ */
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
  .App {
@@ -44,3 +48,21 @@ p{
     transform: rotate(360deg);
   }
 }
+
+/* ------ 0-Idle (Lisa) ------ */
+
+
+
+/* ------ 1-Overview (Lin) ------ */
+
+
+
+/* ------ 1.2-Search (Nicolas) ------ */
+
+
+
+/* ------ 2-Select ------ */
+
+
+
+/* ------ 3-Project Page (Carina) ------ */

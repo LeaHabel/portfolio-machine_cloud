@@ -1,13 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import {Overview} from './pages/Overview.js';
-import {Idle} from './pages/0-Idle.js';
+import { Overview } from './pages/Overview.js';
 
 function App() {
   return (
     <div className="App" >
       <header className="App-header">
-          <Idle/>
+        <Overview />
       </header>
     </div>
   );
