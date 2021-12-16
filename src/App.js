@@ -6,7 +6,7 @@ import {Portfolio} from "./pages/3-ProjectPage";
 function App() {
     return (
         <>
-            <div className="background">
+            <div>
                 <content>
                     <img className="background-specs" src={BGsimple} alt="Water Background"/>
                     <Portfolio className="content-specs"/>
