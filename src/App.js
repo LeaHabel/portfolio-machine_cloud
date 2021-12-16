@@ -1,21 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
-import { Portfolio } from './pages/3-ProjectPage.js';
+import BGsimple from "./assets/BGsimple.png";
+import puddle from "./assets/puddle.png";
 
 function App() {
-  return (
-      <>
-    <div className="background" >
-      <header className="background-specs">
-          <Portfolio />
-      </header>
-        <div>
+    return (
+        <>
+            <div className="background">
+                <header>
+                    <img className="background-specs" src={BGsimple} alt="Water Background"/>
+                    <img className="puddle-overlay" src={puddle} alt="Puddle Mask"/>
+                </header>
+            </div>
+        </>
 
-        </div>
-    </div>
-      </>
-
-  );
+    );
 }
 
 export default App;
