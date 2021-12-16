@@ -27,13 +27,22 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
-    position: absolute;
+    position: fixed;
+    top: 0;
 }
 
-.Header {
-    text-align: center;
-    position: fixed;
+.content-specs {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    position: absolute;
+    z-index: 100;
 }
+
 
 .App-link {
     color: #61dafb;
@@ -56,20 +65,24 @@ p {
     }
 }
 
-/* ------ 0-Idle (Lisa) ------ */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+}
 
+/* ------ 0-Idle (Lisa) ------ */
 
 
 /* ------ 1-Overview (Lin) ------ */
 
 
-
 /* ------ 1.2-Search (Nicolas) ------ */
 
 
-
 /* ------ 2-Select ------ */
-
 
 
 /* ------ 3-Project Page (Carina) ------ */
