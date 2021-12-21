@@ -9,7 +9,7 @@ import Img3 from '../assets/img3.png'
 
 const { useEffect, useRef } = React;
 
-export function Person() {
+export function Person(props) {
     const boxRef = useRef();
     const childElement = useRef();
 
@@ -31,11 +31,11 @@ export function Person() {
 
     return (
         <>
-            <div className="big maskBubble box" ref={boxRef}>
+            <div className={`big maskBubble box fixed ${props.position}`} ref={boxRef}>
                 <div className="person box" ref={childElement}>
                     <div id="personName">
-                        <h1>Nicolas Saavedra-Rueda</h1>
-                        <h2>Interaction Design</h2>
+                        <h1>{props.name}</h1>
+                        <h2>{props.major}</h2>
                     </div>
                     <div className="flex-container">
                         <div className="flex-row">
