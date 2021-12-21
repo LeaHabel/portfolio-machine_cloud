@@ -1,7 +1,6 @@
 import './App.css';
 import BGsimple from "./assets/BGsimple.png";
 import puddle from "./assets/puddle.png";
-import { Overview } from './pages/1-Overview';
 
 import Idle from "./pages/0-Idle.js"
 import Overview from "./pages/1-Overview"
