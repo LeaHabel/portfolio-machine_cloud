@@ -19,7 +19,7 @@ function App() {
         For example: 
         <MyComponent />
         Don't forget to import your component. As soon as we have the routing/links through our pages we can do it "correctly" */}
-        <Overview />
+
         <img className="puddle-overlay" src={puddle} alt="Puddle Mask" />
       </content>
     </>
