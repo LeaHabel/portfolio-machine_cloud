@@ -11,6 +11,8 @@ import img2 from "../assets/img2.png"
 import img3 from "../assets/img3.png"
 import Next from "../assets/Next.png"
 import Previous from "../assets/Previous.png"
+import IconMajorBTN from "../assets/IconMajorBTN.svg"
+import CloseBTN from "../assets/CloseBTN.svg"
 
 export function Portfolio() {
 
@@ -58,7 +60,8 @@ export function Portfolio() {
             </div>
 
             <div>
-                
+                <img className="cloudbtn" src={IconMajorBTN} alt="Back to cloud"/>
+                <img className="closebtn" src={CloseBTN} alt="Back to cloud"/>
             </div>
         </>
     )

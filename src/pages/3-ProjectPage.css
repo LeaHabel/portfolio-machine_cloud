@@ -60,7 +60,7 @@
     z-index: 2;
     position: absolute;
     top: 30%;
-    left: 55%;
+    left: 50%;
 }
 
 .mediafile2 {
@@ -84,7 +84,7 @@
     z-index: 2;
     position: absolute;
     top: 52.5%;
-    left: 55%;
+    left: 57%;
 }
 
 
@@ -178,4 +178,18 @@
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     color: #21496D;
+}
+
+.closebtn {
+    z-index: 3;
+    position: absolute;
+    top: 84%;
+    left: 43.5%;
+}
+
+.cloudbtn {
+    z-index: 3;
+    position: absolute;
+    top: 0%;
+    left: 43.5%;
 }
