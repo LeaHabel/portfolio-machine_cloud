@@ -1,34 +1,58 @@
 import React from "react";
+
+import gsap from "gsap";
+
 import '../pages/Overview.css';
 import Img1 from '../assets/img1.png'
 import Img2 from '../assets/img2.png'
 import Img3 from '../assets/img3.png'
 
+const { useEffect, useRef } = React;
 
 export function Person() {
+    const boxRef = useRef();
+    const childElement = useRef();
+
+    // wait until DOM has been rendered
+    useEffect(() => {
+        gsap.to(boxRef.current, {
+            rotation: "+=360",
+            repeat: -1,
+            duration: 100,
+            ease: "slow"
+        });
+        gsap.to(childElement.current, {
+            rotation: "-=360",
+            repeat: -1,
+            duration: 100,
+            ease: "slow"
+        });
+    });
 
     return (
         <>
-            <svg width="388" height="396" viewBox="0 0 388 396" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <clipPath id="clip">
-                    <path d="M206.5 393.891C122.088 396.654 39.4501 353.706 11.9058 274.626C-16.8917 191.948 15.8661 101.238 86.2601 48.6526C158.753 -5.50123 259.06 -17.8094 330.769 36.3572C397.872 87.0447 397.629 182.029 369.598 262.767C344.237 335.812 283.402 391.374 206.5 393.891Z" stroke="#D8E5F5" stroke-width="5" />
-                </clipPath>
-            </svg>
-
-            <div className="person big">
-                <div id="personName">
-                    <h1>Nicolas Saavedra-Rueda</h1>
-                    <h2>Interaction Design</h2>
-                </div>
-                <div className="personImage">
-                    <div className="grid">
-                        <img className="grid1" src={Img3} />
-                        <img className="grid2" src={Img1} />
-                        <img className="grid3" src={Img3} />
-                        <img className="grid4" src={Img2} />
+            <div className="big maskBubble box" ref={boxRef}>
+                <div className="person box" ref={childElement}>
+                    <div id="personName">
+                        <h1>Nicolas Saavedra-Rueda</h1>
+                        <h2>Interaction Design</h2>
                     </div>
+                    <div className="flex-container">
+                        <div className="flex-row">
+                            <img className="flex-item" src={Img1} />
+                            <img className="flex-item" src={Img2} />
+                        </div>
+                        <img className="flex-item last-item" src={Img3} />
+                    </div>
+
+                    <svg className="maskSVG " width="606" height="675" viewBox="0 0 606 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <clipPath id="clip">
+                            <path id="path" fill-rule="evenodd" clip-rule="evenodd" d="M301.069 0.540202C402.062 -5.85987 500.928 45.1073 560.472 126.932C617.226 204.924 612.203 305.883 591.881 400.175C571.148 496.373 536.182 595.426 449.47 641.956C358.94 690.535 247.107 682.406 156.628 633.734C70.7209 587.522 18.5803 498.122 3.05948 401.817C-11.237 313.11 26.2864 229.524 79.858 157.389C136.559 81.0399 206.159 6.55476 301.069 0.540202Z" fill="#C4C4C4" />
+                        </clipPath>
+                    </svg>
                 </div>
             </div>
+
         </>
     );
 

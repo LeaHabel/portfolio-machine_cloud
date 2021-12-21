@@ -11,7 +11,7 @@ export default function Overview() {
             <div className="component-display">
                 <div id="majorButton">
                     <img className="icon" src={CloudIcon} />
-                    <h4>Major</h4>
+                    <h4>Send back to cloud</h4>
                 </div>
                 <Person />
             </div>
