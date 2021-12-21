@@ -62,7 +62,7 @@
 
 .profil {
     border-style: solid;
-    border-width: 10px;
+    border-width: 5px;
     border-color: #EABA19;
     border-radius: 50%;
     margin-bottom: 5%;
@@ -94,8 +94,27 @@
     color: #EABA19;
 }
 
-.paragraph {
+.head4 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    color: black;
+}
+
+.paragraphw {
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     color: white;
+}
+
+.paragraphb {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: black;
+}
+
+.paragraphbold {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: black;
 }
