@@ -33,7 +33,7 @@
     align-items: flex-start;
     z-index: 2;
     position: absolute;
-    top: 40%;
+    top: 38%;
     left: 25%;
     max-width: 21%;
 }
@@ -51,7 +51,7 @@
     left: 55%;
 }
 
-.twoMedia {
+.mediafile1 {
     display: flex; /* or inline-flex */
     flex-direction: row;
     flex-wrap: wrap;
@@ -59,6 +59,32 @@
     align-items: flex-start;
     z-index: 2;
     position: absolute;
+    top: 30%;
+    left: 55%;
+}
+
+.mediafile2 {
+    display: flex; /* or inline-flex */
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    z-index: 2;
+    position: absolute;
+    top: 30%;
+    left: 75%;
+}
+
+.mediafile3 {
+    display: flex; /* or inline-flex */
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    z-index: 2;
+    position: absolute;
+    top: 52.5%;
+    left: 55%;
 }
 
 
@@ -89,6 +115,7 @@
     font-size: 1.2rem;
     color: white;
     margin-top: 2rem;
+    margin-bottom: 0.3rem;
 }
 
 .head3 {
@@ -96,6 +123,7 @@
     font-size: 1.2rem;
     color: #EABA19;
     margin-bottom: 2rem;
+    font-weight: lighter;
 }
 
 .head4 {
@@ -108,12 +136,14 @@
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     color: white;
+    font-weight: lighter;
 }
 
 .paragraphb {
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     color: black;
+    font-weight: lighter;
 }
 
 .paragraphbold {
@@ -121,9 +151,31 @@
     font-size: 1rem;
     font-weight: bold;
     color: black;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.3rem;
 }
 
 .QR {
     margin-top: 2rem;
+    margin-bottom: 0.3rem;
+}
+
+.icons {
+    padding-top: 0.3rem;
+    padding-right: 0.3rem;
+}
+
+.arrows {
+    padding-top: 1.2rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    padding-bottom: 0.3rem;
+}
+
+.arrowtext {
+    padding-right: 2rem;
+    padding-left: 2rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #21496D;
 }
