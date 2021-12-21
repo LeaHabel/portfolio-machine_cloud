@@ -2,6 +2,11 @@ import './App.css';
 import BGsimple from "./assets/BGsimple.png";
 import puddle from "./assets/puddle.png";
 
+import Idle from "./pages/0-Idle.js"
+import Overview from "./pages/1-Overview"
+import Search from "./pages/1.2-Search"
+import Portfolio from "./pages/3-ProjectPage"
+
 function App() {
   return (
     <>

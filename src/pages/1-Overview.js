@@ -4,7 +4,7 @@ import { Person } from "../components/Person";
 import CloudIcon from "../assets/cloudiIcon.png";
 import frame from "../assets/frame.png";
 
-export function Overview() {
+export default function Overview() {
 
     return (
         <>
