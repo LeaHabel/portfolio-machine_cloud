@@ -3,6 +3,12 @@ import './3-ProjectPage.css'
 import MaxMuster from "../assets/MaxMuster.png";
 import PortfolioBG from "../assets/PortfolioBG.png";
 import QRmm from "../assets/QRmm.png";
+import MAILicon from "../assets/MAILicon.png"
+import IGicon from "../assets/IGicon.png"
+import WEBicon from "../assets/WEBicon.png"
+import img1 from "../assets/img1.png"
+import img2 from "../assets/img2.png"
+import img3 from "../assets/img3.png"
 
 export function Portfolio() {
 
@@ -13,12 +19,15 @@ export function Portfolio() {
                 <img className="profil" src={MaxMuster} alt="Profil"/>
                 <h1 className="head1">Max Mustermann</h1>
                 <p className="head3">Communication Design</p>
+                <img src={MAILicon} alt="Mail"/>
                 <p className="paragraphw">max.mustermann@gmail.com</p>
+                <img src={IGicon} alt="Instagram"/>
                 <p className="paragraphw">Maxmustermann</p>
+                <img src={WEBicon} alt="Website"/>
                 <p className="paragraphw">www.maxmustermann.com</p>
                 <p className="head2">Skills</p>
                 <p className="paragraphw">App Design, Screen Design, 2D/3D Animation, Projection Mapping</p>
-                <img src={QRmm} alt="QR"/>
+                <img className="QR" src={QRmm} alt="QR Code"/>
                 <p className="paragraphw">Save Details</p>
             </div>
 
@@ -39,10 +48,10 @@ export function Portfolio() {
 
             <div className="projectmedia">
                 <div className="twoMedia">
-                    <img className="mediafiles" src={MaxMuster} alt="Projectmedia"/>
-                    <img className="mediafiles" src={MaxMuster} alt="Projectmedia"/>
+                    <img className="mediafiles" src={img1} alt="Projectmedia"/>
+                    <img className="mediafiles" src={img2} alt="Projectmedia"/>
                 </div>
-                <img className="mediafiles" src={MaxMuster} alt="Projectmedia"/>
+                <img className="mediafiles" src={img3} alt="Projectmedia"/>
             </div>
         </>
     )
