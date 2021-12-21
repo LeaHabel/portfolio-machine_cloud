@@ -21,6 +21,7 @@
     position: absolute;
     top: 15%;
     left: 8%;
+    max-width: 15%;
 }
 
 .projectinfo {
@@ -34,6 +35,7 @@
     position: absolute;
     top: 40%;
     left: 25%;
+    max-width: 21%;
 }
 
 .projectmedia {
@@ -46,7 +48,7 @@
     z-index: 2;
     position: absolute;
     top: 30%;
-    left: 50%;
+    left: 55%;
 }
 
 .twoMedia {

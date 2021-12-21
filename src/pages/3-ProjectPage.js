@@ -19,12 +19,9 @@ export function Portfolio() {
                 <img className="profil" src={MaxMuster} alt="Profil"/>
                 <h1 className="head1">Max Mustermann</h1>
                 <p className="head3">Communication Design</p>
-                <img src={MAILicon} alt="Mail"/>
-                <p className="paragraphw">max.mustermann@gmail.com</p>
-                <img src={IGicon} alt="Instagram"/>
-                <p className="paragraphw">Maxmustermann</p>
-                <img src={WEBicon} alt="Website"/>
-                <p className="paragraphw">www.maxmustermann.com</p>
+                <p className="paragraphw"><img src={MAILicon} alt="Mail"/> max.mustermann@gmail.com</p>
+                <p className="paragraphw"><img src={IGicon} alt="Instagram"/> Maxmustermann</p>
+                <p className="paragraphw"><img src={WEBicon} alt="Website"/> www.maxmustermann.com</p>
                 <p className="head2">Skills</p>
                 <p className="paragraphw">App Design, Screen Design, 2D/3D Animation, Projection Mapping</p>
                 <img className="QR" src={QRmm} alt="QR Code"/>
