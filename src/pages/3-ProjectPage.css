@@ -47,7 +47,7 @@
     align-items: flex-start;
     z-index: 2;
     position: absolute;
-    top: 30%;
+    top: 18%;
     left: 55%;
 }
 
@@ -59,8 +59,8 @@
     align-items: flex-start;
     z-index: 2;
     position: absolute;
-    top: 30%;
-    left: 50%;
+    top: 18%;
+    left: 48%;
 }
 
 .mediafile2 {
@@ -71,8 +71,8 @@
     align-items: flex-start;
     z-index: 2;
     position: absolute;
-    top: 30%;
-    left: 75%;
+    top: 18%;
+    left: 81.5%;
 }
 
 .mediafile3 {
@@ -83,8 +83,8 @@
     align-items: flex-start;
     z-index: 2;
     position: absolute;
-    top: 52.5%;
-    left: 57%;
+    top: 52%;
+    left: 59%;
 }
 
 

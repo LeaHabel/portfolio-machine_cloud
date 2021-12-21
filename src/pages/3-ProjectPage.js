@@ -6,9 +6,9 @@ import QRmm from "../assets/QRmm.png";
 import MAILicon from "../assets/MAILicon.png"
 import IGicon from "../assets/IGicon.png"
 import WEBicon from "../assets/WEBicon.png"
-import img1 from "../assets/img1.png"
-import img2 from "../assets/img2.png"
-import img3 from "../assets/img3.png"
+import projIMG1 from "../assets/projIMG1.png"
+import projIMG2 from "../assets/projIMG2.png"
+import projIMG3 from "../assets/projIMG3.png"
 import Next from "../assets/Next.svg"
 import Previous from "../assets/Previous.svg"
 import IconMajorBTN from "../assets/IconMajorBTN.svg"
@@ -52,10 +52,10 @@ export function Portfolio() {
 
             <div>
                 <div>
-                    <img className="mediafile1" src={img1} alt="Projectmedia"/>
-                    <img className="mediafile2" src={img2} alt="Projectmedia"/>
+                    <img className="mediafile1" src={projIMG3} alt="Projectmedia"/>
+                    <img className="mediafile2" src={projIMG2} alt="Projectmedia"/>
                 </div>
-                <img className="mediafile3" src={img3} alt="Projectmedia"/>
+                <img className="mediafile3" src={projIMG1} alt="Projectmedia"/>
             </div>
 
             <div>
