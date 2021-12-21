@@ -167,18 +167,11 @@
 
 .arrows {
     padding-top: 1.2rem;
-    padding-right: 2rem;
-    padding-left: 2rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
     padding-bottom: 0.3rem;
 }
 
-.arrowtext {
-    padding-right: 2rem;
-    padding-left: 2rem;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
-    color: #21496D;
-}
 
 .closebtn {
     z-index: 3;

@@ -9,8 +9,8 @@ import WEBicon from "../assets/WEBicon.png"
 import img1 from "../assets/img1.png"
 import img2 from "../assets/img2.png"
 import img3 from "../assets/img3.png"
-import Next from "../assets/Next.png"
-import Previous from "../assets/Previous.png"
+import Next from "../assets/Next.svg"
+import Previous from "../assets/Previous.svg"
 import IconMajorBTN from "../assets/IconMajorBTN.svg"
 import CloseBTN from "../assets/CloseBTN.svg"
 
@@ -48,7 +48,6 @@ export function Portfolio() {
                 <p className="arrows"><img className="arrows" src={Previous} alt="Previous"/><img className="arrows"
                                                                                                   src={Next}
                                                                                                   alt="Next"/></p>
-                <p className="arrowtext">Previous Projekt</p><p className="arrowtext">Next Projekt</p>
             </div>
 
             <div>
