@@ -1,17 +1,27 @@
+.overflow {
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
 
 .background-specs {
     height: 100vh;
-    display: flex;
+    max-width: 100%;
+    display: block;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
-    position: absolute;
 }
 
 .contact {
-    display: flex; /* or inline-flex */
+    display: block; /* or inline-flex */
     flex-direction: column;
     flex-wrap: wrap;
     flex-flow: column wrap;
@@ -21,11 +31,11 @@
     position: absolute;
     top: 15%;
     left: 8%;
-    max-width: 15%;
+    width: 14.5%;
 }
 
 .projectinfo {
-    display: flex; /* or inline-flex */
+    display: block; /* or inline-flex */
     flex-direction: column;
     flex-wrap: wrap;
     flex-flow: column wrap;
@@ -35,54 +45,54 @@
     position: absolute;
     top: 38%;
     left: 25%;
-    max-width: 21%;
+    width: 20.5%;
 }
 
 .projectmedia {
-    display: flex; /* or inline-flex */
+    display: block; /* or inline-flex */
     flex-direction: column;
     flex-wrap: wrap;
     flex-flow: column wrap;
     justify-content: space-between;
     align-items: flex-start;
     z-index: 2;
-    position: absolute;
-    top: 18%;
-    left: 55%;
+    position: relative;
+    transform: translate(0%, 0%);
+    transform-origin: center center;
 }
 
 .mediafile1 {
-    display: flex; /* or inline-flex */
+    display: block; /* or inline-flex */
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: flex-start;
     z-index: 2;
-    position: absolute;
+    position: fixed;
     top: 18%;
     left: 48%;
 }
 
 .mediafile2 {
-    display: flex; /* or inline-flex */
+    display: block; /* or inline-flex */
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
     z-index: 2;
-    position: absolute;
+    position: fixed;
     top: 18%;
     left: 81.5%;
+    max-width: ;
 }
 
 .mediafile3 {
-    display: flex; /* or inline-flex */
+    display: block; /* or inline-flex */
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
     z-index: 2;
-    position: absolute;
+    position: fixed;
     top: 52%;
     left: 59%;
 }
@@ -98,7 +108,7 @@
 
 
 .tollerName {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
 }
@@ -175,14 +185,14 @@
 
 .closebtn {
     z-index: 3;
-    position: absolute;
+    position: fixed;
     top: 84%;
     left: 43.5%;
 }
 
 .cloudbtn {
     z-index: 3;
-    position: absolute;
+    position: fixed;
     top: 0%;
     left: 43.5%;
 }

@@ -17,7 +17,7 @@ import CloseBTN from "../assets/CloseBTN.svg"
 export function Portfolio() {
 
     return (
-        <>
+        <div className="overflow">
             <img className="background-specs" src={PortfolioBG} alt="Portfolio Background"/>
             <div className="contact">
                 <img className="profil" src={MaxMuster} alt="Profil"/>
@@ -62,7 +62,6 @@ export function Portfolio() {
                 <img className="cloudbtn" src={IconMajorBTN} alt="Back to cloud"/>
                 <img className="closebtn" src={CloseBTN} alt="Back to cloud"/>
             </div>
-        </>
+        </div>
     )
-        ;
 }
