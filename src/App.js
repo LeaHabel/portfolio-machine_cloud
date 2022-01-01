@@ -10,7 +10,7 @@ function App() {
             <div>
                 <content>
                     {/*<img className="background-specs" src={BGsimple} alt="Water Background"/>*/}
-                    <Portfolio className="content-specs"/>
+                    {/*<Portfolio className="content-specs"/>*/}
                     {/*<img className="puddle-overlay" src={puddle} alt="Puddle Mask"/>*/}
                 </content>
             </div>
