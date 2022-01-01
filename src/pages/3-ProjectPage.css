@@ -82,7 +82,7 @@
     position: fixed;
     top: 18%;
     left: 81.5%;
-    max-width: ;
+    /*max-width: ;*/
 }
 
 .mediafile3 {
@@ -193,6 +193,6 @@
 .cloudbtn {
     z-index: 3;
     position: fixed;
-    top: 0%;
+    top: 0;
     left: 43.5%;
 }
