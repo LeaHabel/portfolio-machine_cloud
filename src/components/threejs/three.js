@@ -3,8 +3,9 @@ import { GUI } from 'lil-gui'
 import Stats from 'three/examples/jsm/libs/stats.module';
 import { GPUComputationRenderer } from 'three/examples/jsm/misc/GPUComputationRenderer';
 import { SimplexNoise } from 'three/examples/jsm/math/SimplexNoise';
-import './threejs.css'
-
+import './threejs.css';
+import profileImage from '../../assets/MaxMuster.png';
+import alphaMapBubble from './textures/bubble/alphaMapBubble.png'
 
 // console.log(THREE)
 
@@ -49,6 +50,40 @@ const spheres = [];
 let spheresEnabled = true;
 
 const simplex = new SimplexNoise();
+scene = new THREE.Scene();
+
+//////// Colins stuff
+
+// Axis Helper
+// const axesHelper = new THREE.AxesHelper(100)
+// scene.add(axesHelper)
+
+// Object
+const c_geometry = new THREE.BoxGeometry(160, 90, 50);
+const c_material = new THREE.MeshPhongMaterial({ color: 0xff0000 });
+const c_cube = new THREE.Mesh(c_geometry, c_material);
+c_cube.position.y = 100;
+
+// scene.add(c_cube);
+
+// Tracking Pictures
+const pictures = [
+    {
+        position: new THREE.Vector3(1.55, 0.3, - 0.6),
+        element: document.querySelector('.picture')
+    }
+]
+
+// Texture
+const textureLoader = new THREE.TextureLoader()
+const texture = textureLoader.load(profileImage)
+const alphaMapTexture = textureLoader.load(alphaMapBubble)
+texture.generateMipmaps = false
+texture.minFilter = THREE.NearestFilter
+texture.magFilter = THREE.NearestFilter
+
+/// Colins stuff end
+
 
 init();
 animate();
@@ -58,19 +93,29 @@ function init() {
     container = document.createElement( 'div' );
     document.body.appendChild( container );
 
-    camera = new THREE.PerspectiveCamera( 25, window.innerWidth / window.innerHeight, 1, 3000 );
-    camera.position.set( 0, 500, 0 );
+    camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 3000 );
+    camera.position.set( 0, 250, 0);
+
+    // straight
+    // camera.position.set( 0, 800, 0);
     camera.lookAt( 0, 0, 0 );
 
-    scene = new THREE.Scene();
+
+
+
+
+    //////// End: Colins stuff
 
     const sun = new THREE.DirectionalLight( 0xFFFFFF, 1.0 );
-    sun.position.set( 0, 400, 0 );
+    sun.position.set( 0, 800, 0 );
     scene.add( sun );
 
-    const sun2 = new THREE.DirectionalLight( 0x40A040, 0.6 );
+    const sun2 = new THREE.DirectionalLight( 0xFFFFFF, 0.6 );
     sun2.position.set( - 100, 350, - 200 );
     scene.add( sun2 );
+
+    const hemisphereLight = new THREE.HemisphereLight(0xFFFFFF, 0x0000ff, 0.3)
+    scene.add(hemisphereLight)
 
     renderer = new THREE.WebGLRenderer();
     renderer.setPixelRatio( window.devicePixelRatio );
@@ -90,6 +135,7 @@ function init() {
 
             waterMesh.material.wireframe = ! waterMesh.material.wireframe;
             waterMesh.material.needsUpdate = true;
+
 
         }
 
@@ -147,7 +193,7 @@ function init() {
 
 function initWater() {
 
-    const materialColor = 0x0040C0;
+    const materialColor = 0x0B1B44;
 
     const geometry = new THREE.PlaneGeometry( BOUNDS, BOUNDS, WIDTH - 1, WIDTH - 1 );
 
@@ -247,7 +293,8 @@ function initWater() {
     material.uniforms[ "diffuse" ].value = material.color;
     material.uniforms[ "specular" ].value = material.specular;
     material.uniforms[ "shininess" ].value = Math.max( material.shininess, 1e-4 );
-    material.uniforms[ "opacity" ].value = material.opacity;
+    material.uniforms[ "opacity" ].value = material.opacity * 0.95;
+    material.transparent = true;
 
     // Defines
     material.defines.WIDTH = WIDTH.toFixed( 1 );
@@ -542,7 +589,16 @@ function smoothWater() {
 
 function createSpheres() {
 
-    const sphereTemplate = new THREE.Mesh( new THREE.SphereGeometry( 4, 24, 12 ), new THREE.MeshPhongMaterial( { color: 0xFFFF00 } ) );
+    const sphereTemplate = new THREE.Mesh(
+        new THREE.BoxGeometry( 90, 16, 90 ),
+        new THREE.MeshStandardMaterial( {
+            color: 'fx000000',
+            map: texture,
+            alphaMap: alphaMapTexture,
+            transparent: true,
+            metalness: 0.5}
+        )
+    );
 
     for ( let i = 0; i < NUM_SPHERES; i ++ ) {
 
@@ -659,9 +715,34 @@ function animate() {
 
     requestAnimationFrame( animate );
 
+    // console.log(spheres[0].position.x);
+
+    const picture = document.querySelector('.picture');
+    // position: new THREE.Vector3(spheres[0].position.x, spheres[0].position.y, spheres[0].position.z)
+    // const screenPosition = picture.position.clone()
+    // screenPosition.project(camera)
+    const translateX = spheres[3].position.x;
+    const translateY = - spheres[3].position.z;
+    if(picture != null) picture.style.transform = `translateX(${translateX}px) translateY(${translateY}px)`
+
+    // console.log(picture)
+    // for(const point of pictures)
+    // {
+    //     const screenPosition = point.position.clone()
+    //     screenPosition.project(camera)
+    //
+    //     const translateX = spheres[0].position.x;
+    //     const translateY = - spheres[0].position.y;
+    //     point.element.style.transform = `translateX(${translateX}px) translateY(${translateY}px)`
+    // }
     delta += clock.getDelta();
 
     if (delta  > interval) {
+        // Update objects
+        // c_cube.position.y += 50
+
+        // console.log(delta)
+
         // The draw or time dependent code are here
         render();
         stats.update();
@@ -669,7 +750,8 @@ function animate() {
         delta = delta % interval;
 
     }
-    // render();
+
+
 
 
 }
