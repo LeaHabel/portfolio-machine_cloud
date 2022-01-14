@@ -1,6 +1,7 @@
 import './App.css';
 import BGsimple from "./assets/BGsimple.png";
 import puddle from "./assets/puddle.png";
+import {Portfolio} from "./pages/3-ProjectPage";
 
 import Idle from "./pages/0-Idle.js"
 import Overview from "./pages/1-Overview"
@@ -8,22 +9,26 @@ import Search from "./pages/1.2-Search"
 import Portfolio from "./pages/3-ProjectPage"
 
 function App() {
-  return (
-    <>
-      <content>
-        <img className="background" src={BGsimple} alt="Water Background" />
+    return (
+        <>
+            <div>
+                <content>
+                    <img className="background-specs" src={BGsimple} alt="Water Background"/>
+                    <Portfolio className="content-specs"/>
+                    <img className="puddle-overlay" src={puddle} alt="Puddle Mask"/>
+                </content>
+            </div>
+        </>
 
-        {/* As long as we don't have buttons to navigate from Idle to > Overview to > Search and so on: 
-        While working on your branch you can add the component you are currently working on here. 
-        For example: 
-        <MyComponent />
-        Don't forget to import your component. As soon as we have the routing/links through our pages we can do it "correctly" */}
+    );
+}
+//Nicolas Search Bar
+import Search from './search';
 
-        <img className="puddle-overlay" src={puddle} alt="Puddle Mask" />
-      </content>
-    </>
-
-  );
+const App = () => {
+    return (
+        <Search />
+    );
 }
 
 export default App;
