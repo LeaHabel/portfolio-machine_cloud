@@ -39,7 +39,9 @@ p {
 .absolute {
   position: absolute;
 }
-
+.relative {
+  position: relative;
+}
 .fixed {
   position: fixed;
 }
@@ -137,40 +139,62 @@ h4{
 
 /* ------ Person ------ */
 .big{
-  width: 606px;
-  height: 675px;
+  width: 20vw;
+  height: 20vw;
 }
 
 .person {
-  /*background: radial-gradient(circle at 50%,#FFFFFF, #D8E5F5);*/
-  /*border-radius: 50%;*/
-  /*border: solid .3em #FFFFFF;*/
+  background: radial-gradient(circle at 50%,#FFFFFF, #D8E5F5);
+  /* border-radius: 50%; */
+  /* border: solid 0.3em #FFFFFF; */
   /* margin: 2%; */
   background-color: white;
   width: 100%;
   height: 100%;
-  align-self: center;
   align-items: center;
+  display: flex;
+  flex-direction: column;
 
 }
 
 #personName{
-  /* margin-top: 12%; */
-  padding: 3%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
 }
+
+.bubbleName {
+  margin: 0;
+}
+.bubbleMajor {
+  margin: 0;
+}
+
 .flex-container {
   display: flex;
   flex-direction: column;
-  align-content: center;
-  width: 110%;
-  height: 80%;
+  /* align-content: center; */
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
 }
 .flex-row {
   align-self: center;
 }
 .flex-item {
-  object-fit: contain;
+  width: 30%;
+  padding: 0.5rem;
+  height: auto;
+}
+.ratioWrapper {
+  width: 100%;
+  height: calc(100%/1.77777); /*  1.7 used for 16:9 ratio */
+  overflow: hidden;
+}
+.teaserImage {
+  height: 100%;
 }
 .last-item {
 }
@@ -205,11 +229,18 @@ h4{
 .maskBubble {
   clip-path: url(#clip);
   object-fit: cover;
+}
 
+.maskingShape {
+  transform: scale(0.4);
+}
+#clip {
+  
 }
 .maskSVG{
   position: absolute;
   top: 0;
+ 
 }
 
 #morphShape{
