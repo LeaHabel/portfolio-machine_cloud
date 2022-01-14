@@ -1,14 +1,17 @@
 import CloudIcon from "../assets/CloseBTN.svg";
 import '../pages/Overview.css';
+import { Link } from "react-router-dom";
 
 export function CloseButton (){
 
     return (
+        <Link to="/overview">
+        <div id="majorButton" class="icon-close">
 
-        <div id="majorButton">
-            <img className="icon icon-close" src={CloudIcon}/>
-            <h4>Major</h4>
+            <img className="icon" src={CloudIcon}/>
+
         </div>
+        </Link>
     );
 
 }
