@@ -10,7 +10,7 @@ function App() {
         <>
             <div>
                 <content>
-                    <img className="background-specs" src={BGsimple} alt="Water Background"/>
+
                     <Overview className="content-specs"/>
 
                 </content>
