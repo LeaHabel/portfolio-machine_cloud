@@ -24,19 +24,19 @@ export function Person(props) {
                     <div className="flex-container">
                         {/* <div className="flex-row"> */}
                         <div className="flex-item">
-                            <div className=" ratioWrapper">
+                            <div className="ratioWrapper">
                                 <img className="teaserImage" src={Img1} />
                             </div>
                         </div>
                         <div className="flex-item">
-                            <div className=" ratioWrapper">
-                                <img className="flex-item" src={Img2} />
+                            <div className="ratioWrapper">
+                                <img className="teaserImage" src={Img2} />
                             </div>
                         </div>
                         {/* </div> */}
                         <div className="flex-item">
-                            <div className=" ratioWrapper">
-                                <img className="flex-item" src={Img3} />
+                            <div className="ratioWrapper">
+                                <img className="teaserImage" src={Img3} />
                             </div>
                         </div>
                     </div>
