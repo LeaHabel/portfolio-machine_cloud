@@ -13,6 +13,8 @@ import Next from "../assets/Next.svg"
 import Previous from "../assets/Previous.svg"
 import IconMajorBTN from "../assets/IconMajorBTN.svg"
 import CloseBTN from "../assets/CloseBTN.svg"
+import {Cloudbutton} from "../components/cloudbutton";
+import {CloseButton} from "../components/closeButton";
 
 export function Portfolio() {
 
@@ -59,8 +61,8 @@ export function Portfolio() {
             </div>
 
             <div>
-                <img className="cloudbtn" src={IconMajorBTN} alt="Back to cloud"/>
-                <img className="closebtn" src={CloseBTN} alt="Back to cloud"/>
+                <Cloudbutton/>
+                <CloseButton/>
             </div>
         </div>
     )
