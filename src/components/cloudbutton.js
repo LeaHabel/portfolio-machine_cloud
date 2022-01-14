@@ -1,4 +1,4 @@
-import CloudIcon from "../assets/cloudiIcon.png";
+import CloudIcon from "../assets/IconMajorBTN.svg";
 import '../pages/Overview.css';
 
 export function Cloudbutton (){
