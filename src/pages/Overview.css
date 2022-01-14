@@ -86,4 +86,6 @@ bottom: -1%;
     color: #21496D;
     font-size: 1em;
 }
-
+.absolute{
+    position: absolute;
+}
