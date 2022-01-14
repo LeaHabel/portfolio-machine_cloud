@@ -1,6 +1,6 @@
 import React from "react";
 
-import gsap from "gsap";
+//import gsap from "gsap";
 
 import '../pages/Overview.css';
 import Img1 from '../assets/img1.png'
@@ -13,21 +13,21 @@ export function Person() {
     const boxRef = useRef();
     const childElement = useRef();
 
-    // wait until DOM has been rendered
-    useEffect(() => {
-        gsap.to(boxRef.current, {
-            rotation: "+=360",
-            repeat: -1,
-            duration: 100,
-            ease: "slow"
-        });
-        gsap.to(childElement.current, {
-            rotation: "-=360",
-            repeat: -1,
-            duration: 100,
-            ease: "slow"
-        });
-    });
+    // // wait until DOM has been rendered
+    // useEffect(() => {
+    //     gsap.to(boxRef.current, {
+    //         rotation: "+=360",
+    //         repeat: -1,
+    //         duration: 100,
+    //         ease: "slow"
+    //     });
+    //     gsap.to(childElement.current, {
+    //         rotation: "-=360",
+    //         repeat: -1,
+    //         duration: 100,
+    //         ease: "slow"
+    //     });
+    // });
 
     return (
         <>
