@@ -6,10 +6,10 @@ export function Cloudbutton (){
 
     return (
         <Link to="/overview">
-        <div id="majorButton">
+        <div id="majorButton" className={"icon-major"}>
 
             <img className="icon" src={CloudIcon}/>
-            <h2 class={"major"}>Major</h2>
+            <h2 className={"major"}>Major</h2>
 
         </div>
         </Link>

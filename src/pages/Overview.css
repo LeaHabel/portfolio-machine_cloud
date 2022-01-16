@@ -3,6 +3,7 @@
     border-radius: 50%;
     margin: 2%;
     border: solid .3em #FFFFFF;
+    transform: translate(60%, -190%);
 }
 .grid{
     display: grid;
@@ -42,8 +43,8 @@
     z-index: 50;
 }
 .big{
-    height: 500px;
-    width: 500px;
+    height: 100%;
+    width: 85%;
 }
 h1{
     font-size: 0.8em;
@@ -66,17 +67,7 @@ h4{
 #idletext{
     padding-top: 40%;
 }
-#majorButton{
-    justify-self: center;
-    position: absolute;
-    left: 45%;
-}
-.icon{
-    height: 15%;
-}
-.icon-close{
-bottom: -1%;
-}
+
 .major{
    margin-top: -14%;
     position: absolute;

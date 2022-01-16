@@ -9,7 +9,21 @@
     width: 100vw;
     position: absolute;
 }
-
+#majorButton{
+  justify-self: center;
+  position: absolute;
+  left: 45%;
+}
+.icon{
+  height: 100%;
+}
+.icon-close{
+  bottom: 0;
+  height: 17%;
+}
+.icon-major{
+  top: 0;
+}
 .puddle-overlay {
   height: 100vh;
   width: 100vw;
@@ -50,8 +64,6 @@ p {
 
 /* ------ 1-Overview (Lisa + Lin) ------ */
 .component-display {
-  top: 10%;
-  left: 20%;
   position: absolute;
 }
 .frame{
@@ -81,17 +93,7 @@ h4{
 #idletext{
   padding-top: 40%;
 }
-#majorButton{
-  background-color: white;
-  height: 150px;
-  width: 150px;
-  border-radius: 100%;
-  transform: translate(130%, -80%);
-}
-.icon{
-  height: 30%;
-  padding-top:40%;
-}
+
 
 
 
@@ -201,6 +203,13 @@ h4{
   visibility: hidden;
   position: absolute;
   top: 0;
+}
+.background-specs{
+  width: 100vw;
+  height: 100vh;
+}
+.absolute{
+  position: absolute;
 }
 
 

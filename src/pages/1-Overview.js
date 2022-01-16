@@ -15,9 +15,9 @@ export function Overview (){
             <img className="background-specs" src={BGsimple} alt="Water Background"/>
             <Cloudbutton/>
 
-            <Link to="/profil">
+
             <Person/>
-            </Link>
+
         </div>
     );
 
