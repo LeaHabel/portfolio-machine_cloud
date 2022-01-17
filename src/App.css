@@ -36,12 +36,14 @@ p {
     font-family: 'Roboto', sans-serif;
 }
 
-.picture
-{
+.absolute {
   position: absolute;
-  opacity: 0.5;
-  top: 50%;
-  left: 50%;
+}
+.relative {
+  position: relative;
+}
+.fixed {
+  position: fixed;
 }
 
 /* 
@@ -57,43 +59,9 @@ p {
 
 /* ------ 1-Overview (Lisa + Lin) ------ */
 .component-display {
- top: 50%;
- left: 50%;
-}
-.person {
-  background: radial-gradient(circle at 50%,#FFFFFF, #D8E5F5);
-  border-radius: 50%;
-  margin: 2%;
-  border: solid .3em #FFFFFF;
-}
-.grid{
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 60% 50%;
-  gap: .2em;
-  overflow: hidden;
-  border-radius: 0% 0% 100% 100%;
-  height: 320px;
-  width: 99%;
-}
-.grid > img{
-  height: 100%;
-  border-radius:15%;
-
-}
-.grid1{
-  grid-column-start: 1;
-  grid-column-end: 1;
-}
-.grid2{
-  margin-left: 25%;
-}
-.grid3{
-  margin-top: 1%;
-}
-.grid4{
-  margin-left: 5%;
-  margin-top: 1%;
+width: 100%;
+height: 100%;
+  position: absolute;
 }
 .frame{
   height: 100vh;
@@ -103,10 +71,7 @@ p {
   left: 0;
   z-index: 50;
 }
-.big{
-  height: 500px;
-  width: 500px;
-}
+
 h1{
   font-size: 0.8em;
   color: #000000;
@@ -120,10 +85,7 @@ h4{
   font-size: 0.5em;
   margin: 0%;
 }
-#personName{
-  margin-top: 10%;
-  padding: 3%;
-}
+
 
 #idletext{
   padding-top: 40%;
@@ -139,6 +101,18 @@ h4{
   height: 30%;
   padding-top:40%;
 }
+
+.pos0 {
+  top: 5%;
+  left: 10%;
+
+}
+
+.pos1 {
+  top: 10%;
+  left: 60%;
+}
+
 
 
 
@@ -164,8 +138,118 @@ h4{
 
 
 /* ------ Person ------ */
-#clip {
-  clip-path: url(#clip);
-  object-fit: cover;
+.big{
+  width: 20vw;
+  height: 20vw;
+}
+
+.person {
+  background: radial-gradient(circle at 50%,#FFFFFF, #D8E5F5);
+  /* border-radius: 50%; */
+  /* border: solid 0.3em #FFFFFF; */
+  /* margin: 2%; */
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 
 }
+
+#personName{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  padding-top: 1rem;
+}
+
+.bubbleName {
+  margin: 0;
+}
+.bubbleMajor {
+  margin: 0;
+}
+
+.flex-container {
+  display: flex;
+  /* flex-direction: column; */
+  /* align-content: center; */
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+html {
+  --color-text: black;
+  --color-background: lightgray;
+  --color-primary: rebeccapurple;
+  --format: 30%;
+}
+.flex-item {
+  height: calc((var(--format))/1.7777);
+  /* padding: 0.1rem; */
+  /* height: auto; */
+  overflow: hidden;
+  width: 30%;
+}
+.portraitTestImage {
+  height: calc(30%/1.7777) !important;
+  width: calc((30%/1.7777)/1.7777) !important;
+}
+/* .ratioWrapper {
+  width: 100%;
+  height: calc(100%/1.77777);
+  overflow: hidden;
+} */
+.teaserImage {
+  /* height: 100%; */
+  /* width: auto; */
+}
+
+.maskBubble {
+  clip-path: url(#clip);
+  object-fit: cover;
+}
+
+.maskingShape {
+  transform: scale(0.4);
+}
+#clip {
+
+}
+.maskSVG{
+  position: absolute;
+  top: 0;
+
+}
+
+#morphShape{
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+}
+
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: 0; /* gutter size offset */
+  width: 100%;
+  height: 80%;
+}
+.my-masonry-grid_column {
+  padding-left: .5rem;
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
+  background: grey;
+  margin-bottom: .5rem;
+}
+
+
+

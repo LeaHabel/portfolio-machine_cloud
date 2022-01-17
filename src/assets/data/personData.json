@@ -1,0 +1,19 @@
+{
+    "students": [
+        {
+            "id": 1,
+            "name": "Nicolas Saavedra-Rueda",
+            "major": "Interaction Design"
+        },
+        {
+            "id": 2,
+            "name": "Max Mustermann",
+            "major": "Interaction Design"
+        },
+        {
+            "id": 1,
+            "name": "Foo Bar",
+            "major": "Media Design"
+        }
+    ]
+}
