@@ -1,73 +1,56 @@
 import React from "react";
 
-import gsap from "gsap";
-import Masonry from 'react-masonry-css'
-
 import '../pages/Overview.css';
+import Bubble from '../assets/bubbleMorph.svg'
 import Media1 from '../assets/P14-2.jpg'
 import Media2 from '../assets/P50-2.jpg'
 import Media3 from '../assets/P19-1.jpg'
 import Media4 from '../assets/P19-1.jpg'
 
-const { useEffect, useRef } = React;
 
 export function Person(props) {
-    const boxRef = useRef();
-    const childElement = useRef();
-
-
-
 
     return (
         <>
-            <div className={`big maskBubble box fixed ${props.position}`} ref={boxRef}>
-                <div className="person box" ref={childElement}>
+            {/* <img src={Bubble} className={`big  fixed ${props.position}`}></img > */}
+
+            <div className={`big maskBubble box fixed ${props.position}`} >
+                <div className="person box" >
                     <div id="personName">
                         <h1 className="bubbleName">{props.name}</h1>
                         <h2 className="bubbleMajor">{props.major}</h2>
                     </div>
-                    {/* <Masonry
-                        breakpointRows={2}
-                        className="my-masonry-grid"
-                        columnClassName="my-masonry-grid_column"
-                    >
-                        <img className="teaserImage" src={Media2} />
-                        <img className="teaserImage" src={Media1} />
-                        <source src={Media4} type="video/mp4" />
-                        <img className="teaserImage" src={Media3} />
-                    </Masonry> */}
-                    <div className="flex-container">
-                        <div className="flex-item">
-                            {/* <div className="ratioWrapper"> */}
-                            <img className="teaserImage" src={Media1} />
-                            {/* </div> */}
+
+
+                    <div className="teaserGallery">
+                        <div className="flex-container">
+                            <div className="flex-item">
+                                <img className="teaserImage" src={Media1} />
+                            </div>
+                            <div className="flex-item portraitTestImage">
+                                <img className="teaserImage" src={Media2} />
+                            </div>
+                            <div className="flex-item">
+                                <img className="teaserImage" src={Media3} />
+                            </div>
                         </div>
-                        <div className="flex-item portraitTestImage">
-                            {/* <div className="ratioWrapper"> */}
-                            <img className="teaserImage" src={Media2} />
-                            {/* </div> */}
-                        </div>
-                        <div className="flex-item">
-                            {/* <div className="ratioWrapper"> */}
-                            <img className="teaserImage" src={Media3} />
-                            {/* </div> */}
-                        </div>
-                        <div className="flex-item">
-                            {/* <div className="ratioWrapper"> */}
+                        <div className="flex-container">
+
+                            {/* <div className="flex-item">
                             <source src={Media4} type="video/mp4" />
-                            {/* </div> */}
-                        </div>
-                        <div className="flex-item">
-                            {/* <div className="ratioWrapper"> */}
-                            <img className="teaserImage" src={Media3} />
-                            {/* </div> */}
-                        </div>
-                        <div className="flex-item">
-                            {/* <div className="ratioWrapper"> */}
-                            <img className="teaserImage" src={Media1} />
-                            {/* </div> */}
+                        </div> */}
+                            <div className="flex-item">
+                                <img className="teaserImage" src={Media1} />
+                            </div>
+                            <div className="flex-item">
+                                <img className="teaserImage" src={Media1} />
+                            </div>
+                            <div className="flex-item">
+                                <img className="teaserImage" src={Media1} />
+                            </div>
                         </div>
                     </div>
+
 
                     <svg className="maskSVG big" viewBox="0 0 606 675" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <clipPath id="clip" className="maskingShape absolute">
