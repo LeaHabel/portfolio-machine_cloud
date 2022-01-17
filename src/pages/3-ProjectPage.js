@@ -55,25 +55,34 @@ export function Portfolio(props) {
 
 
                 <div className="projectinfo">
-                    <h1 className="head4">Project Title</h1>
-                    <p className="head3">Communication Design</p>
-                    <p className="paragraphb">Here is a short project description, consetetur sadipscing
-                        elitr,
-                        sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-                        diam
-                        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-                        gubergren,
-                        no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-                        consetetur sadipscing elitr.</p>
-                    <p className="paragraphbold">2021 | Sem X</p>
-                    <p className="paragraphbold">Own role</p>
-                    <p className="paragraphb">Lorem ipsum, dolor sit amet, consectetur, adipiscing elit</p>
-                    <p className="paragraphbold">Team</p>
-                    <p className="paragraphb">Name Lastname, Name Lastname, Name Lastname</p>
-                    <p className="arrows"><img className="arrows" src={Previous} alt="Previous"/><img
-                        className="arrows"
-                        src={Next}
-                        alt="Next"/></p>
+                    {data.PERSONAL_DETAILS.map((user) => (
+                            <div>{
+                                <>
+                                    <h1 className="head4">Project Title</h1>
+                                    <p className="head3">Communication Design</p>
+                                    <p className="paragraphb">Here is a short project description, consetetur sadipscing
+                                        elitr,
+                                        sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+                                        diam
+                                        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                                        gubergren,
+                                        no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                                        consetetur sadipscing elitr.</p>
+                                    <p className="paragraphbold">2021 | Sem X</p>
+                                    <p className="paragraphbold">Own role</p>
+                                    <p className="paragraphb">{user.ownrole_1}</p>
+                                    <p className="paragraphbold">Team</p>
+                                    <p className="paragraphb">Name Lastname, Name Lastname, Name Lastname</p>
+                                    <p className="arrows"><img className="arrows" src={Previous} alt="Previous"/><img
+                                        className="arrows"
+                                        src={Next}
+                                        alt="Next"/></p>
+                                </>
+                            }
+                            </div>
+                        )
+                    )
+                    }
                 </div>
 
                 <div>
