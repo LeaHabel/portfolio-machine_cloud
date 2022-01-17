@@ -5,24 +5,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 .background {
+    text-align: center;
+}
+
+.background-specs {
     height: 100vh;
-    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
     position: absolute;
 }
 
 .puddle-overlay {
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 50;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    position: fixed;
+    top: 0;
+    z-index: 10;
 }
 
-.Header {
-    text-align: center;
-    position: fixed;
+.content-specs {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
 }
+
 
 .App-link {
     color: #61dafb;
@@ -36,129 +55,33 @@ p {
     font-family: 'Roboto', sans-serif;
 }
 
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
 
-/* 
-------------------------------------------------------------------------------------------------------------
------------------------------------------------ PAGES ------------------------------------------------------
-------------------------------------------------------------------------------------------------------------
-*/
-
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+}
 
 /* ------ 0-Idle (Lisa) ------ */
 
 
-
-/* ------ 1-Overview (Lisa + Lin) ------ */
-.component-display {
- top: 50%;
- left: 50%;
-}
-.person {
-  background: radial-gradient(circle at 50%,#FFFFFF, #D8E5F5);
-  border-radius: 50%;
-  margin: 2%;
-  border: solid .3em #FFFFFF;
-}
-.grid{
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 60% 50%;
-  gap: .2em;
-  overflow: hidden;
-  border-radius: 0% 0% 100% 100%;
-  height: 320px;
-  width: 99%;
-}
-.grid > img{
-  height: 100%;
-  border-radius:15%;
-
-}
-.grid1{
-  grid-column-start: 1;
-  grid-column-end: 1;
-}
-.grid2{
-  margin-left: 25%;
-}
-.grid3{
-  margin-top: 1%;
-}
-.grid4{
-  margin-left: 5%;
-  margin-top: 1%;
-}
-.frame{
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 50;
-}
-.big{
-  height: 500px;
-  width: 500px;
-}
-h1{
-  font-size: 0.8em;
-  color: #000000;
-}
-h2{
-  font-size: 0.5em;
-  color: #80A9AE;
-}
-h4{
-  color: #21496D;
-  font-size: 0.5em;
-  margin: 0%;
-}
-#personName{
-  margin-top: 10%;
-  padding: 3%;
-}
-
-#idletext{
-  padding-top: 40%;
-}
-#majorButton{
-  background-color: white;
-  height: 150px;
-  width: 150px;
-  border-radius: 100%;
-  transform: translate(130%, -80%);
-}
-.icon{
-  height: 30%;
-  padding-top:40%;
-}
-
-
-
+/* ------ 1-Overview (Lin) ------ */
 
 
 /* ------ 1.2-Search (Nicolas) ------ */
 
 
-
 /* ------ 2-Select ------ */
 
 
-
 /* ------ 3-Project Page (Carina) ------ */
-
-
-
-/* 
-------------------------------------------------------------------------------------------------------------
------------------------------------------- COMPONENTS ------------------------------------------------------
-------------------------------------------------------------------------------------------------------------
-*/
-
-
-/* ------ Person ------ */
-#clip {
-  clip-path: url(#clip);
-  object-fit: cover;
-
-}

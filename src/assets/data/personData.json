@@ -1,0 +1,34 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "firstname": "Jan",
+      "lastname": "Adams",
+      "major": "Communication Design",
+      "mail": "office@adamsjan.com",
+      "website": "www.adamsjan.com",
+      "socialmedia": "www.instagram.com/adamsjan_com",
+      "skills": "communication design, creative coding, conception"
+    },
+    {
+      "id": 2,
+      "firstname": "Katharina",
+      "lastname": "Berger",
+      "major": "Media Design",
+      "mail": " ",
+      "website": " ",
+      "socialmedia": " ",
+      "skills": " "
+    },
+    {
+      "id": 3,
+      "firstname": "Tobias",
+      "lastname": "Bettke",
+      "major": "Sound Design",
+      "mail": "tobias.bettke@googlemail.com",
+      "website": " ",
+      "socialmedia": "instagram.com/tobibettke",
+      "skills": "sound design, audio engineering, music production, electronic music, coding"
+    }
+  ]
+}
