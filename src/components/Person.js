@@ -1,8 +1,5 @@
 import React from "react";
 
-import gsap from "gsap";
-import Masonry from 'react-masonry-css'
-
 import '../pages/Overview.css';
 import Media1 from '../assets/P14-2.jpg'
 import Media2 from '../assets/P50-2.jpg'
