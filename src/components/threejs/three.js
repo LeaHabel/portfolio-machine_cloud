@@ -9,10 +9,6 @@ import alphaMapBubble from './textures/bubble/alphaMapBubble.png'
 
 // console.log(THREE)
 
-
-
-// import * as THREE from '../build/three.module.js';
-
 // Limit fps
 let clock = new THREE.Clock();
 let delta = 0;
@@ -67,12 +63,12 @@ c_cube.position.y = 100;
 // scene.add(c_cube);
 
 // Tracking Pictures
-const pictures = [
-    {
-        position: new THREE.Vector3(1.55, 0.3, - 0.6),
-        element: document.querySelector('.picture')
-    }
-]
+// const pictures = [
+//     {
+//         position: new THREE.Vector3(1.55, 0.3, - 0.6),
+//         element: document.querySelector('.picture')
+//     }
+// ]
 
 // Texture
 const textureLoader = new THREE.TextureLoader()
@@ -84,14 +80,15 @@ texture.magFilter = THREE.NearestFilter
 
 /// Colins stuff end
 
+export function startThreeJS() {
+    init();
+    animate();
+}
 
-init();
-animate();
 
 function init() {
 
-    container = document.createElement( 'div' );
-    document.body.appendChild( container );
+    container = document.getElementById("three-js");
 
     camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 3000 );
     camera.position.set( 0, 250, 0);
@@ -100,11 +97,6 @@ function init() {
     // camera.position.set( 0, 800, 0);
     camera.lookAt( 0, 0, 0 );
 
-
-
-
-
-    //////// End: Colins stuff
 
     const sun = new THREE.DirectionalLight( 0xFFFFFF, 1.0 );
     sun.position.set( 0, 800, 0 );
@@ -717,13 +709,14 @@ function animate() {
 
     // console.log(spheres[0].position.x);
 
-    const picture = document.querySelector('.picture');
-    // position: new THREE.Vector3(spheres[0].position.x, spheres[0].position.y, spheres[0].position.z)
-    // const screenPosition = picture.position.clone()
-    // screenPosition.project(camera)
-    const translateX = spheres[3].position.x;
-    const translateY = - spheres[3].position.z;
-    if(picture != null) picture.style.transform = `translateX(${translateX}px) translateY(${translateY}px)`
+    //// Translate HTML/CSS to ThreeJS objects
+    // const picture = document.querySelector('.picture');
+    // // position: new THREE.Vector3(spheres[0].position.x, spheres[0].position.y, spheres[0].position.z)
+    // // const screenPosition = picture.position.clone()
+    // // screenPosition.project(camera)
+    // const translateX = spheres[3].position.x;
+    // const translateY = - spheres[3].position.z;
+    // if(picture != null) picture.style.transform = `translateX(${translateX}px) translateY(${translateY}px)`
 
     // console.log(picture)
     // for(const point of pictures)
@@ -735,6 +728,8 @@ function animate() {
     //     const translateY = - spheres[0].position.y;
     //     point.element.style.transform = `translateX(${translateX}px) translateY(${translateY}px)`
     // }
+
+    // Limit FPS to 60
     delta += clock.getDelta();
 
     if (delta  > interval) {

@@ -1,16 +1,23 @@
-import React from "react";
+import React, {useEffect} from "react";
 import '../../src/App.css';
 import { Person } from "../components/Person";
 import CloudIcon from "../assets/cloudiIcon.png";
 import frame from "../assets/frame.png";
+import { startThreeJS } from "../components/threejs/three";
 
 import Img1 from '../assets/img1.png'
 
 export function Overview() {
-
+    useEffect(() => {
+        startThreeJS();
+    })
+    // start();
     return (
         <>
             <div className="component-display">
+                <div id="three-js">
+
+                </div>
                 <div id="majorButton">
                     <img className="icon" src={CloudIcon} />
                     <h4>Send back to cloud</h4>
@@ -31,5 +38,4 @@ export function Overview() {
             </div>
         </>
     );
-
 }
