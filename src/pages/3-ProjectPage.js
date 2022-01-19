@@ -55,6 +55,7 @@ export function Portfolio() {
             <div>
                 <div>
                     <img className="mediafile1" src={projIMG3} alt="Projectmedia"/>
+
                     <img className="mediafile2" src={projIMG2} alt="Projectmedia"/>
                 </div>
                 <img className="mediafile3" src={projIMG1} alt="Projectmedia"/>

@@ -80,3 +80,7 @@ h4{
 .absolute{
     position: absolute;
 }
+.person-animation:after{
+    width: 800px;
+    height: 800px;
+}

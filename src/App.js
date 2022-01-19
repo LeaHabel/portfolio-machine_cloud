@@ -1,22 +1,37 @@
 import './App.css';
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import  {Portfolio}  from "./pages/3-ProjectPage";
+import reportWebVitals from './reportWebVitals';
+import {Select} from "./pages/2-Select";
 import BGsimple from "./assets/BGsimple.png";
 import puddle from "./assets/puddle.png";
 import {Idle} from "./pages/0-Idle";
 import {Overview} from "./pages/1-Overview";
+import {
+    BrowserRouter,
+    Routes,
+    Route,
+    useLocation
+} from "react-router-dom";
+import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
 
 
 function App() {
+    const location = useLocation();
     return (
-        <>
-            <div>
-                <content>
+<>
+            <AnimatePresence exitBeforeEnter>
+                <Routes location={location} key={location.key}>
+                    <Route path="/" element={<Overview/>}/>
+                    <Route path="/overview" element={<Overview/>}/>
+                    <Route path="/profil" element={<Portfolio/>}/>
+                    <Route path="/select" element={<Select/>}/>
+                </Routes>
+            </AnimatePresence>
 
-                    <Overview className="content-specs"/>
-
-                </content>
-            </div>
-        </>
-
+</>
     );
 }
 // //Nicolas Search Bar
