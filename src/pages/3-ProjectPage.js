@@ -47,15 +47,15 @@ export function Portfolio() {
                 </div>
 
                 <div className="projectinfo">
-                    <h1 className="head4">{data1.PROJECT_DETAILS[0].Project}</h1>
-                    <p className="head3">{data1.PROJECT_DETAILS[0].University}</p>
-                    <p className="paragraphb">{data1.PROJECT_DETAILS[0].description}</p>
-                    <p className="paragraphbold">{data1.PROJECT_DETAILS[0].Year} |
-                        Sem {data1.PROJECT_DETAILS[0].Semester}</p>
+                    <h1 className="head4">{data1.PROJECT_DETAILS[52].Project}</h1>
+                    <p className="head3">{data1.PROJECT_DETAILS[52].University}</p>
+                    <p className="paragraphb">{data1.PROJECT_DETAILS[52].description}</p>
+                    <p className="paragraphbold">{data1.PROJECT_DETAILS[52].Year} |
+                        Sem {data1.PROJECT_DETAILS[52].Semester}</p>
                     <p className="paragraphbold">Own role</p>
                     <p className="paragraphb">{data.PERSONAL_DETAILS[0].ownrole_1}</p>
                     <p className="paragraphbold">Team</p>
-                    <p className="paragraphb">{data1.PROJECT_DETAILS[0].Team}</p>
+                    <p className="paragraphb">{data1.PROJECT_DETAILS[52].Team}</p>
                     <p className="arrows"><img className="arrows" src={Previous} alt="Previous"/><img
                         className="arrows"
                         src={Next}
