@@ -1,7 +1,11 @@
 /* This is our global CSS file */
 
 /* ------ App.js ------ */
-
+html, body{min-height:100%;}
+body{height:100vh;}
+body {
+  min-height: 100%;
+}
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 .background {
