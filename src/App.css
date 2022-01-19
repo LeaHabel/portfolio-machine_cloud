@@ -5,43 +5,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 .background {
-    text-align: center;
-}
-
-.background-specs {
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+    width: 100vw;
     position: absolute;
 }
-
+#majorButton{
+  justify-self: center;
+  position: absolute;
+  left: 45%;
+}
+.icon{
+  height: 100%;
+}
+.icon-close{
+  bottom: 0;
+  height: 17%;
+}
+.icon-major{
+  top: 0;
+}
 .puddle-overlay {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+
+.Header {
+    text-align: center;
     position: fixed;
-    top: 0;
-    z-index: 10;
 }
-
-.content-specs {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    z-index: 1;
-}
-
 
 .App-link {
     color: #61dafb;
@@ -55,33 +50,167 @@ p {
     font-family: 'Roboto', sans-serif;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output, section, summary, time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-}
+/* 
+------------------------------------------------------------------------------------------------------------
+----------------------------------------------- PAGES ------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+*/
+
 
 /* ------ 0-Idle (Lisa) ------ */
 
 
-/* ------ 1-Overview (Lin) ------ */
+
+/* ------ 1-Overview (Lisa + Lin) ------ */
+.component-display {
+  position: absolute;
+}
+.frame{
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+
+h1{
+  font-size: 0.8em;
+  color: #000000;
+}
+h2{
+  font-size: 0.5em;
+  color: #80A9AE;
+}
+h4{
+  color: #21496D;
+  font-size: 0.5em;
+  margin: 0%;
+}
+
+
+#idletext{
+  padding-top: 40%;
+}
+
+
+
+
 
 
 /* ------ 1.2-Search (Nicolas) ------ */
-
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
 
 /* ------ 2-Select ------ */
 
 
+
 /* ------ 3-Project Page (Carina) ------ */
+
+
+
+/* 
+------------------------------------------------------------------------------------------------------------
+------------------------------------------ COMPONENTS ------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+*/
+
+
+/* ------ Person ------ */
+.big{
+  width: 606px;
+  height: 675px;
+}
+
+.person {
+  /*background: radial-gradient(circle at 50%,#FFFFFF, #D8E5F5);*/
+  /*border-radius: 50%;*/
+  /*border: solid .3em #FFFFFF;*/
+  /* margin: 2%; */
+  background-color: white;
+  width: 100%;
+  height: 100%;
+}
+
+#personName{
+  /* margin-top: 12%; */
+  padding: 3%;
+  text-align: center;
+}
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 110%;
+  height: 80%;
+}
+.flex-row {
+  align-self: center;
+}
+.flex-item {
+  object-fit: contain;
+}
+.last-item {
+}
+.grid{
+  /* display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+  gap: 1em;
+  overflow: hidden; */
+  /* border-radius: 0% 0% 100% 100%; */
+  /* height: 100%;
+  width: auto; */
+}
+.grid > img{
+  /* border-radius:12%; */
+}
+.grid1{
+  /* grid-column-start: 1;
+  grid-column-end: 1; */
+}
+.grid2{
+  /* margin-left: 25%; */
+}
+.grid3{
+  /* margin-top: 1%; */
+}
+.grid4{
+  /* margin-left: 5%;
+  margin-top: 1%; */
+}
+
+.maskBubble {
+  clip-path: url(#clip);
+  object-fit: cover;
+
+}
+.maskSVG{
+  position: absolute;
+  top: 0;
+}
+
+#morphShape{
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+}
+.background-specs{
+  width: 100vw;
+  height: 100vh;
+}
+.absolute{
+  position: absolute;
+}
+
+
+
