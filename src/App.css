@@ -13,7 +13,21 @@ body {
     width: 100vw;
     position: absolute;
 }
-
+#majorButton{
+  justify-self: center;
+  position: absolute;
+  left: 45%;
+}
+.icon{
+  height: 100%;
+}
+.icon-close{
+  bottom: 0;
+  height: 17%;
+}
+.icon-major{
+  top: 0;
+}
 .puddle-overlay {
   height: 100vh;
   width: 100vw;
@@ -40,15 +54,6 @@ p {
     font-family: 'Roboto', sans-serif;
 }
 
-.absolute {
-  position: absolute;
-}
-.relative {
-  position: relative;
-}
-.fixed {
-  position: fixed;
-}
 
 /* 
 ------------------------------------------------------------------------------------------------------------
@@ -63,8 +68,6 @@ p {
 
 /* ------ 1-Overview (Lisa + Lin) ------ */
 .component-display {
-width: 100%;
-height: 100%;
   position: absolute;
 }
 .frame{
@@ -94,28 +97,6 @@ h4{
 #idletext{
   padding-top: 40%;
 }
-#majorButton{
-  background-color: white;
-  height: 150px;
-  width: 150px;
-  border-radius: 100%;
-  transform: translate(130%, -80%);
-}
-.icon{
-  height: 30%;
-  padding-top:40%;
-}
-
-.pos0 {
-  top: 5%;
-  left: 10%;
-
-}
-
-.pos1 {
-  top: 10%;
-  left: 60%;
-}
 
 
 
@@ -123,8 +104,15 @@ h4{
 
 
 /* ------ 1.2-Search (Nicolas) ------ */
-
-
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
 
 /* ------ 2-Select ------ */
 
@@ -143,99 +131,76 @@ h4{
 
 /* ------ Person ------ */
 .big{
-  width: 15vw;
-  height: 16vw;
+  width: 606px;
+  height: 675px;
 }
 
 .person {
-  background: radial-gradient(circle at 50%,#FFFFFF, #D8E5F5);
-  /* border-radius: 50%; */
-  /* border: solid 0.3em #FFFFFF; */
+  /*background: radial-gradient(circle at 50%,#FFFFFF, #D8E5F5);*/
+  /*border-radius: 50%;*/
+  /*border: solid .3em #FFFFFF;*/
   /* margin: 2%; */
-  /* background-color: white; */
+  background-color: white;
   width: 100%;
   height: 100%;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-
 }
 
 #personName{
+  /* margin-top: 12%; */
+  padding: 3%;
   text-align: center;
+}
+.flex-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: 50%;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-.bubbleName {
-  margin: 0;
-}
-.bubbleMajor {
-  margin: 0;
-}
-.teaserGallery {
-  height: 50%;
-  width: 120%;
-}
-
-.flex-container {
-  /* display: flex;
-  width: 140%;
-  height: 50%;
-  flex-wrap: nowrap;
-  align-content: center; */
-  display: flex;
-  width: 100%;
-  height: 50%;
-  flex-wrap: nowrap;
   align-content: center;
-  /* overflow: hidden; */
-  justify-content: center;
-  margin-bottom: 0.2rem;
+  width: 110%;
+  height: 80%;
 }
-html {
-  --format: 100%;
+.flex-row {
+  align-self: center;
 }
 .flex-item {
-  /* height: calc((var(--format))/1.7777);
-  overflow: hidden;
-  width: (var(--format));
-  margin: 0.1rem; */
-  overflow: hidden;
-  width: (var(--format));
-  margin: 0.1rem;
-  height: 100%;
-
-}
-.portraitTestImage {
-  /* height: calc((var(--format))/1.7777) !important;  */
-  /* width: calc(((var(--format))/1.7777)/1.7777) !important; */
-}
-
-.teaserImage {
-  height: 100%;
   object-fit: contain;
+}
+.last-item {
+}
+.grid{
+  /* display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+  gap: 1em;
+  overflow: hidden; */
+  /* border-radius: 0% 0% 100% 100%; */
+  /* height: 100%;
+  width: auto; */
+}
+.grid > img{
+  /* border-radius:12%; */
+}
+.grid1{
+  /* grid-column-start: 1;
+  grid-column-end: 1; */
+}
+.grid2{
+  /* margin-left: 25%; */
+}
+.grid3{
+  /* margin-top: 1%; */
+}
+.grid4{
+  /* margin-left: 5%;
+  margin-top: 1%; */
 }
 
 .maskBubble {
   clip-path: url(#clip);
   object-fit: cover;
-}
 
-.maskingShape {
-  transform: scale(0.3); 
-}
-#clip {
-  
 }
 .maskSVG{
   position: absolute;
   top: 0;
- 
 }
 
 #morphShape{
@@ -243,24 +208,12 @@ html {
   position: absolute;
   top: 0;
 }
-
-.my-masonry-grid {
-  display: -webkit-box; /* Not needed if autoprefixing */
-  display: -ms-flexbox; /* Not needed if autoprefixing */
-  display: flex;
-  margin-left: 0; /* gutter size offset */
-  width: 100%;
-  height: 80%;
+.background-specs{
+  width: 100vw;
+  height: 100vh;
 }
-.my-masonry-grid_column {
-  padding-left: .5rem; 
-  background-clip: padding-box;
-}
-
-/* Style your items */
-.my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
-  background: grey;
-  margin-bottom: .5rem;
+.absolute{
+  position: absolute;
 }
 
 
