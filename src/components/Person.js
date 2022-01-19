@@ -25,7 +25,7 @@ export function Person(props) {
                     <div className="teaserGallery">
                         <div className="flex-container">
                             <div className="flex-item">
-                                <img className="teaserImage" src={Media1} />
+                                <img className="teaserImage" src="https://d18p28upkrc95t.cloudfront.net/testimage2.jpg" />
                             </div>
                             <div className="flex-item portraitTestImage">
                                 <img className="teaserImage" src={Media2} />
@@ -43,10 +43,10 @@ export function Person(props) {
                                 <img className="teaserImage" src={Media1} />
                             </div>
                             <div className="flex-item">
-                                <img className="teaserImage" src={Media1} />
+                                <img className="teaserImage" src="https://d18p28upkrc95t.cloudfront.net/testimage2.jpg" />
                             </div>
                             <div className="flex-item">
-                                <img className="teaserImage" src={Media1} />
+                                <img className="teaserImage" src="https://d18p28upkrc95t.cloudfront.net/cat.jpg" />
                             </div>
                         </div>
                     </div>
