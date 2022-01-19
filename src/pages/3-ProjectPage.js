@@ -1,5 +1,5 @@
 import React from 'react';
-import './3-ProjectPage.css'
+import './3-ProjectPage.css';
 import MaxMuster from '../assets/MaxMuster.png';
 import PortfolioBG from '../assets/PortfolioBG.png';
 import QRmm from '../assets/QRmm.png';
@@ -14,6 +14,7 @@ import Previous from '../assets/Previous.svg';
 import IconMajorBTN from '../assets/IconMajorBTN.svg';
 import CloseBTN from '../assets/CloseBTN.svg';
 import data from '../assets/data/personDataV2.json';
+import data1 from '../assets/data/projectDataV2.json';
 
 export function Portfolio() {
     /*    const data = [
@@ -22,6 +23,7 @@ export function Portfolio() {
             {id: 3, name: "Jane Doe"},
         ];*/
     console.log(data.PERSONAL_DETAILS[0].Surname)
+    console.log(data1.PROJECT_DETAILS[0].Project)
 
     return (
         <div className="Portfolio">
@@ -42,26 +44,18 @@ export function Portfolio() {
                     <p className="paragraphw">{data.PERSONAL_DETAILS[0].Skills}</p>
                     <img className="QR" src={QRmm} alt="QR Code"/>
                     <p className="paragraphw">Save Details</p>
-
                 </div>
 
-
                 <div className="projectinfo">
-                    <h1 className="head4">Project Title</h1>
-                    <p className="head3">Communication Design</p>
-                    <p className="paragraphb">Here is a short project description, consetetur sadipscing
-                        elitr,
-                        sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-                        diam
-                        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-                        gubergren,
-                        no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-                        consetetur sadipscing elitr.</p>
-                    <p className="paragraphbold">2021 | Sem X</p>
+                    <h1 className="head4">{data1.PROJECT_DETAILS[0].Project}</h1>
+                    <p className="head3">{data1.PROJECT_DETAILS[0].University}</p>
+                    <p className="paragraphb">{data1.PROJECT_DETAILS[0].description}</p>
+                    <p className="paragraphbold">{data1.PROJECT_DETAILS[0].Year} |
+                        Sem {data1.PROJECT_DETAILS[0].Semester}</p>
                     <p className="paragraphbold">Own role</p>
                     <p className="paragraphb">{data.PERSONAL_DETAILS[0].ownrole_1}</p>
                     <p className="paragraphbold">Team</p>
-                    <p className="paragraphb">Name Lastname, Name Lastname, Name Lastname</p>
+                    <p className="paragraphb">{data1.PROJECT_DETAILS[0].Team}</p>
                     <p className="arrows"><img className="arrows" src={Previous} alt="Previous"/><img
                         className="arrows"
                         src={Next}
