@@ -11,7 +11,6 @@ export function Overview() {
     useEffect(() => {
         startThreeJS();
     })
-    // start();
     return (
         <>
             <div className="component-display">
