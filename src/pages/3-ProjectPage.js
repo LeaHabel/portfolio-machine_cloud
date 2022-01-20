@@ -25,6 +25,29 @@ export function Portfolio() {
     console.log(data.PERSONAL_DETAILS[0].Surname)
     console.log(data1.PROJECT_DETAILS[0].Project)
 
+    const img = new Image();
+    img.src = 'http://placekitten.com/1080/1920';
+
+    img.onload = () => {
+        console.log(img.height);
+        console.log(img.width);
+    };
+    
+    isLandscape(img);
+    isLandscape = true;
+
+    function isLandscape(imgtotest, isLandscapeBoolean) {
+        //tolle Rechnung die rausfindet ob landscape
+        if (imgtotest.width / imgtotest.height <= 1) {
+            isLandscapeBoolean = true;
+        }
+        return (
+            console.log(imgtotest + " Landscape: " + isLandscapeBoolean)
+        )
+    }
+
+    console.log("yeah i'm working")
+
     return (
         <div className="Portfolio">
             <div className="overflow">
