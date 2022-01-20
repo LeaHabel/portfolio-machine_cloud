@@ -6,7 +6,7 @@ export function CloseButton (){
 
     return (
         <Link to="/overview">
-        <div id="majorButton" class="icon-close">
+        <div id="majorButton" className="icon-close">
 
             <img className="icon" src={CloudIcon}/>
 

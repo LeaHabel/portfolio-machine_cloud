@@ -24,22 +24,26 @@ const variants = {
         x: '100vw',
         transition:{ease:'easeInOut'},
         scale: 5
+    },
+    cloud:{
+        y: '200vh',
+        transition:{ease:'easeInOut', duration: .6},
+        scale: 0.1
     }
     }
+
     return (
         <div className="component-display">
             <img className="background-specs" src={BGsimple} alt="Water Background"/>
             <Cloudbutton/>
             <motion.div variants={variants} animate={{ scale: 1.1}}  transition={{ duration: 1 }} exit={"exit"}>
-
                     <Person/>
-
             </motion.div>
 
 
 
 
-        </div>
+        </div >
     );
 
 }

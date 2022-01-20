@@ -15,11 +15,28 @@ import IconMajorBTN from "../assets/IconMajorBTN.svg"
 import CloseBTN from "../assets/CloseBTN.svg"
 import {Cloudbutton} from "../components/cloudbutton";
 import {CloseButton} from "../components/closeButton";
+import Zoom from 'react-reveal/Zoom';
+import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
 
 export function Portfolio() {
-
+    const bodyVariants = {
+        hidden:{
+            opacity: 0,
+        },
+        visible:{
+            opacity: 1,
+            transition:{duration: .9}
+        },
+        exit:{
+            y: '200vh',
+            transition:{ease:'easeInOut', duration: .6},
+            scale: 0.1
+        }
+    }
     return (
-        <div className="overflow">
+        <motion.div variants={bodyVariants} initial="hidden" animate="visible" exit={"exit"} className="overflow">
+            <Zoom>
+                <>
             <img className="background-specs" src={PortfolioBG} alt="Portfolio Background"/>
             <div className="contact">
                 <img className="profil" src={MaxMuster} alt="Profil"/>
@@ -52,6 +69,7 @@ export function Portfolio() {
                                                                                                   alt="Next"/></p>
             </div>
 
+
             <div>
                 <div>
                     <img className="mediafile1" src={projIMG3} alt="Projectmedia"/>
@@ -60,11 +78,13 @@ export function Portfolio() {
                 </div>
                 <img className="mediafile3" src={projIMG1} alt="Projectmedia"/>
             </div>
-
+                </>
+            </Zoom>
             <div>
                 <Cloudbutton/>
                 <CloseButton/>
             </div>
-        </div>
+
+        </motion.div>
     )
 }

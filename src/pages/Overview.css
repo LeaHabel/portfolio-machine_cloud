@@ -84,3 +84,6 @@ h4{
     width: 800px;
     height: 800px;
 }
+.react-reveal {
+    animation-fill-mode: both !important;
+}
