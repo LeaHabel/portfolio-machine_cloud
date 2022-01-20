@@ -24,10 +24,11 @@ function App() {
 <>
             <AnimatePresence exitBeforeEnter>
                 <Routes location={location} key={location.key}>
-                    <Route path="/" element={<Overview/>}/>
+                    <Route path="/" element={<Idle/>}/>
                     <Route path="/overview" element={<Overview/>}/>
                     <Route path="/profil" element={<Portfolio/>}/>
                     <Route path="/select" element={<Select/>}/>
+
                 </Routes>
             </AnimatePresence>
 

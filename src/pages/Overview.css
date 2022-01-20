@@ -5,6 +5,23 @@
     border: solid .3em #FFFFFF;
     transform: translate(60%, -190%);
 }
+.idle-bubble{
+    justify-self: center;
+    background: radial-gradient(circle at 50%,#FFFFFF, #D8E5F5);
+    border-radius: 50%;
+    margin: 2%;
+    border: solid .3em #FFFFFF;
+    top:20%;
+    left:30%;
+    width: 35%;
+    height: 60%;
+}
+.idleFont{
+    font-size: 3em;
+    font-family: 'Roboto', sans-serif;
+    color: #21496D;
+    text-align: center;
+}
 .grid{
     display: grid;
     grid-template-columns: 50% 50%;
