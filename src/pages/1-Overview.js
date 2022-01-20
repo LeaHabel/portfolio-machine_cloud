@@ -9,7 +9,7 @@ import Img1 from '../assets/img1.png'
 
 import PersonData from '../assets/data/personDataV2.json'
 import ProjectData from '../assets/data/projectDataV2.json'
-import CommunicationDesigners from '../assets/data/personDataV2-communication.json'
+import CommunicationDesigners from '../assets/data/personDataV3-communication.json'
 
 export function Overview() {
     useEffect(() => {
@@ -73,11 +73,11 @@ export function Overview() {
                     <Person
                         name={user.FirstName}
                         major={user.Major}
-                        position={"pos" + user.ID}
+                        position={"pos" + user.virtualID}
                         img1URL={Img1}
-                        key={user.ID}
+                        key={user.virtualID}
                         projectMedia={
-                            findCorrectProject(user.ID) ? console.log("yes") : console.log("no")
+                            findCorrectProject(user.virtualID) ? console.log("yes") : console.log("no")
                         }
 
                     />
