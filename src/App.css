@@ -45,6 +45,9 @@ p {
 .fixed {
   position: fixed;
 }
+.none {
+  display: none;
+}
 
 /* 
 ------------------------------------------------------------------------------------------------------------
@@ -102,15 +105,14 @@ h4{
   padding-top:40%;
 }
 
-.pos0 {
+.pos1 {
   top: 5%;
-  left: 10%;
-
+  left: 2%;
 }
 
-.pos1 {
-  top: 10%;
-  left: 60%;
+.pos4 {
+  top: 1%;
+  left: 3%;
 }
 
 
@@ -139,8 +141,10 @@ h4{
 
 /* ------ Person ------ */
 .big{
-  width: 20vw;
-  height: 20vw;
+  width: 15vw;
+  height: 16vw;
+      position: relative;
+      float: left;
 }
 
 .person {
@@ -148,13 +152,13 @@ h4{
   /* border-radius: 50%; */
   /* border: solid 0.3em #FFFFFF; */
   /* margin: 2%; */
-  background-color: white;
+  /* background-color: white; */
   width: 100%;
   height: 100%;
   align-items: center;
   display: flex;
   flex-direction: column;
-
+  opacity: 0.8;
 }
 
 #personName{
@@ -164,6 +168,7 @@ h4{
   justify-content: center;
   width: 50%;
   padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .bubbleName {
@@ -172,41 +177,48 @@ h4{
 .bubbleMajor {
   margin: 0;
 }
+.teaserGallery {
+  height: 50%;
+  width: 120%;
+}
 
 .flex-container {
+  /* display: flex;
+  width: 140%;
+  height: 50%;
+  flex-wrap: nowrap;
+  align-content: center; */
   display: flex;
-  /* flex-direction: column; */
-  /* align-content: center; */
   width: 100%;
-  height: 100%;
-  flex-wrap: wrap;
-  align-content: flex-start;
+  height: 50%;
+  flex-wrap: nowrap;
+  align-content: center;
+  /* overflow: hidden; */
+  justify-content: center;
+  margin-bottom: 0.2rem;
 }
 html {
-  --color-text: black;
-  --color-background: lightgray;
-  --color-primary: rebeccapurple;
-  --format: 30%;
+  --format: 100%;
 }
 .flex-item {
-  height: calc((var(--format))/1.7777);
-  /* padding: 0.1rem; */
-  /* height: auto; */
+  /* height: calc((var(--format))/1.7777);
   overflow: hidden;
-  width: 30%;
+  width: (var(--format));
+  margin: 0.1rem; */
+  overflow: hidden;
+  width: (var(--format));
+  margin: 0.1rem;
+  height: 100%;
+
 }
 .portraitTestImage {
-  height: calc(30%/1.7777) !important;
-  width: calc((30%/1.7777)/1.7777) !important;
+  /* height: calc((var(--format))/1.7777) !important;  */
+  /* width: calc(((var(--format))/1.7777)/1.7777) !important; */
 }
-/* .ratioWrapper {
-  width: 100%;
-  height: calc(100%/1.77777);
-  overflow: hidden;
-} */
+
 .teaserImage {
-  /* height: 100%; */
-  /* width: auto; */
+  height: 100%;
+  object-fit: contain;
 }
 
 .maskBubble {
@@ -215,15 +227,14 @@ html {
 }
 
 .maskingShape {
-  transform: scale(0.4);
+  transform: scale(0.3);
 }
 #clip {
-
+  
 }
 .maskSVG{
   position: absolute;
   top: 0;
-
 }
 
 #morphShape{
@@ -231,25 +242,4 @@ html {
   position: absolute;
   top: 0;
 }
-
-.my-masonry-grid {
-  display: -webkit-box; /* Not needed if autoprefixing */
-  display: -ms-flexbox; /* Not needed if autoprefixing */
-  display: flex;
-  margin-left: 0; /* gutter size offset */
-  width: 100%;
-  height: 80%;
-}
-.my-masonry-grid_column {
-  padding-left: .5rem;
-  background-clip: padding-box;
-}
-
-/* Style your items */
-.my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
-  background: grey;
-  margin-bottom: .5rem;
-}
-
-
 
