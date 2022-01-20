@@ -5,22 +5,20 @@ import App from './App';
 import {Overview} from "./pages/1-Overview";
 import  {Portfolio}  from "./pages/3-ProjectPage";
 import reportWebVitals from './reportWebVitals';
+import {Select} from "./pages/2-Select";
+import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
 import {
-    BrowserRouter,
-    Routes,
-    Route
+    BrowserRouter as Router
 } from "react-router-dom";
 
-ReactDOM.render(
-    <BrowserRouter>
-        <Routes>
-            <Route path="/" element={<App />} />
-            <Route path="/overview" element={<Overview />} />
-            <Route path="/profil" element={<Portfolio />} />
-        </Routes>
-    </BrowserRouter>,
-  document.getElementById('root')
-);
+    ReactDOM.render(
+<React.StrictMode>
+<Router>
+    <App className="content-specs"/>
+</Router>
+</React.StrictMode>        ,
+        document.getElementById('root')
+    );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
