@@ -41,10 +41,10 @@ export function Overview (){
         <div className="component-display">
             <img className="background-specs" src={BGsimple} alt="Water Background"/>
             <Cloudbutton onClick={() => setIsOpen(true)}/>
-            <motion.div
+            <motion.div  exit={"exit"}
                              animate={isOpen ? "open" : "visible"}
                              variants={variants}>
-                             exit={"exit"}
+
                     <Person/>
             </motion.div>
         </div >
