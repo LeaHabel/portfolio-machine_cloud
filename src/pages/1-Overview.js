@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import './Overview.css';
 import {Person} from "../components/Person";
 import CloudIcon from "../assets/cloudiIcon.png";
@@ -11,12 +11,14 @@ import Zoom from 'react-reveal/Zoom';
 import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
 
 export function Overview (){
-const variants = {
+    const [isOpen, setIsOpen] = useState(false)
+
+    const variants = {
     hidden:{
         opacity: 0,
     },
     visible:{
-        opacity: 0,
+        opacity: 1,
         transition:{delay: 1.5, duration: 1.5}
     },
     exit:{
@@ -29,20 +31,22 @@ const variants = {
         y: '200vh',
         transition:{ease:'easeInOut', duration: .6},
         scale: 0.1
-    }
+    },
+        open: {
+            opacity: 1, y: '-200vh'},
+        closed: { opacity: 0, x: "-100%" },
     }
 
     return (
         <div className="component-display">
             <img className="background-specs" src={BGsimple} alt="Water Background"/>
-            <Cloudbutton/>
-            <motion.div variants={variants} animate={{ scale: 1.1}}  transition={{ duration: 1 }} exit={"exit"}>
+            <Cloudbutton onClick={() => setIsOpen(true)}/>
+            <motion.div  exit={"exit"}
+                             animate={isOpen ? "open" : "visible"}
+                             variants={variants}>
+
                     <Person/>
             </motion.div>
-
-
-
-
         </div >
     );
 

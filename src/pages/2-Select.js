@@ -1,7 +1,6 @@
 import React from "react";
 import './Select.css';
 //import TweenMax from 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js';
-//import './animation.sass';
 import CloudIcon from '../assets/cloudiIcon.png'
 import frame from "../assets/frame.png";
 import {Cloudbutton} from "../components/cloudbutton";

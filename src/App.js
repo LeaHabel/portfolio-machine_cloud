@@ -20,16 +20,17 @@ import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
 function App() {
     const location = useLocation();
     return (
-<>
+        <>
             <AnimatePresence exitBeforeEnter>
                 <Routes location={location} key={location.key}>
-                    <Route path="/" element={<Overview/>}/>
+                    <Route path="/" element={<Idle/>}/>
                     <Route path="/overview" element={<Overview/>}/>
                     <Route path="/profil" element={<Portfolio/>}/>
+
                 </Routes>
             </AnimatePresence>
 
-</>
+        </>
     );
 }
 // //Nicolas Search Bar

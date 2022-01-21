@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export function Cloudbutton (){
 
     return (
-        <Link to="/overview">
+        <Link to="/">
         <div id="majorButton" className={"icon-major"}>
 
             <img className="icon" src={CloudIcon}/>

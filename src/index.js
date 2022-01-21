@@ -13,6 +13,7 @@ import {
     ReactDOM.render(
 <React.StrictMode>
 <Router>
+
     <App className="content-specs"/>
 </Router>
 </React.StrictMode>        ,
