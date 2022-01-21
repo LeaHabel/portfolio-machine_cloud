@@ -223,12 +223,12 @@
     },
     {
       "PID": "P18",
-      "Project": "\/*Fun with*\/ Processing",
+      "Project": "/*Fun with*/ Processing",
       "University": "private project",
       "Semester": "–",
       "Year": "2020–2021",
       "Team": "Kristina Reischl",
-      "description": "\/*Fun with*\/ Processing is an ongoing self-initiated project dealing with creative coding respective generative art. The experimental, geometric artworks get created by an individual self-coded program via processing. The goal is to expand the written program and the level of interaction with a focus on aesthetically pleasing results.",
+      "description": "/*Fun with*/ Processing is an ongoing self-initiated project dealing with creative coding respective generative art. The experimental, geometric artworks get created by an individual self-coded program via processing. The goal is to expand the written program and the level of interaction with a focus on aesthetically pleasing results.",
       "Keywords": "graphic design, processing, generative art, digital arts, poster",
       "Mediafile_1": "P18-1.mp4",
       "Mediafile_2": "P18-2.jpg",
@@ -256,9 +256,9 @@
       "Team": "Marcelino Zus",
       "description": "Besides the representation of works, the package including two booklets and a silkscreen poster was meant to explore the possibilities concerning printing techniques, functional packaging and also the choice of papers and colors while considering various ways of production. ",
       "Keywords": "graphic design, packaging, illustration, letterpress, screen print, risography",
-      "Mediafile_1": "p20-1.jpg",
-      "Mediafile_2": "p20-2.jpg",
-      "Mediafile_3": "p20-3.jpg"
+      "Mediafile_1": "P20-1.jpg",
+      "Mediafile_2": "P20-2.jpg",
+      "Mediafile_3": "P20-3.jpg"
     },
     {
       "PID": "P21",
@@ -269,9 +269,9 @@
       "Team": "Marcelino Zus",
       "description": "The poster edition combines linocut with handset lettering. Inspired by David Sax’ “The Revenge Of Analog”, the project should rise awareness for our direct environment and how it stimulates all of our human senses.",
       "Keywords": "poster design, linocut, manual typesetting, letterpress",
-      "Mediafile_1": "p21-1.jpg",
-      "Mediafile_2": "p21-2.jpg",
-      "Mediafile_3": "p21-3.jpg"
+      "Mediafile_1": "P21-1.jpg",
+      "Mediafile_2": "P21-2.jpg",
+      "Mediafile_3": "P21-3.jpg"
     },
     {
       "PID": "P22",
@@ -294,10 +294,10 @@
       "Year": 2021,
       "Team": "Nicolas Saavedra, Geoint IT Team",
       "description": "The Geoportal OCP Ecuador is a custom software for monitoring the pipeline for the transportation of crude oil in Ecuadorian territory. The design and incorporation of the geoportal was done following UX protocols. The main objective of the system is that it can be used by administrative and technical personal.",
-      "Keywords": "ux\/ui, app design, software development, web design, corporate identity",
-      "Mediafile_1": "p23-1.jpg",
-      "Mediafile_2": "p23-2.jpg",
-      "Mediafile_3": "p23-3.jpg"
+      "Keywords": "ux/ui, app design, software development, web design, corporate identity",
+      "Mediafile_1": "P23-1.jpg",
+      "Mediafile_2": "P23-2.jpg",
+      "Mediafile_3": "P23-3.jpg"
     },
     {
       "PID": "P24",
@@ -478,7 +478,7 @@
       "description": "Waves and Ice is a short film with an all female crew and protagonists, it shows women in mostly man dominated sports fields and hopes to inspire other women to follow their passions.",
       "Keywords": "documentary film, snowboarding, diving, surf, outdoor, trailer",
       "Mediafile_1": "P37-1.mp4",
-      "Mediafile_2": "p37-2.jpg",
+      "Mediafile_2": "P37-2.jpg",
       "Mediafile_3": " "
     },
     {
@@ -763,7 +763,7 @@
       "Team": "Markus Weber",
       "description": "Animated Shortfilm about a popular video game called \"Five Nights at Freddy's: Security Breach\"",
       "Keywords": "animation, 3d, blender",
-      "Mediafile_1": "p59-1.mp4",
+      "Mediafile_1": "P59-1.mp4",
       "Mediafile_2": " ",
       "Mediafile_3": " "
     },

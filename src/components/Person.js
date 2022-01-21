@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 
 export function Person(props) {
 
+
     return (
         <>
             <Link to={"/profil"} className={`big maskBubble box  ${props.position}`} >
@@ -44,7 +45,7 @@ export function Person(props) {
                             </div>
                             <div className="flex-item">
                                 <img alt="" className="teaserImage" src="https://d18p28upkrc95t.cloudfront.net/testimage2.jpg" />
-                            </div>alt=""
+                            </div>
                             <div className="flex-item">
                                 <img alt="" className="teaserImage" src="https://d18p28upkrc95t.cloudfront.net/cat.jpg" />
                             </div>
