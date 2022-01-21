@@ -100,12 +100,12 @@ export function Portfolio() {
 
                         <div>
                             <div>
-                                {/*<div>*/}
-                                {/*    /!*<MediaComponent/>*!/*/}
-                                {/*    Media Component*/}
-                                {/*</div>*/}
-                                <MediaComponent/>
-                                <img className="mediafile1" src={projIMG3} alt="Projectmedia"/>
+                                <div className="mediafile1">
+                                    <MediaComponent/>
+                                </div>
+
+                                {/*<MediaComponent/>*/}
+                                {/*<img className="mediafile1" src={projIMG3} alt="Projectmedia"/>*/}
 
                                 <img className="mediafile2" src={projIMG2} alt="Projectmedia"/>
                             </div>

@@ -4,14 +4,15 @@ import { ReactVideo, ReactAudio, YoutubePlayer } from "reactjs-media";
 const MediaComponent = () => {
   return (
     <div>
-      <YoutubePlayer src="https://www.youtube.com/watch?v=KNMbDIKJ6T0" />
+      {/*<YoutubePlayer src="https://www.youtube.com/watch?v=KNMbDIKJ6T0" />*/}
 
       {/* This code below is for files external to Youtube videos */}
 
-      {/* <ReactVideo
-       src="https://www.example.com/video.mp4"
-        poster="/poster.jpg"
-      /> */}
+      <ReactVideo
+       src="https://d18p28upkrc95t.cloudfront.net/projects/P62-1.mp4"
+       poster=""
+       type="video/mp4"
+      />
       
       {/* This code below is for audio files  */}
 
