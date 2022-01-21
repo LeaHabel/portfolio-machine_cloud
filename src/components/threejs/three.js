@@ -152,6 +152,7 @@ function init() {
         for ( let i = 0; i < NUM_SPHERES; i ++ ) {
 
             if ( spheres[ i ] ) {
+                spheresEnabled = false;
 
                 spheres[ i ].visible = spheresEnabled;
 
