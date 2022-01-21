@@ -33,13 +33,5 @@ function App() {
         </>
     );
 }
-// //Nicolas Search Bar
-// import Search from './search';
-
-// const App = () => {
-//     return (
-//         <Search />
-//     );
-// }
 
 export default App;
