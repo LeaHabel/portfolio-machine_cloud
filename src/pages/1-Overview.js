@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useEffect} from "react";
 import '../../src/App.css';
 import { Person } from "../components/Person";
 import CloudIcon from "../assets/cloudiIcon.png";
 import frame from "../assets/frame.png";
+import { startThreeJS } from "../components/threejs/three";
 
 import Img1 from '../assets/img1.png'
 
@@ -11,11 +12,14 @@ import ProjectData from '../assets/data/projectDataV2.json'
 import CommunicationDesigners from '../assets/data/personDataV3-communication.json'
 
 export function Overview() {
+    useEffect(() => {
+        startThreeJS();
+    })
 
     var initID = 0;
     var majorSize = 16;
 
-    var currentMajor = 1; //1=CD, 2=MD, 3=SD, 4=ID 
+    var currentMajor = 1; //1=CD, 2=MD, 3=SD, 4=ID
 
     //console.log(CommunicationDesigners.PERSONAL_DETAILS[0].FirstName)
 
@@ -66,6 +70,9 @@ export function Overview() {
     return (
         <>
             <div className="component-display">
+                <div id="three-js">
+
+                </div>
                 <div id="majorButton">
                     <img className="icon" src={CloudIcon} />
                     <h4>Send back to cloud</h4>
@@ -91,5 +98,4 @@ export function Overview() {
 
         </>
     );
-
 }

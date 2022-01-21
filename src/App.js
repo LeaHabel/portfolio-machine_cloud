@@ -1,6 +1,9 @@
 import './App.css';
 import BGsimple from "./assets/BGsimple.png";
 import puddle from "./assets/puddle.png";
+import picture from "./assets/MaxMuster.png"
+import {Portfolio} from "./pages/3-ProjectPage";
+import './components/threejs/three.js';
 import { Overview } from './pages/1-Overview';
 
 function App() {
