@@ -4,7 +4,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import  {Portfolio}  from "./pages/3-ProjectPage";
 import reportWebVitals from './reportWebVitals';
-import {Select} from "./pages/2-Select";
 import BGsimple from "./assets/BGsimple.png";
 import puddle from "./assets/puddle.png";
 import {Idle} from "./pages/0-Idle";
@@ -27,7 +26,6 @@ function App() {
                     <Route path="/" element={<Overview/>}/>
                     <Route path="/overview" element={<Overview/>}/>
                     <Route path="/profil" element={<Portfolio/>}/>
-                    <Route path="/select" element={<Select/>}/>
                 </Routes>
             </AnimatePresence>
 

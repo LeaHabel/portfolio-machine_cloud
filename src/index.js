@@ -5,7 +5,6 @@ import App from './App';
 import {Overview} from "./pages/1-Overview";
 import  {Portfolio}  from "./pages/3-ProjectPage";
 import reportWebVitals from './reportWebVitals';
-import {Select} from "./pages/2-Select";
 import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
 import {
     BrowserRouter as Router
