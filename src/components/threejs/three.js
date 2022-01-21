@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 // import { GUI } from 'lil-gui'
-import Stats from 'three/examples/jsm/libs/stats.module';
+// import Stats from 'three/examples/jsm/libs/stats.module';
 import { GPUComputationRenderer } from 'three/examples/jsm/misc/GPUComputationRenderer';
 import { SimplexNoise } from 'three/examples/jsm/math/SimplexNoise';
 import './threejs.css';
@@ -24,7 +24,7 @@ const WIDTH = 128;
 const BOUNDS = 512;
 const BOUNDS_HALF = BOUNDS * 0.5;
 
-let container, stats;
+let container;
 let camera, scene, renderer;
 let mouseMoved = false;
 const mouseCoords = new THREE.Vector2();
@@ -116,8 +116,8 @@ function init() {
     renderer.setSize( window.innerWidth, window.innerHeight );
     container.appendChild( renderer.domElement );
 
-    stats = new Stats();
-    container.appendChild( stats.dom );
+    // stats = new Stats();
+    // container.appendChild( stats.dom );
 
     container.style.touchAction = 'none';
     container.addEventListener( 'pointermove', onPointerMove );
@@ -142,7 +142,7 @@ function init() {
 
     const effectController = {
         mouseSize: 20.0,
-        viscosity: 0.98,
+        viscosity: 0.99,
         spheresEnabled: spheresEnabled
     };
 
@@ -742,7 +742,7 @@ function animate() {
 
         // The draw or time dependent code are here
         render();
-        stats.update();
+        // stats.update();
 
         delta = delta % interval;
 
