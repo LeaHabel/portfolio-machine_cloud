@@ -23,13 +23,13 @@ export function Person(props) {
                     <div className="teaserGallery">
                         <div className="flex-container">
                             <div className="flex-item">
-                                <img alt="" className="teaserImage" src={"https://d18p28upkrc95t.cloudfront.net/" + "testimage2.jpg"} />
+                                <img alt="" className="teaserImage" src={props.projectMedia1} />
                             </div>
                             <div className="flex-item portraitTestImage">
-                                <img alt="" className="teaserImage" src={"https://d18p28upkrc95t.cloudfront.net/" + "testimage2.jpg"} />
+                                <img alt="" className="teaserImage" src={props.projectMedia2} />
                             </div>
                             <div className="flex-item">
-                                <img alt="" className="teaserImage" src={props.projectMedia} />
+                                <img alt="" className="teaserImage" src={props.projectMedia3} /> {/* png images won't be displayed */}
                             </div>
                         </div>
                         <div className="flex-container">

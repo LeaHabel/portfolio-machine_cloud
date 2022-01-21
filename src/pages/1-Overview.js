@@ -45,17 +45,36 @@ export function Overview() {
     }
 
 
-    function matchProjectToStudent(CommunicationDesigners, ProjectData, currStudentID) {
+    function matchProjectToStudent(projectnumber, CommunicationDesigners, ProjectData, currStudentID) {
         for (var k = 0; k < CommunicationDesigners.PERSONAL_DETAILS.length; k++) {
             for (var j = 0; j < ProjectData.PROJECT_DETAILS.length; j++) {
-                if (CommunicationDesigners.PERSONAL_DETAILS[k].project_1 == ProjectData.PROJECT_DETAILS[j].PID) {
-                    if (currStudentID + 1 == k) {
-                        console.log("https://d18p28upkrc95t.cloudfront.net/projects/" + ProjectData.PROJECT_DETAILS[j].Mediafile_1)
-                        return "https://d18p28upkrc95t.cloudfront.net/projects/" + ProjectData.PROJECT_DETAILS[j].Mediafile_1
-                    }
 
-                } else {
+                //schön ist es nicht. Ich weiß. 
+                if (projectnumber == 1) {
+                    if (CommunicationDesigners.PERSONAL_DETAILS[k].project_1 == ProjectData.PROJECT_DETAILS[j].PID) {
+                        if (currStudentID - 1 == k) {
+                            console.log("https://d18p28upkrc95t.cloudfront.net/projects/" + ProjectData.PROJECT_DETAILS[j].Mediafile_1)
+                            return "https://d18p28upkrc95t.cloudfront.net/projects/" + ProjectData.PROJECT_DETAILS[j].Mediafile_1
+                        }
+                    }
                 }
+                if (projectnumber == 2) {
+                    if (CommunicationDesigners.PERSONAL_DETAILS[k].project_1 == ProjectData.PROJECT_DETAILS[j].PID) {
+                        if (currStudentID - 1 == k) {
+                            console.log("https://d18p28upkrc95t.cloudfront.net/projects/" + ProjectData.PROJECT_DETAILS[j].Mediafile_2)
+                            return "https://d18p28upkrc95t.cloudfront.net/projects/" + ProjectData.PROJECT_DETAILS[j].Mediafile_2
+                        }
+                    }
+                }
+                if (projectnumber == 3) {
+                    if (CommunicationDesigners.PERSONAL_DETAILS[k].project_1 == ProjectData.PROJECT_DETAILS[j].PID) {
+                        if (currStudentID - 1 == k) {
+                            console.log("https://d18p28upkrc95t.cloudfront.net/projects/" + ProjectData.PROJECT_DETAILS[j].Mediafile_3)
+                            return "https://d18p28upkrc95t.cloudfront.net/projects/" + ProjectData.PROJECT_DETAILS[j].Mediafile_3
+                        }
+                    }
+                }
+
             }
         }
     }
@@ -78,9 +97,17 @@ export function Overview() {
                             major={user.Major}
                             position={"pos" + user.virtualID}
                             img1URL={Img1}
-                            projectMedia={
-                                matchProjectToStudent(CommunicationDesigners, ProjectData, user.virtualID)
+                            projectMedia1={
+                                matchProjectToStudent(1, CommunicationDesigners, ProjectData, user.virtualID)
                             }
+                            projectMedia2={
+                                matchProjectToStudent(2, CommunicationDesigners, ProjectData, user.virtualID)
+                            }
+                            projectMedia3={
+                                matchProjectToStudent(3, CommunicationDesigners, ProjectData, user.virtualID)
+                            }
+                            clickedID={user.virtualID}
+
 
                         />
                     </motion.div>
