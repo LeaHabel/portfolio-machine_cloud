@@ -11,8 +11,6 @@ import projIMG2 from "../assets/projIMG2.png"
 import projIMG3 from "../assets/projIMG3.png"
 import Next from "../assets/Next.svg"
 import Previous from "../assets/Previous.svg"
-import IconMajorBTN from "../assets/IconMajorBTN.svg"
-import CloseBTN from "../assets/CloseBTN.svg"
 import {Cloudbutton} from "../components/cloudbutton";
 import {CloseButton} from "../components/closeButton";
 import Zoom from 'react-reveal/Zoom';
@@ -23,16 +21,16 @@ import MediaComponent from '../components/MediaComponent';
 
 export function Portfolio() {
     const bodyVariants = {
-        hidden:{
+        hidden: {
             opacity: 0,
         },
-        visible:{
+        visible: {
             opacity: 1,
-            transition:{duration: .9}
+            transition: {duration: .9}
         },
-        exit:{
+        exit: {
             y: '200vh',
-            transition:{ease:'easeInOut', duration: .6},
+            transition: {ease: 'easeInOut', duration: .6},
             scale: 0.1
         }
     }
@@ -48,7 +46,6 @@ export function Portfolio() {
     };
 
     isLandscape(img);
-    isLandscape = true;
 
     function isLandscape(imgtotest, isLandscapeBoolean) {
         //tolle Rechnung die rausfindet ob landscape
