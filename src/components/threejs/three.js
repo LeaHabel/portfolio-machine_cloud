@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import { GUI } from 'lil-gui'
+// import { GUI } from 'lil-gui'
 import Stats from 'three/examples/jsm/libs/stats.module';
 import { GPUComputationRenderer } from 'three/examples/jsm/misc/GPUComputationRenderer';
 import { SimplexNoise } from 'three/examples/jsm/math/SimplexNoise';
@@ -43,10 +43,10 @@ const waterNormal = new THREE.Vector3();
 
 const NUM_SPHERES = 5;
 const spheres = [];
-let spheresEnabled = true;
+let spheresEnabled = false;
 
 const simplex = new SimplexNoise();
-scene = new THREE.Scene();
+
 
 //////// Colins stuff
 
@@ -81,14 +81,16 @@ texture.magFilter = THREE.NearestFilter
 /// Colins stuff end
 
 export function startThreeJS() {
-    init();
+    if(document.getElementById('three-js').innerHTML === "") init();
     animate();
 }
 
 
 function init() {
+    scene = new THREE.Scene();
 
     container = document.getElementById("three-js");
+
 
     camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 3000 );
     camera.position.set( 0, 250, 0);
@@ -136,7 +138,7 @@ function init() {
     window.addEventListener( 'resize', onWindowResize );
 
 
-    const gui = new GUI();
+    // const gui = new GUI();
 
     const effectController = {
         mouseSize: 20.0,
@@ -152,7 +154,6 @@ function init() {
         for ( let i = 0; i < NUM_SPHERES; i ++ ) {
 
             if ( spheres[ i ] ) {
-                spheresEnabled = false;
 
                 spheres[ i ].visible = spheresEnabled;
 
@@ -162,17 +163,17 @@ function init() {
 
     };
 
-    gui.add( effectController, "mouseSize", 1.0, 100.0, 1.0 ).onChange( valuesChanger );
-    gui.add( effectController, "viscosity", 0.9, 0.999, 0.001 ).onChange( valuesChanger );
-    gui.add( effectController, "spheresEnabled", 0, 1, 1 ).onChange( valuesChanger );
-    const buttonSmooth = {
-        smoothWater: function () {
-
-            smoothWater();
-
-        }
-    };
-    gui.add( buttonSmooth, 'smoothWater' );
+    // gui.add( effectController, "mouseSize", 1.0, 100.0, 1.0 ).onChange( valuesChanger );
+    // gui.add( effectController, "viscosity", 0.9, 0.999, 0.001 ).onChange( valuesChanger );
+    // gui.add( effectController, "spheresEnabled", 0, 1, 1 ).onChange( valuesChanger );
+    // const buttonSmooth = {
+    //     smoothWater: function () {
+    //
+    //         smoothWater();
+    //
+    //     }
+    // };
+    // gui.add( buttonSmooth, 'smoothWater' );
 
 
     initWater();
@@ -499,7 +500,7 @@ function initWater() {
     readWaterLevelShader.defines.BOUNDS = BOUNDS.toFixed( 1 );
 
     // Create a 4x1 pixel image and a render target (Uint8, 4 channels, 1 byte per channel) to read water height and orientation
-    readWaterLevelImage = new Uint8Array( 4 * 1 * 4 );
+    readWaterLevelImage = new Uint8Array( 4 * 4 );
 
     readWaterLevelRenderTarget = new THREE.WebGLRenderTarget( 4, 1, {
         wrapS: THREE.ClampToEdgeWrapping,
@@ -754,18 +755,28 @@ function animate() {
 
 function render() {
 
-    // Set uniforms: mouse interaction
-    const uniforms = heightmapVariable.material.uniforms;
-    if ( mouseMoved ) {
+    if(scene !== null)
+    {
+        // Set uniforms: mouse interaction
+        const uniforms = heightmapVariable.material.uniforms;
+        if ( mouseMoved ) {
 
-        raycaster.setFromCamera( mouseCoords, camera );
+            raycaster.setFromCamera( mouseCoords, camera );
 
-        const intersects = raycaster.intersectObject( meshRay );
+            const intersects = raycaster.intersectObject( meshRay );
 
-        if ( intersects.length > 0 ) {
+            if ( intersects.length > 0 ) {
 
-            const point = intersects[ 0 ].point;
-            uniforms[ "mousePos" ].value.set( point.x, point.z );
+                const point = intersects[ 0 ].point;
+                uniforms[ "mousePos" ].value.set( point.x, point.z );
+
+            } else {
+
+                uniforms[ "mousePos" ].value.set( 10000, 10000 );
+
+            }
+
+            mouseMoved = false;
 
         } else {
 
@@ -773,27 +784,22 @@ function render() {
 
         }
 
-        mouseMoved = false;
+        // Do the gpu computation
+        gpuCompute.compute();
 
-    } else {
+        if ( spheresEnabled ) {
 
-        uniforms[ "mousePos" ].value.set( 10000, 10000 );
+            sphereDynamics();
 
+        }
+
+        // Get compute output in custom uniform
+        waterUniforms[ "heightmap" ].value = gpuCompute.getCurrentRenderTarget( heightmapVariable ).texture;
+
+        // Render
+        renderer.render( scene, camera );
     }
 
-    // Do the gpu computation
-    gpuCompute.compute();
 
-    if ( spheresEnabled ) {
-
-        sphereDynamics();
-
-    }
-
-    // Get compute output in custom uniform
-    waterUniforms[ "heightmap" ].value = gpuCompute.getCurrentRenderTarget( heightmapVariable ).texture;
-
-    // Render
-    renderer.render( scene, camera );
 
 }
