@@ -18,6 +18,7 @@ import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
 
 
 function App() {
+    var Id;
     const location = useLocation();
     return (
         <>
@@ -25,7 +26,7 @@ function App() {
                 <Routes location={location} key={location.key}>
                     <Route path="/" element={<Idle/>}/>
                     <Route path="/overview" element={<Overview/>}/>
-                    <Route path="/profil" element={<Portfolio/>}/>
+                    <Route path={"/profil/:id"} element={<Portfolio/>}/>
 
                 </Routes>
             </AnimatePresence>

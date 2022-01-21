@@ -15,11 +15,21 @@ import {Cloudbutton} from "../components/cloudbutton";
 import {CloseButton} from "../components/closeButton";
 import Zoom from 'react-reveal/Zoom';
 import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
-import data from '../assets/data/personDataV2.json';
+import data from '../assets/data/personDataV3-communication.json';
+import dataInteraction from '../assets/data/personDataV3-interaction.json';
+import dataMedia from '../assets/data/personDataV3-media.json';
+import dataSound from '../assets/data/personDataV3-sound.json';
 import data1 from '../assets/data/projectDataV2.json';
 import MediaComponent from '../components/MediaComponent';
+import {useLocation, useParams} from 'react-router-dom';
+
 
 export function Portfolio() {
+    let {id} =useParams()
+    let _id = id-1
+
+    console.log("State: "+ id )
+    console.log("State2: "+ _id )
     const bodyVariants = {
         hidden: {
             opacity: 0,
@@ -34,8 +44,7 @@ export function Portfolio() {
             scale: 0.1
         }
     }
-    console.log(data.PERSONAL_DETAILS[0].Surname)
-    console.log(data1.PROJECT_DETAILS[0].Project)
+
 
     const img = new Image();
     img.src = 'http://placekitten.com/1080/1920';
@@ -67,17 +76,17 @@ export function Portfolio() {
                         <img className="background-specs" src={PortfolioBG} alt="Portfolio Background"/>
                         <div className="contact">
                             <img className="profil" src={MaxMuster} alt="Profil"/>
-                            <h1 className="head1">{data.PERSONAL_DETAILS[0].Surname} {data.PERSONAL_DETAILS[0].FirstName}</h1>
-                            <p className="head3">{data.PERSONAL_DETAILS[0].Major}</p>
+                            <h1 className="head1">{data.PERSONAL_DETAILS[_id].Surname} {data.PERSONAL_DETAILS[_id].FirstName}</h1>
+                            <p className="head3">{data.PERSONAL_DETAILS[_id].Major}</p>
                             <p className="paragraphw"><img className="icons" src={MAILicon}
-                                                           alt="Mail"/>{data.PERSONAL_DETAILS[0].Mail}
+                                                           alt="Mail"/>{data.PERSONAL_DETAILS[id].Mail}
                             </p>
                             <p className="paragraphw"><img className="icons" src={IGicon}
-                                                           alt="Instagram"/>{data.PERSONAL_DETAILS[0].SocialMedia}</p>
+                                                           alt="Instagram"/>{data.PERSONAL_DETAILS[id].SocialMedia}</p>
                             <p className="paragraphw"><img className="icons" src={WEBicon}
-                                                           alt="Website"/>{data.PERSONAL_DETAILS[0].Website}</p>
+                                                           alt="Website"/>{data.PERSONAL_DETAILS[id].Website}</p>
                             <p className="head2">Skills</p>
-                            <p className="paragraphw">{data.PERSONAL_DETAILS[0].Skills}</p>
+                            <p className="paragraphw">{data.PERSONAL_DETAILS[id].Skills}</p>
                             <img className="QR" src={QRmm} alt="QR Code"/>
                             <p className="paragraphw">Save Details</p>
                         </div>

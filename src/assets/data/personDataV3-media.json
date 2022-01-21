@@ -1,9 +1,8 @@
 {
   "PERSONAL_DETAILS": [
-    
     {
       "virtualID": 1,
-        "ID": 6,
+      "ID": 6,
       "Surname": "Dostal",
       "FirstName": "Niklas",
       "Major": "Media Design",
@@ -11,17 +10,21 @@
       "Website": "niklasdostal.at",
       "SocialMedia": "instagram niklasdostal",
       "Skills": "film, storytelling, media design",
-      "project _1": "P6",
-      "ownrole_1": "scriptwriting, video production",
-      "project_2": "P7",
-      "ownrole_2": "video production",
-      "project_3": "P8",
-      "ownrole_3": "video production",
+      "projects": [
+        "P6",
+        "P7",
+        "P8"
+      ],
+      "ownroles": [
+        "scriptwriting, video production",
+        "video production",
+        "video production"
+      ],
       "profilepic": "6-pp.jpg"
     },
     {
       "virtualID": 2,
-        "ID": 7,
+      "ID": 7,
       "Surname": "Eskandari",
       "FirstName": "Yasaman",
       "Major": "Media Design",
@@ -29,18 +32,21 @@
       "Website": "yasamaneskandari.myportfolio.com",
       "SocialMedia": "instagram _yasi_e_",
       "Skills": "communication design, illustration, motion graphics, storytelling",
-      "project _1": "P90",
-      "ownrole_1": "motion graphics, post production",
-      "project_2": null,
-      "ownrole_2": null,
-      "project_3": null,
-      "ownrole_3": null,
+      "projects": [
+        "P90",
+        null,
+        null
+      ],
+      "ownroles": [
+        "motion graphics, post production",
+        null,
+        null
+      ],
       "profilepic": "7-pp.jpg"
     },
-    
     {
       "virtualID": 3,
-        "ID": 12,
+      "ID": 12,
       "Surname": "Gruber",
       "FirstName": "Carolin",
       "Major": "Media Design",
@@ -48,18 +54,21 @@
       "Website": "carolinhelga.at",
       "SocialMedia": "instagram helgolin_",
       "Skills": "art direction, direction, set design, colorgrading, photo, retouch",
-      "project _1": "P71",
-      "ownrole_1": "art direction, set desin, concept",
-      "project_2": "P72",
-      "ownrole_2": "art direction, set desing, color grading concept",
-      "project_3": "P73",
-      "ownrole_3": "art direction, set desing, concept",
+      "projects": [
+        "P71",
+        "P72",
+        "P73"
+      ],
+      "ownroles": [
+        "art direction, set desin, concept",
+        "art direction, set desing, color grading concept",
+        "art direction, set desing, concept"
+      ],
       "profilepic": "12-pp.jpg"
     },
-    
     {
       "virtualID": 4,
-        "ID": 15,
+      "ID": 15,
       "Surname": "Jobst",
       "FirstName": "Eva",
       "Major": "Media Design",
@@ -67,17 +76,21 @@
       "Website": "eva-jobst.myportfolio.com",
       "SocialMedia": "–",
       "Skills": "film, graphic design, animation, storytelling",
-      "project _1": "P56",
-      "ownrole_1": "graphic design, concept, editing",
-      "project_2": "P57",
-      "ownrole_2": "concept, production, post production",
-      "project_3": "P58",
-      "ownrole_3": "animation",
+      "projects": [
+        "P56",
+        "P57",
+        "P58"
+      ],
+      "ownroles": [
+        "graphic design, concept, editing",
+        "concept, production, post production",
+        "animation"
+      ],
       "profilepic": "15-pp.jpg"
     },
     {
       "virtualID": 5,
-        "ID": 16,
+      "ID": 16,
       "Surname": "Kardel",
       "FirstName": "Theresa",
       "Major": "Media Design",
@@ -85,18 +98,21 @@
       "Website": "theresakardel.de",
       "SocialMedia": "–",
       "Skills": "graphic design, animation, communication, media",
-      "project _1": "P93",
-      "ownrole_1": "concept, animation",
-      "project_2": null,
-      "ownrole_2": null,
-      "project_3": null,
-      "ownrole_3": null,
+      "projects": [
+        "P93",
+        null,
+        null
+      ],
+      "ownroles": [
+        "concept, animation",
+        null,
+        null
+      ],
       "profilepic": "16-pp.jpg"
     },
-    
     {
       "virtualID": 6,
-        "ID": 23,
+      "ID": 23,
       "Surname": "Meierhofer",
       "FirstName": "Karoline",
       "Major": "Media Design",
@@ -104,18 +120,21 @@
       "Website": "–",
       "SocialMedia": "instagram karo_meierhofer",
       "Skills": "game design, game development, character design, digital art, 3d modeling, illustration, animation",
-      "project _1": "P13",
-      "ownrole_1": "pame design, art direction, character design, animation",
-      "project_2": "P67",
-      "ownrole_2": "character design, modeling, shading, rendering",
-      "project_3": "P68",
-      "ownrole_3": "illustration",
+      "projects": [
+        "P13",
+        "P67",
+        "P68"
+      ],
+      "ownroles": [
+        "pame design, art direction, character design, animation",
+        "character design, modeling, shading, rendering",
+        "illustration"
+      ],
       "profilepic": "23-pp.jpg"
     },
-   
     {
       "virtualID": 7,
-        "ID": 26,
+      "ID": 26,
       "Surname": "Probst",
       "FirstName": "Sabine",
       "Major": "Media Design",
@@ -123,17 +142,21 @@
       "Website": "sabinemprobst.com",
       "SocialMedia": "instagram sabinemprobst",
       "Skills": "documentary film, underwater cinematography, ocean conservation, storytelling",
-      "project _1": "P36",
-      "ownrole_1": "film maker",
-      "project_2": "P37",
-      "ownrole_2": "filmmaker",
-      "project_3": null,
-      "ownrole_3": null,
+      "projects": [
+        "P36",
+        "P37",
+        null
+      ],
+      "ownroles": [
+        "film maker",
+        "filmmaker",
+        null
+      ],
       "profilepic": "26-pp.jpg"
     },
     {
       "virtualID": 8,
-        "ID": 27,
+      "ID": 27,
       "Surname": "Reidl",
       "FirstName": "Julian",
       "Major": "Media Design",
@@ -141,18 +164,21 @@
       "Website": "julianreidl.com",
       "SocialMedia": "instagram julianrevenga",
       "Skills": "film, storytelling, media design",
-      "project _1": "P27",
-      "ownrole_1": "director, producer",
-      "project_2": "P28",
-      "ownrole_2": "director, producer",
-      "project_3": "P29",
-      "ownrole_3": "director, producer",
+      "projects": [
+        "P27",
+        "P28",
+        "P29"
+      ],
+      "ownroles": [
+        "director, producer",
+        "director, producer",
+        "director, producer"
+      ],
       "profilepic": "27-pp.jpg"
     },
-    
     {
       "virtualID": 9,
-        "ID": 40,
+      "ID": 40,
       "Surname": "Thum",
       "FirstName": "Maximilian",
       "Major": "Media Design",
@@ -160,17 +186,21 @@
       "Website": "–",
       "SocialMedia": "instagram clippedmedia",
       "Skills": "photography, 3D, film, animation",
-      "project _1": "P91",
-      "ownrole_1": "photography, retouching",
-      "project_2": null,
-      "ownrole_2": null,
-      "project_3": null,
-      "ownrole_3": null,
+      "projects": [
+        "P91",
+        null,
+        null
+      ],
+      "ownroles": [
+        "photography, retouching",
+        null,
+        null
+      ],
       "profilepic": "40-pp.jpg"
     },
     {
       "virtualID": 10,
-        "ID": 42,
+      "ID": 42,
       "Surname": "Weber",
       "FirstName": "Markus",
       "Major": "Media Design",
@@ -178,14 +208,17 @@
       "Website": "youtube.com\/austrianofficial",
       "SocialMedia": "instagram darealdrogi",
       "Skills": "animation, character animation, storytelling, vfx",
-      "project _1": "P59",
-      "ownrole_1": "animation, video production, vfx, sound",
-      "project_2": null,
-      "ownrole_2": null,
-      "project_3": null,
-      "ownrole_3": null,
+      "projects": [
+        "P59",
+        null,
+        null
+      ],
+      "ownroles": [
+        "animation, video production, vfx, sound",
+        null,
+        null
+      ],
       "profilepic": "42-pp.jpg"
-    },
-    
+    }
   ]
 }

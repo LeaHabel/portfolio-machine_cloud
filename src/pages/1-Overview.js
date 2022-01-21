@@ -108,9 +108,11 @@ export function Overview() {
                         <Person
                             name={user.FirstName}
                             major={user.Major}
+                            id={user.virtualID}
+                            key={user.virtualID}
                             position={"pos" + user.virtualID}
                             img1URL={Img1}
-                            key={user.virtualID}
+
                             projectMedia={
                                 findCorrectProject(ProjectData, user.virtualID) ? null : null
                             }
