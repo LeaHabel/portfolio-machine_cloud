@@ -17,6 +17,8 @@ import {Cloudbutton} from "../components/cloudbutton";
 import {CloseButton} from "../components/closeButton";
 import Zoom from 'react-reveal/Zoom';
 import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
+import data from '../assets/data/personDataV2.json';
+import data1 from '../assets/data/projectDataV2.json';
 
 export function Portfolio() {
     const bodyVariants = {
@@ -33,58 +35,86 @@ export function Portfolio() {
             scale: 0.1
         }
     }
+    console.log(data.PERSONAL_DETAILS[0].Surname)
+    console.log(data1.PROJECT_DETAILS[0].Project)
+
+    const img = new Image();
+    img.src = 'http://placekitten.com/1080/1920';
+
+    img.onload = () => {
+        console.log(img.height);
+        console.log(img.width);
+    };
+
+    isLandscape(img);
+    isLandscape = true;
+
+    function isLandscape(imgtotest, isLandscapeBoolean) {
+        //tolle Rechnung die rausfindet ob landscape
+        if (imgtotest.width / imgtotest.height <= 1) {
+            isLandscapeBoolean = false;
+        }
+        return (
+            console.log(imgtotest + " Landscape: " + isLandscapeBoolean)
+        )
+    }
+
+    console.log("yeah i'm working")
+
     return (
-        <motion.div variants={bodyVariants} initial="hidden" animate="visible" exit={"exit"} className="overflow">
-            <Zoom>
-                <>
-            <img className="background-specs" src={PortfolioBG} alt="Portfolio Background"/>
-            <div className="contact">
-                <img className="profil" src={MaxMuster} alt="Profil"/>
-                <h1 className="head1">Max Mustermann</h1>
-                <p className="head3">Communication Design</p>
-                <p className="paragraphw"><img className="icons" src={MAILicon} alt="Mail"/>max.mustermann@gmail.com</p>
-                <p className="paragraphw"><img className="icons" src={IGicon} alt="Instagram"/>Maxmustermann</p>
-                <p className="paragraphw"><img className="icons" src={WEBicon} alt="Website"/>www.maxmustermann.com</p>
-                <p className="head2">Skills</p>
-                <p className="paragraphw">App Design, Screen Design, 2D/3D Animation, Projection Mapping</p>
-                <img className="QR" src={QRmm} alt="QR Code"/>
-                <p className="paragraphw">Save Details</p>
-            </div>
+        <div className="Portfolio">
+            <motion.div variants={bodyVariants} initial="hidden" animate="visible" exit={"exit"} className="overflow">
+                <Zoom>
+                    <>
+                        <img className="background-specs" src={PortfolioBG} alt="Portfolio Background"/>
+                        <div className="contact">
+                            <img className="profil" src={MaxMuster} alt="Profil"/>
+                            <h1 className="head1">{data.PERSONAL_DETAILS[0].Surname} {data.PERSONAL_DETAILS[0].FirstName}</h1>
+                            <p className="head3">{data.PERSONAL_DETAILS[0].Major}</p>
+                            <p className="paragraphw"><img className="icons" src={MAILicon}
+                                                           alt="Mail"/>{data.PERSONAL_DETAILS[0].Mail}
+                            </p>
+                            <p className="paragraphw"><img className="icons" src={IGicon}
+                                                           alt="Instagram"/>{data.PERSONAL_DETAILS[0].SocialMedia}</p>
+                            <p className="paragraphw"><img className="icons" src={WEBicon}
+                                                           alt="Website"/>{data.PERSONAL_DETAILS[0].Website}</p>
+                            <p className="head2">Skills</p>
+                            <p className="paragraphw">{data.PERSONAL_DETAILS[0].Skills}</p>
+                            <img className="QR" src={QRmm} alt="QR Code"/>
+                            <p className="paragraphw">Save Details</p>
+                        </div>
 
-            <div className="projectinfo">
-                <h1 className="head4">Project Title</h1>
-                <p className="head3">Communication Design</p>
-                <p className="paragraphb">Here is a short project description, consetetur sadipscing elitr,
-                    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-                    voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-                    no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-                    consetetur sadipscing elitr.</p>
-                <p className="paragraphbold">2021 | Sem X</p>
-                <p className="paragraphbold">Own role</p>
-                <p className="paragraphb">Lorem ipsum, dolor sit amet, consectetur, adipiscing elit</p>
-                <p className="paragraphbold">Team</p>
-                <p className="paragraphb">Name Lastname, Name Lastname, Name Lastname</p>
-                <p className="arrows"><img className="arrows" src={Previous} alt="Previous"/><img className="arrows"
-                                                                                                  src={Next}
-                                                                                                  alt="Next"/></p>
-            </div>
+                        <div className="projectinfo">
+                            <h1 className="head4">{data1.PROJECT_DETAILS[52].Project}</h1>
+                            <p className="head3">{data1.PROJECT_DETAILS[52].University}</p>
+                            <p className="paragraphb">{data1.PROJECT_DETAILS[52].description}</p>
+                            <p className="paragraphbold">{data1.PROJECT_DETAILS[52].Year} |
+                                Sem {data1.PROJECT_DETAILS[52].Semester}</p>
+                            <p className="paragraphbold">Own role</p>
+                            <p className="paragraphb">{data.PERSONAL_DETAILS[0].ownrole_1}</p>
+                            <p className="paragraphbold">Team</p>
+                            <p className="paragraphb">{data1.PROJECT_DETAILS[52].Team}</p>
+                            <p className="arrows"><img className="arrows" src={Previous} alt="Previous"/><img
+                                className="arrows"
+                                src={Next}
+                                alt="Next"/></p>
+                        </div>
 
+                        <div>
+                            <div>
+                                <img className="mediafile1" src={projIMG3} alt="Projectmedia"/>
 
-            <div>
+                                <img className="mediafile2" src={projIMG2} alt="Projectmedia"/>
+                            </div>
+                            <img className="mediafile3" src={projIMG1} alt="Projectmedia"/>
+                        </div>
+                    </>
+                </Zoom>
                 <div>
-                    <img className="mediafile1" src={projIMG3} alt="Projectmedia"/>
-
-                    <img className="mediafile2" src={projIMG2} alt="Projectmedia"/>
+                    <Cloudbutton/>
+                    <CloseButton/>
                 </div>
-                <img className="mediafile3" src={projIMG1} alt="Projectmedia"/>
-            </div>
-                </>
-            </Zoom>
-            <div>
-                <Cloudbutton/>
-                <CloseButton/>
-            </div>
-
-        </motion.div>
+            </motion.div>
+        </div>
     )
 }
