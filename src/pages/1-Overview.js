@@ -44,10 +44,6 @@ export function Overview() {
         closed: { opacity: 0, x: "-100%" },
     }
 
-    var initID = 0;
-    var majorSize = 16;
-
-
     function matchProjectToStudent(projectnumber, CommunicationDesigners, ProjectData, currStudentID) {
         for (var k = 0; k < CommunicationDesigners.PERSONAL_DETAILS.length; k++) {
             for (var j = 0; j < ProjectData.PROJECT_DETAILS.length; j++) {
@@ -83,21 +79,6 @@ export function Overview() {
 
         }
 
-    }
-
-    //finds out which major each person belongs to, but also does it all at once. Is needed to find out how big the majorSize is.
-    for (var i = 0; i < PersonData.PERSONAL_DETAILS.length; i++) {
-        if (PersonData.PERSONAL_DETAILS[i].Major == "Communication Design") { //10
-            currentMajor = 1;
-        } else if (PersonData.PERSONAL_DETAILS[i].Major == "Media Design") { //10
-            currentMajor = 2;
-        } else if (PersonData.PERSONAL_DETAILS[i].Major == "Sound Design") { //7
-            currentMajor = 3;
-        } else if (PersonData.PERSONAL_DETAILS[i].Major == "Interaction Design") { //17
-            currentMajor = 4;
-        } else {
-            console.log("Misspelled major detected. BOOM! ")
-        }
     }
 
 
