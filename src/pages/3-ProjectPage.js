@@ -19,6 +19,7 @@ import Zoom from 'react-reveal/Zoom';
 import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
 import data from '../assets/data/personDataV2.json';
 import data1 from '../assets/data/projectDataV2.json';
+import MediaComponent from '../components/MediaComponent';
 
 export function Portfolio() {
     const bodyVariants = {
@@ -102,6 +103,11 @@ export function Portfolio() {
 
                         <div>
                             <div>
+                                {/*<div>*/}
+                                {/*    /!*<MediaComponent/>*!/*/}
+                                {/*    Media Component*/}
+                                {/*</div>*/}
+                                <MediaComponent/>
                                 <img className="mediafile1" src={projIMG3} alt="Projectmedia"/>
 
                                 <img className="mediafile2" src={projIMG2} alt="Projectmedia"/>
