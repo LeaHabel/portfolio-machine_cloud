@@ -9,7 +9,21 @@
     width: 100vw;
     position: absolute;
 }
-
+#majorButton{
+  justify-self: center;
+  position: absolute;
+  left: 45%;
+}
+.icon{
+  height: 100%;
+}
+.icon-close{
+  bottom: 0;
+  height: 17%;
+}
+.icon-major{
+  top: 0;
+}
 .puddle-overlay {
   height: 100vh;
   width: 100vw;
@@ -93,17 +107,7 @@ h4{
 #idletext{
   padding-top: 40%;
 }
-#majorButton{
-  background-color: white;
-  height: 150px;
-  width: 150px;
-  border-radius: 100%;
-  transform: translate(130%, -80%);
-}
-.icon{
-  height: 30%;
-  padding-top:40%;
-}
+
 
 .pos1 {
   top: 5%;
@@ -121,8 +125,15 @@ h4{
 
 
 /* ------ 1.2-Search (Nicolas) ------ */
-
-
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
 
 /* ------ 2-Select ------ */
 
@@ -230,7 +241,7 @@ html {
   transform: scale(0.3);
 }
 #clip {
-  
+
 }
 .maskSVG{
   position: absolute;
@@ -241,5 +252,9 @@ html {
   visibility: hidden;
   position: absolute;
   top: 0;
+}
+.background-specs{
+  width: 100vw;
+  height: 100vh;
 }
 

@@ -1,28 +1,37 @@
 import './App.css';
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import  {Portfolio}  from "./pages/3-ProjectPage";
+import reportWebVitals from './reportWebVitals';
 import BGsimple from "./assets/BGsimple.png";
 import puddle from "./assets/puddle.png";
-import picture from "./assets/MaxMuster.png"
-import {Portfolio} from "./pages/3-ProjectPage";
-import './components/threejs/three.js';
-import { Overview } from './pages/1-Overview';
+import {Idle} from "./pages/0-Idle";
+import {Overview} from "./pages/1-Overview";
+import {
+    BrowserRouter,
+    Routes,
+    Route,
+    useLocation
+} from "react-router-dom";
+import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
+
 
 function App() {
-  return (
-    <>
-      <content>
-        <img className="background" src={BGsimple} alt="Water Background" />
+    const location = useLocation();
+    return (
+        <>
+            <AnimatePresence exitBeforeEnter>
+                <Routes location={location} key={location.key}>
+                    <Route path="/" element={<Idle/>}/>
+                    <Route path="/overview" element={<Overview/>}/>
+                    <Route path="/profil" element={<Portfolio/>}/>
 
-        {/* As long as we don't have buttons to navigate from Idle to > Overview to > Search and so on: 
-        While working on your branch you can add the component you are currently working on here. 
-        For example: 
-        <MyComponent />
-        Don't forget to import your component. As soon as we have the routing/links through our pages we can do it "correctly" */}
-        <Overview />
-        {/* <img className="puddle-overlay" src={puddle} alt="Puddle Mask" /> */}
-      </content>
-    </>
+                </Routes>
+            </AnimatePresence>
 
-  );
+        </>
+    );
 }
 
 export default App;

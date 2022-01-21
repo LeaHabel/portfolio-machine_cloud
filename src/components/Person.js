@@ -7,12 +7,13 @@ import Media1 from '../assets/P14-2.jpg'
 import Media2 from '../assets/P50-2.jpg'
 import Media3 from '../assets/P19-1.jpg'
 import Media4 from '../assets/P19-1.jpg'
+import { Link } from "react-router-dom";
 
 
 export function Person(props) {
 
     return (
-        <>
+        <Link to={"/profil"}>
             {/* <img src={Bubble} className={`big  fixed ${props.position}`}></img > */}
 
             <div className={`big maskBubble box  ${props.position}`} >
@@ -62,7 +63,6 @@ export function Person(props) {
                 </div>
             </div>
 
-        </>
+        </Link>
     );
-
 }

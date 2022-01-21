@@ -1,7 +1,8 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState } from "react";
 import '../../src/App.css';
 import { Person } from "../components/Person";
-import CloudIcon from "../assets/cloudiIcon.png";
+import './Overview.css';
+import {Person} from "../components/Person";
 import frame from "../assets/frame.png";
 import { startThreeJS } from "../components/threejs/three";
 
@@ -10,11 +11,42 @@ import Img1 from '../assets/img1.png'
 import PersonData from '../assets/data/personDataV2.json'
 import ProjectData from '../assets/data/projectDataV2.json'
 import CommunicationDesigners from '../assets/data/personDataV3-communication.json'
+import {Cloudbutton} from "../components/cloudbutton";
+import {CloseButton} from "../components/closeButton";
+import {Link} from "react-router-dom";
+import BGsimple from "../assets/BGsimple.png";
+import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
 
 export function Overview() {
     useEffect(() => {
         startThreeJS();
     })
+
+    const [isOpen, setIsOpen] = useState(false)
+
+    const variants = {
+        hidden:{
+            opacity: 0,
+        },
+        visible:{
+            opacity: 1,
+            transition:{delay: 1.5, duration: 1.5}
+        },
+        exit:{
+            y: '200vh',
+            x: '100vw',
+            transition:{ease:'easeInOut'},
+            scale: 5
+        },
+        cloud:{
+            y: '200vh',
+            transition:{ease:'easeInOut', duration: .6},
+            scale: 0.1
+        },
+        open: {
+            opacity: 1, y: '-200vh'},
+        closed: { opacity: 0, x: "-100%" },
+    }
 
     var initID = 0;
     var majorSize = 16;
@@ -73,13 +105,12 @@ export function Overview() {
                 <div id="three-js">
 
                 </div>
-                <div id="majorButton">
-                    <img className="icon" src={CloudIcon} />
-                    <h4>Send back to cloud</h4>
-                </div>
-
+                <Cloudbutton onClick={() => setIsOpen(true)}/>
                 {CommunicationDesigners.PERSONAL_DETAILS.map((user) => (
-                    <Person
+                <motion.div  exit={"exit"}
+                                 animate={isOpen ? "open" : "visible"}
+                                 variants={variants}>
+                        <Person
                         name={user.FirstName}
                         major={user.Major}
                         position={"pos" + user.virtualID}
@@ -90,6 +121,7 @@ export function Overview() {
                         }
 
                     />
+                </motion.div>
                 ))}
             </div>
 
