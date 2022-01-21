@@ -28,13 +28,22 @@ export function Overview() {
         return initID
     }
 
-    function findCorrectProject(studentID) {
-        if (CommunicationDesigners.PERSONAL_DETAILS[1].project_1 == ProjectData.PROJECT_DETAILS.PID) {
-            return true
-        } else {
-            return false
+    //console.log(CommunicationDesigners.PERSONAL_DETAILS[0].project_1)
+
+    function findCorrectProject(CommunicationDesigners, ProjectData, studentID) {
+        console.log("CommunicationDesigners " + CommunicationDesigners.length)
+        console.log("studentID " + studentID)
+        for (var j = 0; j < CommunicationDesigners.length; j++) {
+            for (var k = 0; k < CommunicationDesigners.length; k++) {
+                if (CommunicationDesigners.PERSONAL_DETAILS[studentID - 1].project_1 == ProjectData.PROJECT_DETAILS.PID) {
+                    return console.log("true")
+                } else {
+                    return false
+                }
+
+            }
+
         }
-        console.log(studentID)
 
     }
 
@@ -70,7 +79,7 @@ export function Overview() {
                         img1URL={Img1}
                         key={user.virtualID}
                         projectMedia={
-                            findCorrectProject(user.virtualID) ? console.log("yes") : console.log("no")
+                            findCorrectProject(ProjectData, user.virtualID) ? null : null
                         }
 
                     />
