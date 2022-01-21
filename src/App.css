@@ -234,6 +234,9 @@ h4{
 .maskingShape {
   transform: scale(0.3);
 }
+#clip {
+
+}
 .maskSVG{
   position: absolute;
   top: 0;

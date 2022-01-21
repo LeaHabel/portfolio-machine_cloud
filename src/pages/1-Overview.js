@@ -44,6 +44,9 @@ export function Overview() {
         closed: { opacity: 0, x: "-100%" },
     }
 
+    var initID = 0;
+    var majorSize = 16;
+
 
     function matchProjectToStudent(projectnumber, CommunicationDesigners, ProjectData, currStudentID) {
         for (var k = 0; k < CommunicationDesigners.PERSONAL_DETAILS.length; k++) {
@@ -73,9 +76,27 @@ export function Overview() {
                             return "https://d18p28upkrc95t.cloudfront.net/projects/" + ProjectData.PROJECT_DETAILS[j].Mediafile_3
                         }
                     }
+
                 }
 
             }
+
+        }
+
+    }
+
+    //finds out which major each person belongs to, but also does it all at once. Is needed to find out how big the majorSize is.
+    for (var i = 0; i < PersonData.PERSONAL_DETAILS.length; i++) {
+        if (PersonData.PERSONAL_DETAILS[i].Major == "Communication Design") { //10
+            currentMajor = 1;
+        } else if (PersonData.PERSONAL_DETAILS[i].Major == "Media Design") { //10
+            currentMajor = 2;
+        } else if (PersonData.PERSONAL_DETAILS[i].Major == "Sound Design") { //7
+            currentMajor = 3;
+        } else if (PersonData.PERSONAL_DETAILS[i].Major == "Interaction Design") { //17
+            currentMajor = 4;
+        } else {
+            console.log("Misspelled major detected. BOOM! ")
         }
     }
 
@@ -89,19 +110,19 @@ export function Overview() {
                 {CommunicationDesigners.PERSONAL_DETAILS.map((user) => (
                     <motion.div exit={"exit"}
                         animate={isOpen ? "open" : "visible"}
-                        variants={variants} className="test "
-                        key={user.virtualID}>
+                        variants={variants} className="test ">
                         <Person
                             name={user.FirstName}
-                            // user.ID an Portfolio Page geben
                             major={user.Major}
                             position={"pos" + user.virtualID}
                             img1URL={Img1}
+
                             projectMedia1={
                                 matchProjectToStudent(1, CommunicationDesigners, ProjectData, user.virtualID)
                             }
                             projectMedia2={
                                 matchProjectToStudent(2, CommunicationDesigners, ProjectData, user.virtualID)
+
                             }
                             projectMedia3={
                                 matchProjectToStudent(3, CommunicationDesigners, ProjectData, user.virtualID)
