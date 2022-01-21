@@ -8,7 +8,7 @@ import IGicon from "../assets/IGicon.png"
 import WEBicon from "../assets/WEBicon.png"
 import projIMG1 from "../assets/projIMG1.png"
 import projIMG2 from "../assets/projIMG2.png"
-import projIMG3 from "../assets/projIMG3.png"
+// import projIMG3 from "../assets/projIMG3.png"
 import Next from "../assets/Next.svg"
 import Previous from "../assets/Previous.svg"
 import {Cloudbutton} from "../components/cloudbutton";
@@ -101,12 +101,8 @@ export function Portfolio() {
                         <div>
                             <div>
                                 <div className="mediafile1">
-                                    <MediaComponent/>
+                                    <MediaComponent url="https://d18p28upkrc95t.cloudfront.net/projects/P62-1.mp4"/>
                                 </div>
-
-                                {/*<MediaComponent/>*/}
-                                {/*<img className="mediafile1" src={projIMG3} alt="Projectmedia"/>*/}
-
                                 <img className="mediafile2" src={projIMG2} alt="Projectmedia"/>
                             </div>
                             <img className="mediafile3" src={projIMG1} alt="Projectmedia"/>
