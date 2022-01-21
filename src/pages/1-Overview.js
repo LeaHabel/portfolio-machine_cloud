@@ -1,10 +1,8 @@
-import React, {useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import '../../src/App.css';
-import { Person } from "../components/Person";
-import './Overview.css';
 import {Person} from "../components/Person";
-import frame from "../assets/frame.png";
-import { startThreeJS } from "../components/threejs/three";
+import './Overview.css';
+import {startThreeJS} from "../components/threejs/three";
 
 import Img1 from '../assets/img1.png'
 
@@ -12,9 +10,6 @@ import PersonData from '../assets/data/personDataV2.json'
 import ProjectData from '../assets/data/projectDataV2.json'
 import CommunicationDesigners from '../assets/data/personDataV3-communication.json'
 import {Cloudbutton} from "../components/cloudbutton";
-import {CloseButton} from "../components/closeButton";
-import {Link} from "react-router-dom";
-import BGsimple from "../assets/BGsimple.png";
 import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
 
 export function Overview() {
@@ -25,27 +20,28 @@ export function Overview() {
     const [isOpen, setIsOpen] = useState(false)
 
     const variants = {
-        hidden:{
+        hidden: {
             opacity: 0,
         },
-        visible:{
+        visible: {
             opacity: 1,
-            transition:{delay: 1.5, duration: 1.5}
+            transition: {delay: 1.5, duration: 1.5}
         },
-        exit:{
+        exit: {
             y: '200vh',
             x: '100vw',
-            transition:{ease:'easeInOut'},
+            transition: {ease: 'easeInOut'},
             scale: 5
         },
-        cloud:{
+        cloud: {
             y: '200vh',
-            transition:{ease:'easeInOut', duration: .6},
+            transition: {ease: 'easeInOut', duration: .6},
             scale: 0.1
         },
         open: {
-            opacity: 1, y: '-200vh'},
-        closed: { opacity: 0, x: "-100%" },
+            opacity: 1, y: '-200vh'
+        },
+        closed: {opacity: 0, x: "-100%"},
     }
 
     var initID = 0;
@@ -103,31 +99,26 @@ export function Overview() {
         <>
             <div className="component-display">
                 <div id="three-js">
-
                 </div>
                 <Cloudbutton onClick={() => setIsOpen(true)}/>
                 {CommunicationDesigners.PERSONAL_DETAILS.map((user) => (
-                <motion.div  exit={"exit"}
-                                 animate={isOpen ? "open" : "visible"}
-                                 variants={variants}>
+                    <motion.div exit={"exit"}
+                                animate={isOpen ? "open" : "visible"}
+                                variants={variants} className="test ">
                         <Person
-                        name={user.FirstName}
-                        major={user.Major}
-                        position={"pos" + user.virtualID}
-                        img1URL={Img1}
-                        key={user.virtualID}
-                        projectMedia={
-                            findCorrectProject(ProjectData, user.virtualID) ? null : null
-                        }
+                            name={user.FirstName}
+                            major={user.Major}
+                            position={"pos" + user.virtualID}
+                            img1URL={Img1}
+                            key={user.virtualID}
+                            projectMedia={
+                                findCorrectProject(ProjectData, user.virtualID) ? null : null
+                            }
 
-                    />
-                </motion.div>
+                        />
+                    </motion.div>
                 ))}
             </div>
-
-
-
-
         </>
     );
 }
