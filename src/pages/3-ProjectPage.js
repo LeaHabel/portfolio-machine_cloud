@@ -79,14 +79,14 @@ export function Portfolio() {
                             <h1 className="head1">{data.PERSONAL_DETAILS[_id].Surname} {data.PERSONAL_DETAILS[_id].FirstName}</h1>
                             <p className="head3">{data.PERSONAL_DETAILS[_id].Major}</p>
                             <p className="paragraphw"><img className="icons" src={MAILicon}
-                                                           alt="Mail"/>{data.PERSONAL_DETAILS[id].Mail}
+                                                           alt="Mail"/>{data.PERSONAL_DETAILS[_id].Mail}
                             </p>
                             <p className="paragraphw"><img className="icons" src={IGicon}
-                                                           alt="Instagram"/>{data.PERSONAL_DETAILS[id].SocialMedia}</p>
+                                                           alt="Instagram"/>{data.PERSONAL_DETAILS[_id].SocialMedia}</p>
                             <p className="paragraphw"><img className="icons" src={WEBicon}
-                                                           alt="Website"/>{data.PERSONAL_DETAILS[id].Website}</p>
+                                                           alt="Website"/>{data.PERSONAL_DETAILS[_id].Website}</p>
                             <p className="head2">Skills</p>
-                            <p className="paragraphw">{data.PERSONAL_DETAILS[id].Skills}</p>
+                            <p className="paragraphw">{data.PERSONAL_DETAILS[_id].Skills}</p>
                             <img className="QR" src={QRmm} alt="QR Code"/>
                             <p className="paragraphw">Save Details</p>
                         </div>
