@@ -32,14 +32,14 @@ export function Portfolio() {
         console.log(img.height);
         console.log(img.width);
     };
-    
+
     isLandscape(img);
     isLandscape = true;
 
     function isLandscape(imgtotest, isLandscapeBoolean) {
         //tolle Rechnung die rausfindet ob landscape
         if (imgtotest.width / imgtotest.height <= 1) {
-            isLandscapeBoolean = true;
+            isLandscapeBoolean = false;
         }
         return (
             console.log(imgtotest + " Landscape: " + isLandscapeBoolean)
