@@ -1,23 +1,12 @@
 import React from "react";
-
 import '../pages/Overview.css';
-import Media1 from '../assets/P14-2.jpg'
-import Media2 from '../assets/P50-2.jpg'
-import Media3 from '../assets/P19-1.jpg'
-import Media4 from '../assets/P19-1.jpg'
 import { Link } from "react-router-dom";
-
 import { matchProjectToStudent } from '../../src/components/matchProjectToStudent.js'
-
 import ProjectData from '../assets/data/projectDataV2.json'
 import CommunicationDesigners from '../assets/data/personDataV3-communication.json'
 
 
 export function Person(props) {
-
-    console.log(matchProjectToStudent(1, 1, CommunicationDesigners, ProjectData, 0))
-
-
 
     return (
         <>
@@ -49,7 +38,7 @@ export function Person(props) {
                             <source src={Media4} type="video/mp4" />
                         </div> */}
                             <div className="flex-item">
-                                <img alt="" className="teaserImage" src={Media1} />
+                                <img alt="" className="teaserImage" src={matchProjectToStudent(1, 1, CommunicationDesigners, ProjectData, 0)} />
                             </div>
                             <div className="flex-item">
                                 <img alt="" className="teaserImage" src="https://d18p28upkrc95t.cloudfront.net/testimage2.jpg" />
