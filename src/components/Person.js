@@ -7,8 +7,16 @@ import Media3 from '../assets/P19-1.jpg'
 import Media4 from '../assets/P19-1.jpg'
 import { Link } from "react-router-dom";
 
+import { matchProjectToStudent } from '../../src/components/matchProjectToStudent.js'
+
+import ProjectData from '../assets/data/projectDataV2.json'
+import CommunicationDesigners from '../assets/data/personDataV3-communication.json'
+
 
 export function Person(props) {
+
+    console.log(matchProjectToStudent(1, 1, CommunicationDesigners, ProjectData, 0))
+
 
 
     return (
