@@ -14,7 +14,7 @@ import { AnimatePresence, motion } from 'framer-motion/dist/framer-motion'
 
 
 export function Overview() {
-    let selectedMajor = 1;
+    let selectedMajor = 0;
 
     useEffect(() => {
         startThreeJS();
