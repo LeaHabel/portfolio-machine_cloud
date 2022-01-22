@@ -22,7 +22,7 @@ import dataSound from '../assets/data/personDataV3-sound.json';
 import data1 from '../assets/data/projectDataV2.json';
 import MediaComponent from '../components/MediaComponent';
 import {useLocation, useParams} from 'react-router-dom';
-
+import FindProjectFromPerson from '../components/FindProjectFromPerson';
 
 export function Portfolio() {
     let {id} =useParams()
@@ -55,10 +55,19 @@ export function Portfolio() {
     };
 
     isLandscape(img);
-function nextImg(){
-    choosenProject ++;
-    console.log("COSSENPROJECT: "+choosenProject);
-}
+
+    //nächstes Proejct
+    const nextProject = () => {
+        choosenProject ++;
+        console.log("COSSENPROJECT: "+choosenProject);
+       // document.getElementById("mediafile2").src;
+    }
+    //vorheriges Proejct
+    const prevProject = () => {
+        choosenProject --;
+        console.log("COSSENPROJECT: "+choosenProject);
+    }
+
     function isLandscape(imgtotest, isLandscapeBoolean) {
         //tolle Rechnung die rausfindet ob landscape
         if (imgtotest.width / imgtotest.height <= 1) {
@@ -68,7 +77,7 @@ function nextImg(){
             console.log(imgtotest + " Landscape: " + isLandscapeBoolean)
         )
     }
-    let choosenProject = 1;
+    let choosenProject = 0;
     var results = [];
      results = data1.PROJECT_DETAILS.find( record => record.PID === data.PERSONAL_DETAILS[_id].projects[choosenProject])
 
@@ -113,8 +122,8 @@ function nextImg(){
                             <p className="paragraphbold">Team</p>
                             <p className="paragraphb">{results["Team"]}</p>
                             <p className="arrows">
-                                <img className="arrows" src={Previous} alt="Previous"/>
-                                <img onClick={nextImg()}
+                                <img onClick={() => prevProject()} className="arrows" src={Previous} alt="Previous"/>
+                                <img onClick={() => nextProject()}
                                 className="arrows"
                                 src={Next}
                                 alt="Next"/></p>
@@ -122,12 +131,12 @@ function nextImg(){
 
                         <div>
                             <div>
-                                <div className="mediafile1">
+                                <div className="mediafile mediafile1">
                                     <MediaComponent url="https://d18p28upkrc95t.cloudfront.net/projects/P62-1.mp4"/>
                                 </div>
-                                <img className="mediafile2" src={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"]} alt="Projectmedia"/>
+                                <img className="mediafile mediafile2"  src={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_2"]} alt="Projectmedia"/>
                             </div>
-                            <img className="mediafile3" src={projIMG1} alt="Projectmedia"/>
+                            <img className=" mediafile mediafile3"  src={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_3"]} alt="Projectmedia"/>
                         </div>
                     </>
                 </Zoom>
