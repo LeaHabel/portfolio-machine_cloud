@@ -107,6 +107,7 @@ export function Overview() {
                                 variants={variants} className="test ">
                         <Person
                             name={user.FirstName}
+                            surname={user.Surname}
                             major={user.Major}
                             id={user.virtualID}
                             key={user.virtualID}

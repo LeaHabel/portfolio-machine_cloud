@@ -21,7 +21,7 @@ export function Person(props) {
             }} className={`big maskBubble box  ${props.position}`} id={Id}>
                 <div className="person box" >
                     <div id="personName">
-                        <h1 className="bubbleName">{props.name}</h1>
+                        <h1 className="bubbleName">{props.name} {props.surname}</h1>
                         <h2 className="bubbleMajor">{props.major}</h2>
                     </div>
 

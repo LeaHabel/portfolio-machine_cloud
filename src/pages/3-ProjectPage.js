@@ -65,9 +65,15 @@ export function Portfolio() {
             console.log(imgtotest + " Landscape: " + isLandscapeBoolean)
         )
     }
+    var results = [];
+    var searchField = "PID";
+    var searchVal = data.PERSONAL_DETAILS[_id].projects[0];
 
-    console.log("yeah i'm working")
 
+
+    console.log("Projekte: " + data.PERSONAL_DETAILS[_id].projects[0])
+
+    //console.log("Projekte: " + data1.PROJECT_DETAILS[data.PERSONAL_DETAILS[_id].projects[0]].Project)
     return (
         <div className="Portfolio">
             <motion.div variants={bodyVariants} initial="hidden" animate="visible" exit={"exit"} className="overflow">
@@ -75,8 +81,8 @@ export function Portfolio() {
                     <>
                         <img className="background-specs" src={PortfolioBG} alt="Portfolio Background"/>
                         <div className="contact">
-                            <img className="profil" src={MaxMuster} alt="Profil"/>
-                            <h1 className="head1">{data.PERSONAL_DETAILS[_id].Surname} {data.PERSONAL_DETAILS[_id].FirstName}</h1>
+                            <img className="profil" src={"https://d18p28upkrc95t.cloudfront.net/persons/" + data.PERSONAL_DETAILS[_id].profilepic} alt="Profil"/>
+                            <h1 className="head1"> {data.PERSONAL_DETAILS[_id].FirstName} {data.PERSONAL_DETAILS[_id].Surname}</h1>
                             <p className="head3">{data.PERSONAL_DETAILS[_id].Major}</p>
                             <p className="paragraphw"><img className="icons" src={MAILicon}
                                                            alt="Mail"/>{data.PERSONAL_DETAILS[_id].Mail}
@@ -92,7 +98,7 @@ export function Portfolio() {
                         </div>
 
                         <div className="projectinfo">
-                            <h1 className="head4">{data1.PROJECT_DETAILS[52].Project}</h1>
+                            <h1 className="head4">{data1.PROJECT_DETAILS[_id].Project[0]}</h1>
                             <p className="head3">{data1.PROJECT_DETAILS[52].University}</p>
                             <p className="paragraphb">{data1.PROJECT_DETAILS[52].description}</p>
                             <p className="paragraphbold">{data1.PROJECT_DETAILS[52].Year} |
