@@ -60,7 +60,9 @@
     transform: translate(0%, 0%);
     transform-origin: center center;
 }
-
+.mediafile{
+    height: 30%;
+}
 .mediafile1 {
     display: block; /* or inline-flex */
     flex-direction: row;

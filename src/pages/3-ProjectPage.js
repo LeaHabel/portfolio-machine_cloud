@@ -58,6 +58,7 @@ export function Portfolio() {
 
     //nächstes Proejct
     const nextProject = () => {
+
         choosenProject ++;
         console.log("COSSENPROJECT: "+choosenProject);
        // document.getElementById("mediafile2").src;
@@ -81,8 +82,8 @@ export function Portfolio() {
     var results = [];
      results = data1.PROJECT_DETAILS.find( record => record.PID === data.PERSONAL_DETAILS[_id].projects[choosenProject])
 
-
-    console.log("Array "+ results["Project"])
+    const length = data.PERSONAL_DETAILS[_id].projects.length;
+    console.log("Array "+ length)
 
     console.log("filelink: " + "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"])
 
