@@ -1,18 +1,21 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import '../../src/App.css';
-import {Person} from "../components/Person";
+import { Person } from "../components/Person";
 import './Overview.css';
-import {startThreeJS} from "../components/threejs/three";
-
-import Img1 from '../assets/img1.png'
-
-import PersonData from '../assets/data/personDataV2.json'
+import { startThreeJS } from "../components/threejs/three";
 import ProjectData from '../assets/data/projectDataV2.json'
+import { matchProjectToStudent } from '../../src/components/matchProjectToStudent.js'
 import CommunicationDesigners from '../assets/data/personDataV3-communication.json'
-import {Cloudbutton} from "../components/cloudbutton";
-import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
+import MediaDesigners from '../assets/data/personDataV3-media.json'
+import SoundDesigners from '../assets/data/personDataV3-sound.json'
+import InteractionDesigners from '../assets/data/personDataV3-interaction.json'
+import { Cloudbutton } from "../components/cloudbutton";
+import { AnimatePresence, motion } from 'framer-motion/dist/framer-motion'
+
 
 export function Overview() {
+    let selectedMajor = 1;
+
     useEffect(() => {
         startThreeJS();
     })
@@ -25,86 +28,51 @@ export function Overview() {
         },
         visible: {
             opacity: 1,
-            transition: {delay: 1.5, duration: 1.5}
+            transition: { delay: 1.5, duration: 1.5 }
         },
         exit: {
             y: '200vh',
             x: '100vw',
-            transition: {ease: 'easeInOut'},
+            transition: { ease: 'easeInOut' },
             scale: 5
         },
         cloud: {
             y: '200vh',
-            transition: {ease: 'easeInOut', duration: .6},
+            transition: { ease: 'easeInOut', duration: .6 },
             scale: 0.1
         },
         open: {
             opacity: 1, y: '-200vh'
         },
-        closed: {opacity: 0, x: "-100%"},
+        closed: { opacity: 0, x: "-100%" },
     }
 
-    var initID = 0;
-    var majorSize = 16;
-
-    var currentMajor = 1; //1=CD, 2=MD, 3=SD, 4=ID
-
-    //console.log(CommunicationDesigners.PERSONAL_DETAILS[0].FirstName)
-
-    //iterates over each student. But does it all at once. Need to solve it with state? Or map over each student somehow
-    function currentStudentID() {
-        while (initID != majorSize) {
-            initID++;
+    const currentMajor = (selectedMajor) => {
+        if (selectedMajor == 0) {
+            return CommunicationDesigners;
         }
-        // console.log(initID)
-        return initID
-    }
-
-    //console.log(CommunicationDesigners.PERSONAL_DETAILS[0].project_1)
-
-    function findCorrectProject(CommunicationDesigners, ProjectData, studentID) {
-        console.log("CommunicationDesigners " + CommunicationDesigners.length)
-        console.log("studentID " + studentID)
-        for (var j = 0; j < CommunicationDesigners.length; j++) {
-            for (var k = 0; k < CommunicationDesigners.length; k++) {
-                if (CommunicationDesigners.PERSONAL_DETAILS[studentID - 1].project_1 == ProjectData.PROJECT_DETAILS.PID) {
-                    return console.log("true")
-                } else {
-                    return false
-                }
-
-            }
-
+        if (selectedMajor == 1) {
+            return MediaDesigners;
+        }
+        if (selectedMajor == 2) {
+            return SoundDesigners;
+        }
+        if (selectedMajor == 3) {
+            return InteractionDesigners;
         }
 
     }
-
-    //finds out which major each person belongs to, but also does it all at once. Is needed to find out how big the majorSize is.
-    for (var i = 0; i < PersonData.PERSONAL_DETAILS.length; i++) {
-        if (PersonData.PERSONAL_DETAILS[i].Major == "Communication Design") { //10
-            currentMajor = 1;
-        } else if (PersonData.PERSONAL_DETAILS[i].Major == "Media Design") { //10
-            currentMajor = 2;
-        } else if (PersonData.PERSONAL_DETAILS[i].Major == "Sound Design") { //7
-            currentMajor = 3;
-        } else if (PersonData.PERSONAL_DETAILS[i].Major == "Interaction Design") { //17
-            currentMajor = 4;
-        } else {
-            console.log("Misspelled major detected. BOOM! ")
-        }
-    }
-
 
     return (
         <>
             <div className="component-display">
                 <div id="three-js">
                 </div>
-                <Cloudbutton onClick={() => setIsOpen(true)}/>
-                {CommunicationDesigners.PERSONAL_DETAILS.map((user) => (
+                <Cloudbutton onClick={() => setIsOpen(true)} />
+                {currentMajor(selectedMajor).PERSONAL_DETAILS.map((user) => (
                     <motion.div exit={"exit"}
-                                animate={isOpen ? "open" : "visible"}
-                                variants={variants} className="test ">
+                        animate={isOpen ? "open" : "visible"}
+                        variants={variants} className="test ">
                         <Person
                             name={user.FirstName}
                             surname={user.Surname}
@@ -112,12 +80,16 @@ export function Overview() {
                             id={user.virtualID}
                             key={user.virtualID}
                             position={"pos" + user.virtualID}
-                            img1URL={Img1}
-
-                            projectMedia={
-                                findCorrectProject(ProjectData, user.virtualID) ? null : null
+                            projectMedia1={
+                                matchProjectToStudent(1, 1, currentMajor(selectedMajor), ProjectData, user.virtualID)
                             }
-
+                            projectMedia2={
+                                matchProjectToStudent(1, 2, currentMajor(selectedMajor), ProjectData, user.virtualID)
+                            }
+                            projectMedia3={
+                                matchProjectToStudent(1, 3, currentMajor(selectedMajor), ProjectData, user.virtualID)
+                            }
+                            clickedID={user.virtualID}
                         />
                     </motion.div>
                 ))}

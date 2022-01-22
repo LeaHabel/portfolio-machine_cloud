@@ -11,10 +11,10 @@ import projIMG2 from "../assets/projIMG2.png"
 // import projIMG3 from "../assets/projIMG3.png"
 import Next from "../assets/Next.svg"
 import Previous from "../assets/Previous.svg"
-import {Cloudbutton} from "../components/cloudbutton";
-import {CloseButton} from "../components/closeButton";
+import { Cloudbutton } from "../components/cloudbutton";
+import { CloseButton } from "../components/closeButton";
 import Zoom from 'react-reveal/Zoom';
-import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
+import { AnimatePresence, motion } from 'framer-motion/dist/framer-motion'
 import data from '../assets/data/personDataV3-communication.json';
 import dataInteraction from '../assets/data/personDataV3-interaction.json';
 import dataMedia from '../assets/data/personDataV3-media.json';
@@ -25,22 +25,22 @@ import {useLocation, useParams} from 'react-router-dom';
 import FindProjectFromPerson from '../components/FindProjectFromPerson';
 
 export function Portfolio() {
-    let {id} =useParams()
-    let _id = id-1
+    let { id } = useParams()
+    let _id = id - 1
 
-    console.log("State: "+ id )
-    console.log("State2: "+ _id )
+    console.log("State: " + id)
+    console.log("State2: " + _id)
     const bodyVariants = {
         hidden: {
             opacity: 0,
         },
         visible: {
             opacity: 1,
-            transition: {duration: .9}
+            transition: { duration: .9 }
         },
         exit: {
             y: '200vh',
-            transition: {ease: 'easeInOut', duration: .6},
+            transition: { ease: 'easeInOut', duration: .6 },
             scale: 0.1
         }
     }
@@ -94,21 +94,21 @@ export function Portfolio() {
             <motion.div variants={bodyVariants} initial="hidden" animate="visible" exit={"exit"} className="overflow">
                 <Zoom>
                     <>
-                        <img className="background-specs" src={PortfolioBG} alt="Portfolio Background"/>
+                        <img className="background-specs" src={PortfolioBG} alt="Portfolio Background" />
                         <div className="contact">
                             <img className="profil" src={"https://d18p28upkrc95t.cloudfront.net/persons/" + data.PERSONAL_DETAILS[_id].profilepic} alt="Profil"/>
                             <h1 className="head1"> {data.PERSONAL_DETAILS[_id].FirstName} {data.PERSONAL_DETAILS[_id].Surname}</h1>
                             <p className="head3">{data.PERSONAL_DETAILS[_id].Major}</p>
                             <p className="paragraphw"><img className="icons" src={MAILicon}
-                                                           alt="Mail"/>{data.PERSONAL_DETAILS[_id].Mail}
+                                alt="Mail" />{data.PERSONAL_DETAILS[_id].Mail}
                             </p>
                             <p className="paragraphw"><img className="icons" src={IGicon}
-                                                           alt="Instagram"/>{data.PERSONAL_DETAILS[_id].SocialMedia}</p>
+                                alt="Instagram" />{data.PERSONAL_DETAILS[_id].SocialMedia}</p>
                             <p className="paragraphw"><img className="icons" src={WEBicon}
-                                                           alt="Website"/>{data.PERSONAL_DETAILS[_id].Website}</p>
+                                alt="Website" />{data.PERSONAL_DETAILS[_id].Website}</p>
                             <p className="head2">Skills</p>
                             <p className="paragraphw">{data.PERSONAL_DETAILS[_id].Skills}</p>
-                            <img className="QR" src={QRmm} alt="QR Code"/>
+                            <img className="QR" src={QRmm} alt="QR Code" />
                             <p className="paragraphw">Save Details</p>
                         </div>
 
@@ -127,7 +127,7 @@ export function Portfolio() {
                                 <img onClick={() => nextProject()}
                                 className="arrows"
                                 src={Next}
-                                alt="Next"/></p>
+                                alt="Next" /></p>
                         </div>
 
                         <div>
@@ -142,8 +142,8 @@ export function Portfolio() {
                     </>
                 </Zoom>
                 <div>
-                    <Cloudbutton/>
-                    <CloseButton/>
+                    <Cloudbutton />
+                    <CloseButton />
                 </div>
             </motion.div>
         </div>
