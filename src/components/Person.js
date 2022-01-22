@@ -7,10 +7,16 @@ import CommunicationDesigners from '../assets/data/personDataV3-communication.js
 
 
 export function Person(props) {
-
+    var Id= props.id;
+    let data = [
+        {id:Id}
+    ]
     return (
         <>
-            <Link to={"/profil"} className={`big maskBubble box  ${props.position}`} >
+            <Link to= {{
+                pathname: "/profil/"+ Id,
+                state: {_id: 3 }// your data array of objects
+            }} className={`big maskBubble box  ${props.position}`} id={Id}>
                 <div className="person box" >
                     <div id="personName">
                         <h1 className="bubbleName">{props.name}</h1>

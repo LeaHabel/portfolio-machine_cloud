@@ -8,6 +8,7 @@
     left:30%;
     width: 35%;
     height: 60%;
+    opacity: 0.3;
 }
 .idleFont{
     font-size: 3em;

@@ -76,6 +76,8 @@ export function Overview() {
                         <Person
                             name={user.FirstName}
                             major={user.Major}
+                            id={user.virtualID}
+                            key={user.virtualID}
                             position={"pos" + user.virtualID}
                             projectMedia1={
                                 matchProjectToStudent(1, 1, currentMajor(selectedMajor), ProjectData, user.virtualID)
