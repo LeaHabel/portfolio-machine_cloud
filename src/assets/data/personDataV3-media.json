@@ -1,6 +1,5 @@
 {
   "PERSONAL_DETAILS": [
-
     {
       "virtualID": 1,
       "ID": 6,
@@ -45,7 +44,6 @@
       ],
       "profilepic": "7-pp.jpg"
     },
-
     {
       "virtualID": 3,
       "ID": 12,
@@ -68,7 +66,6 @@
       ],
       "profilepic": "12-pp.jpg"
     },
-
     {
       "virtualID": 4,
       "ID": 15,
@@ -113,7 +110,6 @@
       ],
       "profilepic": "16-pp.jpg"
     },
-
     {
       "virtualID": 6,
       "ID": 23,
@@ -136,7 +132,6 @@
       ],
       "profilepic": "23-pp.jpg"
     },
-
     {
       "virtualID": 7,
       "ID": 26,
@@ -181,7 +176,6 @@
       ],
       "profilepic": "27-pp.jpg"
     },
-
     {
       "virtualID": 9,
       "ID": 40,
@@ -225,7 +219,6 @@
         null
       ],
       "profilepic": "42-pp.jpg"
-    },
-    
+    }
   ]
 }

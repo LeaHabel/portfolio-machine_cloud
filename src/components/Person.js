@@ -21,7 +21,12 @@ export function Person(props) {
                     <div className="teaserGallery">
                         <div className="flex-container">
                             <div className="flex-item">
-                                <img alt="" className="teaserImage" src={props.projectMedia1} />
+                                {props.projectMedia1 &&
+                                    <img alt="" className="teaserImage" src={props.projectMedia1} />
+                                }
+                                {props.projectMedia1 &&
+                                    <source src={props.projectMedia1} type="video/mp4" />
+                                }
                             </div>
                             <div className="flex-item portraitTestImage">
                                 <img alt="" className="teaserImage" src={props.projectMedia2} />

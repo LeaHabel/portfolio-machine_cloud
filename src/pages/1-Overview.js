@@ -6,11 +6,16 @@ import { startThreeJS } from "../components/threejs/three";
 import ProjectData from '../assets/data/projectDataV2.json'
 import { matchProjectToStudent } from '../../src/components/matchProjectToStudent.js'
 import CommunicationDesigners from '../assets/data/personDataV3-communication.json'
+import MediaDesigners from '../assets/data/personDataV3-media.json'
+import SoundDesigners from '../assets/data/personDataV3-sound.json'
+import InteractionDesigners from '../assets/data/personDataV3-interaction.json'
 import { Cloudbutton } from "../components/cloudbutton";
 import { AnimatePresence, motion } from 'framer-motion/dist/framer-motion'
 
 
 export function Overview() {
+    let selectedMajor = 1;
+
     useEffect(() => {
         startThreeJS();
     })
@@ -42,16 +47,21 @@ export function Overview() {
         closed: { opacity: 0, x: "-100%" },
     }
 
-    let selectedMajor = 0;
-
-
     const currentMajor = (selectedMajor) => {
         if (selectedMajor == 0) {
             return CommunicationDesigners;
         }
+        if (selectedMajor == 1) {
+            return MediaDesigners;
+        }
+        if (selectedMajor == 2) {
+            return SoundDesigners;
+        }
+        if (selectedMajor == 3) {
+            return InteractionDesigners;
+        }
 
     }
-    console.log(currentMajor(0))
 
     return (
         <>
