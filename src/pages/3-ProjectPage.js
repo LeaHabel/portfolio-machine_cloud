@@ -55,7 +55,10 @@ export function Portfolio() {
     };
 
     isLandscape(img);
-
+function nextImg(){
+    choosenProject ++;
+    console.log("COSSENPROJECT: "+choosenProject);
+}
     function isLandscape(imgtotest, isLandscapeBoolean) {
         //tolle Rechnung die rausfindet ob landscape
         if (imgtotest.width / imgtotest.height <= 1) {
@@ -65,13 +68,15 @@ export function Portfolio() {
             console.log(imgtotest + " Landscape: " + isLandscapeBoolean)
         )
     }
+    let choosenProject = 1;
     var results = [];
-    var searchField = "PID";
-    var searchVal = data.PERSONAL_DETAILS[_id].projects[0];
+     results = data1.PROJECT_DETAILS.find( record => record.PID === data.PERSONAL_DETAILS[_id].projects[choosenProject])
 
 
+    console.log("Array "+ results["Project"])
 
-    console.log("Projekte: " + data.PERSONAL_DETAILS[_id].projects[0])
+    console.log("filelink: " + "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"])
+
 
     //console.log("Projekte: " + data1.PROJECT_DETAILS[data.PERSONAL_DETAILS[_id].projects[0]].Project)
     return (
@@ -98,16 +103,18 @@ export function Portfolio() {
                         </div>
 
                         <div className="projectinfo">
-                            <h1 className="head4">{data1.PROJECT_DETAILS[_id].Project[0]}</h1>
-                            <p className="head3">{data1.PROJECT_DETAILS[52].University}</p>
-                            <p className="paragraphb">{data1.PROJECT_DETAILS[52].description}</p>
-                            <p className="paragraphbold">{data1.PROJECT_DETAILS[52].Year} |
-                                Sem {data1.PROJECT_DETAILS[52].Semester}</p>
+                            <h1 className="head4">{results["Project"]}</h1>
+                            <p className="head3">{results["University"]}</p>
+                            <p className="paragraphb">{results["description"]}</p>
+                            <p className="paragraphbold">{results["Year"]} |
+                                Sem {results["Semester"]}</p>
                             <p className="paragraphbold">Own role</p>
-                            <p className="paragraphb">{data.PERSONAL_DETAILS[0].ownrole_1}</p>
+                            <p className="paragraphb">{data.PERSONAL_DETAILS[_id].ownroles[choosenProject]}</p>
                             <p className="paragraphbold">Team</p>
-                            <p className="paragraphb">{data1.PROJECT_DETAILS[52].Team}</p>
-                            <p className="arrows"><img className="arrows" src={Previous} alt="Previous"/><img
+                            <p className="paragraphb">{results["Team"]}</p>
+                            <p className="arrows">
+                                <img className="arrows" src={Previous} alt="Previous"/>
+                                <img onClick={nextImg()}
                                 className="arrows"
                                 src={Next}
                                 alt="Next"/></p>
@@ -118,7 +125,7 @@ export function Portfolio() {
                                 <div className="mediafile1">
                                     <MediaComponent url="https://d18p28upkrc95t.cloudfront.net/projects/P62-1.mp4"/>
                                 </div>
-                                <img className="mediafile2" src={projIMG2} alt="Projectmedia"/>
+                                <img className="mediafile2" src={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"]} alt="Projectmedia"/>
                             </div>
                             <img className="mediafile3" src={projIMG1} alt="Projectmedia"/>
                         </div>
