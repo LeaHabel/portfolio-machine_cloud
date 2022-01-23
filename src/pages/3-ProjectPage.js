@@ -21,8 +21,7 @@ import dataMedia from '../assets/data/personDataV3-media.json';
 import dataSound from '../assets/data/personDataV3-sound.json';
 import data1 from '../assets/data/projectDataV2.json';
 import MediaComponent from '../components/MediaComponent';
-import {useLocation, useParams} from 'react-router-dom';
-import FindProjectFromPerson from '../components/FindProjectFromPerson';
+import { useLocation, useParams } from 'react-router-dom';
 
 export function Portfolio() {
     let { id } = useParams()
@@ -59,14 +58,14 @@ export function Portfolio() {
     //nächstes Proejct
     const nextProject = () => {
 
-        choosenProject ++;
-        console.log("COSSENPROJECT: "+choosenProject);
-       // document.getElementById("mediafile2").src;
+        choosenProject++;
+        console.log("COSSENPROJECT: " + choosenProject);
+        // document.getElementById("mediafile2").src;
     }
     //vorheriges Proejct
     const prevProject = () => {
-        choosenProject --;
-        console.log("COSSENPROJECT: "+choosenProject);
+        choosenProject--;
+        console.log("COSSENPROJECT: " + choosenProject);
     }
 
     function isLandscape(imgtotest, isLandscapeBoolean) {
@@ -80,10 +79,10 @@ export function Portfolio() {
     }
     let choosenProject = 0;
     var results = [];
-     results = data1.PROJECT_DETAILS.find( record => record.PID === data.PERSONAL_DETAILS[_id].projects[choosenProject])
+    results = data1.PROJECT_DETAILS.find(record => record.PID === data.PERSONAL_DETAILS[_id].projects[choosenProject])
 
     const length = data.PERSONAL_DETAILS[_id].projects.length;
-    console.log("Array "+ length)
+    console.log("Array " + length)
 
     console.log("filelink: " + "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"])
 
@@ -96,7 +95,7 @@ export function Portfolio() {
                     <>
                         <img className="background-specs" src={PortfolioBG} alt="Portfolio Background" />
                         <div className="contact">
-                            <img className="profil" src={"https://d18p28upkrc95t.cloudfront.net/persons/" + data.PERSONAL_DETAILS[_id].profilepic} alt="Profil"/>
+                            <img className="profil" src={"https://d18p28upkrc95t.cloudfront.net/persons/" + data.PERSONAL_DETAILS[_id].profilepic} alt="Profil" />
                             <h1 className="head1"> {data.PERSONAL_DETAILS[_id].FirstName} {data.PERSONAL_DETAILS[_id].Surname}</h1>
                             <p className="head3">{data.PERSONAL_DETAILS[_id].Major}</p>
                             <p className="paragraphw"><img className="icons" src={MAILicon}
@@ -123,21 +122,21 @@ export function Portfolio() {
                             <p className="paragraphbold">Team</p>
                             <p className="paragraphb">{results["Team"]}</p>
                             <p className="arrows">
-                                <img onClick={() => prevProject()} className="arrows" src={Previous} alt="Previous"/>
+                                <img onClick={() => prevProject()} className="arrows" src={Previous} alt="Previous" />
                                 <img onClick={() => nextProject()}
-                                className="arrows"
-                                src={Next}
-                                alt="Next" /></p>
+                                    className="arrows"
+                                    src={Next}
+                                    alt="Next" /></p>
                         </div>
 
                         <div>
                             <div>
                                 <div className="mediafile mediafile1">
-                                    <MediaComponent url="https://d18p28upkrc95t.cloudfront.net/projects/P62-1.mp4"/>
+                                    <MediaComponent url="https://d18p28upkrc95t.cloudfront.net/projects/P62-1.mp4" />
                                 </div>
-                                <img className="mediafile mediafile2"  src={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_2"]} alt="Projectmedia"/>
+                                <img className="mediafile mediafile2" src={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_2"]} alt="Projectmedia" />
                             </div>
-                            <img className=" mediafile mediafile3"  src={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_3"]} alt="Projectmedia"/>
+                            <img className=" mediafile mediafile3" src={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_3"]} alt="Projectmedia" />
                         </div>
                     </>
                 </Zoom>
