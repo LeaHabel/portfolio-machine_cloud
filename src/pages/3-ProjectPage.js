@@ -180,6 +180,21 @@ export function Portfolio(props) {
     // console.log("yeah testing " + FindProjectFromPerson(_id, 0, props.selectedMajor)["PID"])
 
     //console.log("Projekte: " + data1.PROJECT_DETAILS[data.PERSONAL_DETAILS[_id].projects[0]].Project)
+
+    function showRightContent(temp) {
+        let fileExtension = temp.split('.').pop();
+
+        if (fileExtension === "mp4") {
+            return (<MediaComponent
+                url={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"]}
+                width="auto"
+                height="300px"
+            />)
+        } else {
+            return <img className="mediafile mediafile2" src={imgPos1} alt="Projectmedia" />
+        }
+
+    }
     return (
         <div className="Portfolio">
             <motion.div variants={bodyVariants} initial="hidden" animate="visible" exit={"exit"} className="overflow">
@@ -226,12 +241,13 @@ export function Portfolio(props) {
 
                             <div>
                                 <div className="mediafile mediafile1">
+                                    {showRightContent(results["Mediafile_1"])}
                                     {/* <MediaComponent
                                         url={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"]}
                                         width="auto"
                                         height="300px"
                                     /> */}
-                                    <img className="mediafile mediafile1" src={imgPos1} alt="Projectmedia" />
+                                    {/* <img className="mediafile mediafile1" src={imgPos1} alt="Projectmedia" /> */}
                                 </div>
                                 <img className="mediafile mediafile2" src={imgPos2} alt="Projectmedia" />
                             </div>
