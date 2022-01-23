@@ -50,6 +50,7 @@ export function Person(props) {
     function showMediaSnippets(filename) {
         console.log(filename)
         let fileExtension = filename.split('.').pop();
+
         if (fileExtension === "jpg" || fileExtension === "png") {
             return <img alt="" className="teaserImage" src={filename} />
         } else if (fileExtension === "mp4") {

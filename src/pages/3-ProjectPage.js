@@ -139,7 +139,7 @@ export function Portfolio(props) {
                                     <MediaComponent
                                         url={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"]}
                                         width="auto"
-                                        height="30%"
+                                        height="300px"
                                     />
                                 </div>
                                 <img className="mediafile mediafile2" src={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_2"]} alt="Projectmedia" />
