@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import './3-ProjectPage.css'
 import MaxMuster from "../assets/MaxMuster.png";
 import PortfolioBG from "../assets/PortfolioBG.png";
@@ -29,6 +29,36 @@ import FindProjectFromPerson from "../components/FindProjectFromPerson";
 export function Portfolio(props) {
     let { id } = useParams()
     let _id = id - 1
+    //nächstes Proejct
+    const nextProject = () => {
+        if (choosenProject < 3 && data.PERSONAL_DETAILS[_id].projects[choosenProject + 1] !== null) {
+            setcchoosenProject(choosenProject + 1);
+            document.getElementById("prevButton").style.opacity = "1";
+            document.getElementById("prevButton").style.pointerEvents = "initial";
+            console.log("BLAA " + img1.src)
+            if (choosenProject == 1 || data.PERSONAL_DETAILS[_id].projects[choosenProject + 2] == null) {
+                document.getElementById("nextButton").style.opacity = "0";
+                document.getElementById("nextButton").style.pointerEvents = "none";
+            }
+        }
+
+
+        // document.getElementById("mediafile2").src;
+    }
+    //vorheriges Proejct
+    const prevProject = () => {
+        if (choosenProject > 0) {
+            setcchoosenProject(choosenProject - 1);
+            document.getElementById("nextButton").style.opacity = "1";
+            document.getElementById("nextButton").style.pointerEvents = "initial";
+
+            if (choosenProject == 1) {
+                document.getElementById("prevButton").style.opacity = "0";
+                document.getElementById("prevButton").style.pointerEvents = "none";
+            }
+        }
+
+    }
 
     console.log("State: " + id)
     console.log("State2: " + _id)
@@ -46,48 +76,106 @@ export function Portfolio(props) {
             scale: 0.1
         }
     }
+    const [choosenProject, setcchoosenProject] = useState(0);
+    var results = [];
+    results = data1.PROJECT_DETAILS.find(record => record.PID === data.PERSONAL_DETAILS[_id].projects[choosenProject])
 
 
-    const img = new Image();
-    img.src = 'http://placekitten.com/1080/1920';
+    const [imgPos1, setimgPos1] = useState(0)
+    const [imgPos2, setimgPos2] = useState(0)
+    const [imgPos3, setimgPos3] = useState(0)
 
-    img.onload = () => {
-        console.log(img.height);
-        console.log(img.width);
+    var isLandscapeBoolean
+    var loadOnce = true
+    var loadOnce2
+    var loadOnce3
+    const img1 = new Image();
+    const img2 = new Image();
+    const img3 = new Image();
+
+
+    img1.src = "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"];
+    img1.onload = () => {
+        if (img1.width / img1.height <= 1) {
+            isLandscapeBoolean = false;
+            setimgPos2(img1.src)
+            console.log("BLA imgpos2 " + imgPos2)
+        } else {
+            isLandscapeBoolean = true;
+            setimgPos1(img1.src)
+            console.log("BLA imgpos1 " + imgPos1)
+
+        }
+
     };
 
-    isLandscape(img);
 
-    //nächstes Proejct
-    const nextProject = () => {
+    img2.src = "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_2"];
+    img2.onload = () => {
 
-        choosenProject++;
-        console.log("COSSENPROJECT: " + choosenProject);
-        // document.getElementById("mediafile2").src;
-    }
-    //vorheriges Proejct
-    const prevProject = () => {
-        choosenProject--;
-        console.log("COSSENPROJECT: " + choosenProject);
-    }
-
-    function isLandscape(imgtotest, isLandscapeBoolean) {
-        //tolle Rechnung die rausfindet ob landscape
-        if (imgtotest.width / imgtotest.height <= 1) {
+        if (img2.width / img2.height <= 1) {
             isLandscapeBoolean = false;
+            setimgPos2(img2.src)
+        } else {
+            isLandscapeBoolean = true;
+            if (imgPos1 == null) {
+                setimgPos1(img2.src)
+
+            } else {
+                setimgPos3(img2.src)
+            }
         }
-        return (
-            console.log(imgtotest + " Landscape: " + isLandscapeBoolean)
-        )
-    }
-    let choosenProject = 0;
+
+    };
+
+
+    choosenProject++;
+    console.log("COSSENPROJECT: " + choosenProject);
+    // document.getElementById("mediafile2").src;
+
+
+
+    console.log("Img3")
+    img3.src = "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_3"];
+    img3.onload = () => {
+
+        if (img3.width / img3.height <= 1 && loadOnce === true) {
+            isLandscapeBoolean = false;
+            loadOnce = false;
+            setimgPos2(img3.src)
+            console.log("Hochformatbild " + imgPos2)
+        } else if (loadOnce === true) {
+            loadOnce = false;
+            isLandscapeBoolean = true;
+            if (imgPos1 == null) {
+                setimgPos1(img3.src)
+                console.log("Querformatbild 1 " + imgPos1)
+            }
+            else if (imgPos3 == null) {
+                setimgPos3(img3.src)
+                console.log("Querformatbild 3 " + imgPos3)
+            }
+        }
+        loadOnce = false;
+        console.log("LoadOnce " + loadOnce)
+    };
+
+
+
+
+
+
+
+
+
     var results = [];
     results = data1.PROJECT_DETAILS.find(record => record.PID === data.PERSONAL_DETAILS[_id].projects[choosenProject])
 
     const length = data.PERSONAL_DETAILS[_id].projects.length;
     console.log("Array " + length)
+    // console.log("Array "+ "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_3"])
 
-    console.log("filelink: " + "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"])
+    //  console.log("filelink: " + "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"])
 
     // console.log("yeah testing " + FindProjectFromPerson(_id, 0, props.selectedMajor)["PID"])
 
@@ -126,14 +214,16 @@ export function Portfolio(props) {
                             <p className="paragraphbold">Team</p>
                             <p className="paragraphb">{results["Team"]}</p>
                             <p className="arrows">
-                                <img onClick={() => prevProject()} className="arrows" src={Previous} alt="Previous" />
+                                <img id={"prevButton"} onClick={() => prevProject()} className="arrows" src={Previous} alt="Previous" />
                                 <img onClick={() => nextProject()}
                                     className="arrows"
+                                    id={"nextButton"}
                                     src={Next}
                                     alt="Next" /></p>
                         </div>
 
                         <div>
+
                             <div>
                                 <div className="mediafile mediafile1">
                                     <MediaComponent
@@ -141,6 +231,7 @@ export function Portfolio(props) {
                                         width="auto"
                                         height="300px"
                                     />
+                                    {/* <img className="mediafile mediafile1"  src={ imgPos1 } alt="Projectmedia"/> */}
                                 </div>
                                 <img className="mediafile mediafile2" src={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_2"]} alt="Projectmedia" />
                             </div>

@@ -47,7 +47,9 @@
     left: 25%;
     width: 19.8%;
 }
-
+#prevButton{
+    opacity: 0;
+}
 .projectmedia {
     display: block; /* or inline-flex */
     flex-direction: column;

@@ -254,7 +254,7 @@
       "Semester": 1,
       "Year": 2020,
       "Team": "Marcelino Zus",
-      "description": "Besides the representation of works, the package including two booklets and a silkscreen poster was meant to explore the possibilities concerning printing techniques, functional packaging and also the choice of papers and colors while considering various ways of production. ",
+      "description": "Besides the representation of works, the package including two booklets and a silkscreen poster was meant to explore the possibilities concerning printing techniques, functional packaging and also the choice of papers and colors while considering various ways of production.null",
       "Keywords": "graphic design, packaging, illustration, letterpress, screen print, risography",
       "Mediafile_1": "P20-1.jpg",
       "Mediafile_2": "P20-2.jpg",
@@ -401,7 +401,7 @@
       "Keywords": "packaging, eat, vinegar, ",
       "Mediafile_1": "P31-1.jpg",
       "Mediafile_2": "P31-2.jpg",
-      "Mediafile_3": " "
+      "Mediafile_3": null
     },
     {
       "PID": "P32",
@@ -466,7 +466,7 @@
       "Keywords": "documentary film, ocean conservation, diving, surf",
       "Mediafile_1": "P36-1.mp4",
       "Mediafile_2": "P36-2.jpg",
-      "Mediafile_3": " "
+      "Mediafile_3": null
     },
     {
       "PID": "P37",
@@ -479,7 +479,7 @@
       "Keywords": "documentary film, snowboarding, diving, surf, outdoor, trailer",
       "Mediafile_1": "P37-1.mp4",
       "Mediafile_2": "P37-2.jpg",
-      "Mediafile_3": " "
+      "Mediafile_3": null
     },
     {
       "PID": null,
@@ -556,8 +556,8 @@
       "description": "Concept, production and implementation of an adaptive sound design and soundtrack for the sample game 'The Explorer' in Unity.",
       "Keywords": "game sound, adaptive sound design",
       "Mediafile_1": "P43-1.mp4",
-      "Mediafile_2": " ",
-      "Mediafile_3": " "
+      "Mediafile_2": null,
+      "Mediafile_3": null
     },
     {
       "PID": "P44",
@@ -569,8 +569,8 @@
       "description": "Sound design, music production and binaural mix for an abstract video.",
       "Keywords": "binaural sound design, music",
       "Mediafile_1": "P44-1.mp4",
-      "Mediafile_2": " ",
-      "Mediafile_3": " "
+      "Mediafile_2": null,
+      "Mediafile_3": null
     },
     {
       "PID": "P45",
@@ -582,8 +582,8 @@
       "description": "A progressive rock song from my solo project 'Drowning Dream'.",
       "Keywords": "music, production, progressive rock",
       "Mediafile_1": "P45-1.mp4",
-      "Mediafile_2": " ",
-      "Mediafile_3": " "
+      "Mediafile_2": null,
+      "Mediafile_3": null
     },
     {
       "PID": "P46",
@@ -635,7 +635,7 @@
       "Keywords": "sustainablity, second hand, web development, ui\/ux design, interaction design",
       "Mediafile_1": "P49-1.jpg",
       "Mediafile_2": "P49-2.jpg",
-      "Mediafile_3": " "
+      "Mediafile_3": null
     },
     {
       "PID": "P50",
@@ -699,8 +699,8 @@
       "description": "Various visualisations are developed that symbolise the Corona pandemic. These are distorted by immersive sound and made partially unrecognisable. Through this audio-visual composition, the listeners and viewers should be sensitised to mental health and its relevance, especially during the Corona pandemic. ",
       "Keywords": "immersive, sound design, experimental, creative coding, processing",
       "Mediafile_1": "P54-1.mp4",
-      "Mediafile_2": " ",
-      "Mediafile_3": " "
+      "Mediafile_2": null,
+      "Mediafile_3": null
     },
     {
       "PID": "P55",
@@ -726,7 +726,7 @@
       "Keywords": "editorial design, print",
       "Mediafile_1": "P56-1.jpg",
       "Mediafile_2": "P56-2.jpg",
-      "Mediafile_3": " "
+      "Mediafile_3": null
     },
     {
       "PID": "P57",
@@ -738,8 +738,8 @@
       "description": "The idea of the short film \"Graz du bist so wunderbar\" was to capture impressions of a city from an atypical perspective and to reproduce them in an unusual way that allows the recipient to reflect on his or her own perception of the city.",
       "Keywords": "shortfilm",
       "Mediafile_1": "P57-1.mp4",
-      "Mediafile_2": " ",
-      "Mediafile_3": " "
+      "Mediafile_2": null,
+      "Mediafile_3": null
     },
     {
       "PID": "P58",
@@ -748,11 +748,11 @@
       "Semester": "–",
       "Year": 2021,
       "Team": "Eva Jobst ",
-      "description": "I created animated textures for this little private project and combined them with photos and typography, which led to these trippy space style illusions. ",
+      "description": "I created animated textures for this little private projectnulland combined them with photos and typography, which led to these trippy space style illusions.null",
       "Keywords": "animation, media design, after effects",
       "Mediafile_1": "P58-1.mp4",
-      "Mediafile_2": " ",
-      "Mediafile_3": " "
+      "Mediafile_2": null,
+      "Mediafile_3": null
     },
     {
       "PID": "P59",
@@ -764,8 +764,8 @@
       "description": "Animated Shortfilm about a popular video game called \"Five Nights at Freddy's: Security Breach\"",
       "Keywords": "animation, 3d, blender",
       "Mediafile_1": "P59-1.mp4",
-      "Mediafile_2": " ",
-      "Mediafile_3": " "
+      "Mediafile_2": null,
+      "Mediafile_3": null
     },
     {
       "PID": null,
@@ -791,7 +791,7 @@
       "Keywords": "webdesign, screendesign, user interface design",
       "Mediafile_1": "P61-1.jpg",
       "Mediafile_2": "P61-2.jpg",
-      "Mediafile_3": " "
+      "Mediafile_3": null
     },
     {
       "PID": "P62",
@@ -816,8 +816,8 @@
       "description": "Postmodern poster series for the online exhibition \"Beyond Objects\" ",
       "Keywords": "posterdesign, photography, concept",
       "Mediafile_1": "P63-1.jpg",
-      "Mediafile_2": " ",
-      "Mediafile_3": " "
+      "Mediafile_2": null,
+      "Mediafile_3": null
     },
     {
       "PID": "P64",
@@ -829,8 +829,8 @@
       "description": "An interactive augmented-reality-guide for the Computermuseum in Kiel. In this prototype you can meet the energetic robot Z03 (called Zoe), that plays games with you with information from the physical objects in the cultural heritage.",
       "Keywords": "augmented reality, ar, interactive storytelling, cultural heritage, culture, hololens, unity",
       "Mediafile_1": "P64-1.mp4",
-      "Mediafile_2": " ",
-      "Mediafile_3": " "
+      "Mediafile_2": null,
+      "Mediafile_3": null
     },
     {
       "PID": "P65",
@@ -842,8 +842,8 @@
       "description": "A combination of the classic board game with immersive virtual reality. This high-fidelity prototype can be played with 2 players, that experience a full-fledged 2 hour story of a crime scene in Kiel. The game has additional features, such as a chat with your boss and some clues.",
       "Keywords": "interactive storytelling, virtual reality, vr, game design, board game, 360° video, unity",
       "Mediafile_1": "P65-1.mp4",
-      "Mediafile_2": " ",
-      "Mediafile_3": " "
+      "Mediafile_2": null,
+      "Mediafile_3": null
     },
     {
       "PID": "P66",
@@ -855,8 +855,8 @@
       "description": "An interactive  rhythm experience for the full-dome \"Mediendom\" in Kiel. With up to 4 players you can go on a star-escape-mission to two different planets. Every asset of the game, such as the soundtrack, was self composed \/ created by the team.",
       "Keywords": "music, rhythm, game design, full-dome, 360°, interactive programming, javascript",
       "Mediafile_1": "P66-1.mp4",
-      "Mediafile_2": " ",
-      "Mediafile_3": " "
+      "Mediafile_2": null,
+      "Mediafile_3": null
     },
     {
       "PID": "P67",
@@ -867,9 +867,9 @@
       "Team": "Karoline Meierhofer",
       "description": "3D Model of a stylized girl completely done in Blender",
       "Keywords": "blender, 3d modeling, 3d sculpting, 3d character, character design",
-      "Mediafile_1": " ",
-      "Mediafile_2": " ",
-      "Mediafile_3": " "
+      "Mediafile_1": null,
+      "Mediafile_2": null,
+      "Mediafile_3": null
     },
     {
       "PID": "P68",
@@ -881,8 +881,8 @@
       "description": "Digital illustration - color and light study",
       "Keywords": "digital illustration, digital art, art study, ",
       "Mediafile_1": "P68-1.jpg",
-      "Mediafile_2": " ",
-      "Mediafile_3": " "
+      "Mediafile_2": null,
+      "Mediafile_3": null
     },
     {
       "PID": "P69",
@@ -895,7 +895,7 @@
       "Keywords": "app design, interface design, user experience, usability",
       "Mediafile_1": "P69-1.jpg",
       "Mediafile_2": "P69-2.jpg",
-      "Mediafile_3": " "
+      "Mediafile_3": null
     },
     {
       "PID": "P70",
@@ -920,8 +920,8 @@
       "description": "Musicvideo for Josef Paul by Eigengrau Media Crew",
       "Keywords": "artdirection, setdesign",
       "Mediafile_1": "P71-1.mp4",
-      "Mediafile_2": " ",
-      "Mediafile_3": " "
+      "Mediafile_2": null,
+      "Mediafile_3": null
     },
     {
       "PID": "P72",
@@ -933,8 +933,8 @@
       "description": "Musicvideo for Die roten Knaben",
       "Keywords": "artdirection, setdesign",
       "Mediafile_1": "P72-1.mp4",
-      "Mediafile_2": " ",
-      "Mediafile_3": " "
+      "Mediafile_2": null,
+      "Mediafile_3": null
     },
     {
       "PID": "P73",
@@ -946,8 +946,8 @@
       "description": "Commercial for Diezano",
       "Keywords": "artdirection, setdesign",
       "Mediafile_1": "P73-1.mp4",
-      "Mediafile_2": " ",
-      "Mediafile_3": " "
+      "Mediafile_2": null,
+      "Mediafile_3": null
     },
     {
       "PID": "P74",
@@ -960,7 +960,7 @@
       "Keywords": "illustration, typography, type design, digital art, digital illustration",
       "Mediafile_1": "P74-1.jpg",
       "Mediafile_2": "P74-2.jpg",
-      "Mediafile_3": " "
+      "Mediafile_3": null
     },
     {
       "PID": "P75",
@@ -973,7 +973,7 @@
       "Keywords": "illustration, digital art, art, digital illustration",
       "Mediafile_1": "P75-1.jpg",
       "Mediafile_2": "P75-2.jpg",
-      "Mediafile_3": " "
+      "Mediafile_3": null
     },
     {
       "PID": "P76",
@@ -984,9 +984,9 @@
       "Team": "Theresa Dachauer",
       "description": "Every year around Christmas my mum tells the family, “I won’t bake any cookies this year!” But on the 22nd of the Dezember she always decides to bake nevertheless. I wanted to document the massive amount of work my mum puts into these cookies and how long they last.",
       "Keywords": "illustration, digital art, infographic, information design",
-      "Mediafile_1": " ",
-      "Mediafile_2": " ",
-      "Mediafile_3": " "
+      "Mediafile_1": "P76-1.jpg",
+      "Mediafile_2": null,
+      "Mediafile_3": null
     },
     {
       "PID": "P77",
@@ -1024,8 +1024,8 @@
       "description": "Sound Design for commercial jingle for football team.",
       "Keywords": "sound design, football, commercial, television",
       "Mediafile_1": "P79-1.mp4",
-      "Mediafile_2": " ",
-      "Mediafile_3": " "
+      "Mediafile_2": null,
+      "Mediafile_3": null
     },
     {
       "PID": "P80",
@@ -1037,8 +1037,8 @@
       "description": "Police Camouflage Short Werbung | Ich besitze nicht die Rechte der Bilder \/ des Videos und habe eine neue Tonebene (Musik & Sound) erstellt.",
       "Keywords": "composition, mixing, mastering ",
       "Mediafile_1": "P80-1.mp4",
-      "Mediafile_2": " ",
-      "Mediafile_3": " "
+      "Mediafile_2": null,
+      "Mediafile_3": null
     },
     {
       "PID": "P81",
@@ -1050,8 +1050,8 @@
       "description": "Yves Saint Laurent - Parisienne - Werbung | Ich besitze nicht die Rechte der Bilder \/ des Videos und habe eine neue Tonebene (Musik & Sound) erstellt.",
       "Keywords": "composition, mixing, mastering ",
       "Mediafile_1": "P81-1.mp4",
-      "Mediafile_2": " ",
-      "Mediafile_3": " "
+      "Mediafile_2": null,
+      "Mediafile_3": null
     },
     {
       "PID": "P82",
@@ -1063,8 +1063,8 @@
       "description": "New Monster.co.uk TV Werbung| Ich besitze nicht die Rechte der Bilder \/ des Videos und habe eine neue Tonebene (Musik & Sound) erstellt.",
       "Keywords": "composition, mixing, mastering ",
       "Mediafile_1": "P82-1.mp4",
-      "Mediafile_2": " ",
-      "Mediafile_3": " "
+      "Mediafile_2": null,
+      "Mediafile_3": null
     },
     {
       "PID": "P83",
@@ -1076,8 +1076,8 @@
       "description": "Progressive Breaks track released on Emergent Textures in 2021",
       "Keywords": "sound design, music production, composition, mixing, mastering ",
       "Mediafile_1": "P83-1.mp4",
-      "Mediafile_2": " ",
-      "Mediafile_3": " "
+      "Mediafile_2": null,
+      "Mediafile_3": null
     },
     {
       "PID": "P84",
@@ -1102,8 +1102,8 @@
       "description": "In this project old videos were reused; in fact this particular video was originally an instruction manual. With experimental sounds it was turned into something abstract and new.",
       "Keywords": "sound design, abstract, experimental",
       "Mediafile_1": "P85-1.mp4",
-      "Mediafile_2": " ",
-      "Mediafile_3": " "
+      "Mediafile_2": null,
+      "Mediafile_3": null
     },
     {
       "PID": "P86",
@@ -1115,8 +1115,8 @@
       "description": "An audio-visual installation\/performance, that blends the analogue and digital world. Dealing with the topic of water and it’s accessibility. Worldwide, but also locally.",
       "Keywords": "digital, analogue, installation, performance, sound design, illustration",
       "Mediafile_1": "P86-1.mp4",
-      "Mediafile_2": " ",
-      "Mediafile_3": " "
+      "Mediafile_2": null,
+      "Mediafile_3": null
     },
     {
       "PID": "P87",
