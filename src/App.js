@@ -20,7 +20,7 @@ import { AnimatePresence, motion } from 'framer-motion/dist/framer-motion'
 function App() {
     var Id;
     const location = useLocation();
-    const [selectedMajor, setSelectedMajor] = useState(2); //this number has to change when Input comes from cloud
+    const [selectedMajor, setSelectedMajor] = useState(1); //this number has to change when Input comes from cloud
     return (
         <>
             <AnimatePresence exitBeforeEnter>

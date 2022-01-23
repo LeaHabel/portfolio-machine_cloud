@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { matchProjectToStudent } from '../../src/components/matchProjectToStudent.js'
 import ProjectData from '../assets/data/projectDataV2.json'
 import CommunicationDesigners from '../assets/data/personDataV3-communication.json'
+import MediaComponent from '../components/MediaComponent';
 import { currentMajor } from "../components/currentMajor";
 
 import data from '../assets/data/personDataV3-communication.json';
@@ -18,7 +19,7 @@ export function Person(props) {
     ]
     let choosenProject = 0;
     var results = [];
-    results = data1.PROJECT_DETAILS.find(record => record.PID === currentMajor(0).PERSONAL_DETAILS[0].projects[choosenProject])
+    results = data1.PROJECT_DETAILS.find(record => record.PID === currentMajor(props.selectedMajor).PERSONAL_DETAILS[0].projects[choosenProject])
 
     const length = currentMajor(props.selectedMajor).PERSONAL_DETAILS[0].projects.length;
 
@@ -54,14 +55,9 @@ export function Person(props) {
                     <div className="teaserGallery">
                         <div className="flex-container">
                             <div className="flex-item">
-                                {props.projectMedia1 &&
-                                    <img alt="" className="teaserImage" src={props.projectMedia1} />
-                                }
-                                {props.projectMedia1 &&
-                                    <source src={props.projectMedia1} type="video/mp4" />
-                                }
+                                <img alt="" className="teaserImage" src={props.projectMedia1} />
                             </div>
-                            <div className="flex-item portraitTestImage">
+                            <div className="flex-item">
                                 <img alt="" className="teaserImage" src={props.projectMedia2} />
                             </div>
                             <div className="flex-item">
@@ -75,6 +71,14 @@ export function Person(props) {
                             {/* <div className="flex-item">
                             <source src={Media4} type="video/mp4" />
                         </div> */}
+                            {isImage("https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"])
+                                ?
+                                <img alt="" className="teaserImage" src={props.projectMedia1} />
+                                :
+                                <div className="mediafile mediafile1">
+                                    <MediaComponent url={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"]} />
+                                </div>
+                            }
                             <div className="flex-item">
                                 <img alt="" className="teaserImage" src={matchProjectToStudent(1, 1, CommunicationDesigners, ProjectData, 0)} />
                             </div>
