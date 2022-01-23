@@ -15,8 +15,8 @@ import { Cloudbutton } from "../components/cloudbutton";
 import { CloseButton } from "../components/closeButton";
 import Zoom from 'react-reveal/Zoom';
 import { AnimatePresence, motion } from 'framer-motion/dist/framer-motion'
-import data3 from '../assets/data/personDataV3-communication.json';
-import data from '../assets/data/personDataV3-interaction.json';
+import data from '../assets/data/personDataV3-communication.json';
+import dataInteraction from '../assets/data/personDataV3-interaction.json';
 import dataMedia from '../assets/data/personDataV3-media.json';
 import dataSound from '../assets/data/personDataV3-sound.json';
 import data1 from '../assets/data/projectDataV2.json';
@@ -133,22 +133,28 @@ if(loadOnce) {
 }
 
 
-
+    const [disable, setDisable] = React.useState(false);
     //nächstes Proejct
     const nextProject = () => {
+        let click = 0
     if (choosenProject < 3 && data.PERSONAL_DETAILS[_id].projects[choosenProject+1] !== null) {
+        console.log("New Next 1: " + choosenProject);
+        click++
         setcchoosenProject(choosenProject+1);
-        console.log("New Next PROJECT: " + choosenProject);
-        console.log("New Next PROJECT: " + data.PERSONAL_DETAILS[_id].projects[choosenProject+1]);
+        console.log("New Next Click: " + click);
+        console.log("New Next: " + data.PERSONAL_DETAILS[_id].projects[choosenProject]);
         console.log("New Next PROJECT: " + results["Project"]);
 
         document.getElementById("prevButton").style.opacity = "1";
 
-
-    }
-    if (choosenProject == 3 || data.PERSONAL_DETAILS[_id].projects[choosenProject+1] == null){
+        if (click == 2 || data.PERSONAL_DETAILS[_id].projects[choosenProject] == null){
+            console.log("ENDE")
+            setDisable(true)
             document.getElementById("nextButton").style.opacity = "0.5";
+            document.getElementById("nextButton").disabled = true;
         }
+    }
+
 
        // document.getElementById("mediafile2").src;
     }
@@ -211,6 +217,7 @@ if(loadOnce) {
                                 <img       id={"prevButton"} onClick={() => prevProject()} className="arrows" src={Previous} alt="Previous"/>
                                 <img onClick={() => nextProject()}
                                 className="arrows"
+                                     disabled={disable}
                                      id={"nextButton"}
                                 src={Next}
                                 alt="Next" /></p>
