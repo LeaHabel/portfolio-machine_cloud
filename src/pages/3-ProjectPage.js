@@ -22,7 +22,7 @@ import dataSound from '../assets/data/personDataV3-sound.json';
 import data1 from '../assets/data/projectDataV2.json';
 import MediaComponent from '../components/MediaComponent';
 import {useLocation, useParams} from 'react-router-dom';
-import FindProjectFromPerson from '../components/FindProjectFromPerson';
+//import FindProjectFromPerson from '../components/FindProjectFromPerson';
 
 export function Portfolio() {
     let { id } = useParams()
