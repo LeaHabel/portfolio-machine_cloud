@@ -129,8 +129,8 @@ export function Portfolio(props) {
     };
 
 
-    choosenProject++;
-    console.log("COSSENPROJECT: " + choosenProject);
+    // choosenProject++;
+    // console.log("COSSENPROJECT: " + choosenProject);
     // document.getElementById("mediafile2").src;
 
 
@@ -226,16 +226,16 @@ export function Portfolio(props) {
 
                             <div>
                                 <div className="mediafile mediafile1">
-                                    <MediaComponent
+                                    {/* <MediaComponent
                                         url={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"]}
                                         width="auto"
                                         height="300px"
-                                    />
-                                    {/* <img className="mediafile mediafile1"  src={ imgPos1 } alt="Projectmedia"/> */}
+                                    /> */}
+                                    <img className="mediafile mediafile1" src={imgPos1} alt="Projectmedia" />
                                 </div>
-                                <img className="mediafile mediafile2" src={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_2"]} alt="Projectmedia" />
+                                <img className="mediafile mediafile2" src={imgPos2} alt="Projectmedia" />
                             </div>
-                            <img className=" mediafile mediafile3" src={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_3"]} alt="Projectmedia" />
+                            <img className=" mediafile mediafile3" src={imgPos3} alt="Projectmedia" />
                         </div>
                     </>
                 </Zoom>
