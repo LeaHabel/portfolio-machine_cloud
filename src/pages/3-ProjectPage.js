@@ -24,11 +24,9 @@ import MediaComponent from '../components/MediaComponent';
 import {useLocation, useParams} from 'react-router-dom';
 import FindProjectFromPerson from '../components/FindProjectFromPerson';
 
-
 export function Portfolio() {
     let { id } = useParams()
     let _id = id - 1
-
 
     console.log("State: " + id)
     console.log("State2: " + _id)
@@ -187,7 +185,7 @@ if(loadOnce) {
                     <>
                         <img className="background-specs" src={PortfolioBG} alt="Portfolio Background" />
                         <div className="contact">
-                            <img className="profil" src={"https://d18p28upkrc95t.cloudfront.net/persons/" + data.PERSONAL_DETAILS[_id].profilepic} alt="Profil"/>
+                            <img className="profil" src={"https://d18p28upkrc95t.cloudfront.net/persons/" + data.PERSONAL_DETAILS[_id].profilepic} alt="Profil" />
                             <h1 className="head1"> {data.PERSONAL_DETAILS[_id].FirstName} {data.PERSONAL_DETAILS[_id].Surname}</h1>
                             <p className="head3">{data.PERSONAL_DETAILS[_id].Major}</p>
                             <p className="paragraphw"><img className="icons" src={MAILicon}
