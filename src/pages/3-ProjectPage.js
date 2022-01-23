@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import './3-ProjectPage.css'
 import MaxMuster from "../assets/MaxMuster.png";
 import PortfolioBG from "../assets/PortfolioBG.png";
@@ -23,10 +23,12 @@ import data1 from '../assets/data/projectDataV2.json';
 import MediaComponent from '../components/MediaComponent';
 import {useLocation, useParams} from 'react-router-dom';
 import FindProjectFromPerson from '../components/FindProjectFromPerson';
+import ReactSync from 'react-sync';
 
 export function Portfolio() {
     let { id } = useParams()
     let _id = id - 1
+
 
     console.log("State: " + id)
     console.log("State2: " + _id)
@@ -44,48 +46,114 @@ export function Portfolio() {
             scale: 0.1
         }
     }
+     const [choosenProject, setcchoosenProject] =useState(0);
+    var results = [];
+    results = data1.PROJECT_DETAILS.find( record => record.PID === data.PERSONAL_DETAILS[_id].projects[choosenProject])
 
 
-    const img = new Image();
-    img.src = 'http://placekitten.com/1080/1920';
+    const[imgPos1, setimgPos1] = useState(0)
+    const [imgPos2, setimgPos2] = useState(0)
+    const [imgPos3, setimgPos3] = useState(0)
+    var isLandscapeBoolean
+    const img1 = new Image();
+    const img2 = new Image();
+    const img3 = new Image();
 
-    img.onload = () => {
-        console.log(img.height);
-        console.log(img.width);
+
+    img1.src = "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"];
+    img1.onload = () => {
+
+        if (img1.width / img1.height <= 1) {
+            isLandscapeBoolean = false;
+            setimgPos2(img1.src)
+            console.log("Hochformatbild " + imgPos2)
+        } else {
+                isLandscapeBoolean = true;
+                setimgPos1(img1.src)
+                console.log("Querformatbild 1 " + imgPos1)
+
+        }
+
+    };
+    img2.src = "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_2"];
+    img2.onload = () => {
+
+        if (img2.width / img2.height <= 1) {
+            isLandscapeBoolean = false;
+            setimgPos2(img2.src)
+            console.log("Hochformatbild " + imgPos2)
+        } else {
+            isLandscapeBoolean = true;
+            if (imgPos1 == 0 ) {
+                setimgPos1(img2.src)
+                console.log("Querformatbild 1 " + imgPos1)
+            }
+            else {
+                setimgPos3(img2.src)
+                console.log("Querformatbild 3 " + imgPos3)
+            }
+        }
+
     };
 
-    isLandscape(img);
+    img3.src = "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_3"];
+    img3.onload = () => {
+
+        if (img3.width / img3.height <= 1) {
+            isLandscapeBoolean = false;
+            setimgPos2(img3.src)
+            console.log("Hochformatbild " + imgPos2)
+        } else {
+            isLandscapeBoolean = true;
+            if (imgPos1 == 0 ) {
+                setimgPos1(img3.src)
+                console.log("Querformatbild 1 " + imgPos1)
+            }
+            else {
+                setimgPos3(img3.src)
+                console.log("Querformatbild 3 " + imgPos3)
+            }
+        }
+
+    };
+
+
+
+
 
     //nächstes Proejct
     const nextProject = () => {
+    if (choosenProject < 3 && data.PERSONAL_DETAILS[_id].projects[choosenProject+1] !== null) {
+        setcchoosenProject(choosenProject+1);
+        console.log("New Next PROJECT: " + choosenProject);
+        console.log("New Next PROJECT: " + data.PERSONAL_DETAILS[_id].projects[choosenProject+1]);
+        document.getElementById("prevButton").style.opacity = "1";
+    }
+    if (choosenProject == 3 || data.PERSONAL_DETAILS[_id].projects[choosenProject+1] == null){
+            document.getElementById("nextButton").style.opacity = "0.5";
+        }
 
-        choosenProject ++;
-        console.log("COSSENPROJECT: "+choosenProject);
        // document.getElementById("mediafile2").src;
     }
     //vorheriges Proejct
     const prevProject = () => {
-        choosenProject --;
-        console.log("COSSENPROJECT: "+choosenProject);
+        if (choosenProject > 0) {
+            setcchoosenProject(choosenProject-1);
+            console.log("New Prev PROJECT: " + choosenProject);
+            document.getElementById("nextButton").style.opacity = "1";
+        }
+        if (choosenProject == 0 || data.PERSONAL_DETAILS[_id].projects[choosenProject+1] == null){
+            document.getElementById("prevButton").style.opacity = "0.5";
+        }
     }
 
-    function isLandscape(imgtotest, isLandscapeBoolean) {
-        //tolle Rechnung die rausfindet ob landscape
-        if (imgtotest.width / imgtotest.height <= 1) {
-            isLandscapeBoolean = false;
-        }
-        return (
-            console.log(imgtotest + " Landscape: " + isLandscapeBoolean)
-        )
-    }
-    let choosenProject = 0;
     var results = [];
      results = data1.PROJECT_DETAILS.find( record => record.PID === data.PERSONAL_DETAILS[_id].projects[choosenProject])
 
     const length = data.PERSONAL_DETAILS[_id].projects.length;
-    console.log("Array "+ length)
+   // console.log("Array "+ "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_3"])
 
-    console.log("filelink: " + "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"])
+  //  console.log("filelink: " + "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"])
 
 
     //console.log("Projekte: " + data1.PROJECT_DETAILS[data.PERSONAL_DETAILS[_id].projects[0]].Project)
@@ -123,22 +191,26 @@ export function Portfolio() {
                             <p className="paragraphbold">Team</p>
                             <p className="paragraphb">{results["Team"]}</p>
                             <p className="arrows">
-                                <img onClick={() => prevProject()} className="arrows" src={Previous} alt="Previous"/>
+                                <img       id={"prevButton"} onClick={() => prevProject()} className="arrows" src={Previous} alt="Previous"/>
                                 <img onClick={() => nextProject()}
                                 className="arrows"
+                                     id={"nextButton"}
                                 src={Next}
                                 alt="Next" /></p>
                         </div>
 
                         <div>
+
                             <div>
                                 <div className="mediafile mediafile1">
-                                    <MediaComponent url="https://d18p28upkrc95t.cloudfront.net/projects/P62-1.mp4"/>
+                                   {/* <MediaComponent url="https://d18p28upkrc95t.cloudfront.net/projects/P62-1.mp4"/>*/}
+                                    <img className="mediafile mediafile1"  src={ imgPos1 } alt="Projectmedia"/>
                                 </div>
-                                <img className="mediafile mediafile2"  src={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_2"]} alt="Projectmedia"/>
+                                <img className="mediafile mediafile2"  src={ imgPos2 } alt="Projectmedia"/>
                             </div>
-                            <img className=" mediafile mediafile3"  src={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_3"]} alt="Projectmedia"/>
-                        </div>
+                            <img className=" mediafile mediafile3"  src={imgPos3} alt="Projectmedia"/>
+
+                            </div>
                     </>
                 </Zoom>
                 <div>
