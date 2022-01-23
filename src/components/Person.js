@@ -4,18 +4,45 @@ import { Link } from "react-router-dom";
 import { matchProjectToStudent } from '../../src/components/matchProjectToStudent.js'
 import ProjectData from '../assets/data/projectDataV2.json'
 import CommunicationDesigners from '../assets/data/personDataV3-communication.json'
+import { currentMajor } from "../components/currentMajor";
+
+import data from '../assets/data/personDataV3-communication.json';
+
+import data1 from '../assets/data/projectDataV2.json';
 
 
 export function Person(props) {
-    var Id= props.id;
+    var Id = props.id;
     let data = [
-        {id:Id}
+        { id: Id }
     ]
+    let choosenProject = 0;
+    var results = [];
+    results = data1.PROJECT_DETAILS.find(record => record.PID === currentMajor(0).PERSONAL_DETAILS[0].projects[choosenProject])
+
+    const length = currentMajor(props.selectedMajor).PERSONAL_DETAILS[0].projects.length;
+
+    function getFileExtension(filename) {
+        return filename.split('.').pop();
+
+    }
+
+    function isImage(filename) {
+        ;
+        if (getFileExtension(filename) === "jpg" ||
+            getFileExtension(filename) === "png") {
+            return true
+        } else {
+            return false
+        }
+    }
+    console.log("is image " + isImage("https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"]));
+
     return (
         <>
-            <Link to= {{
-                pathname: "/profil/"+ Id,
-                state: {_id: 3 }// your data array of objects
+            <Link to={{
+                pathname: "/profil/" + Id,
+                state: { _id: 3 }// your data array of objects
             }} className={`big maskBubble box  ${props.position}`} id={Id}>
                 <div className="person box" >
                     <div id="personName">
