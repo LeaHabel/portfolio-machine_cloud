@@ -25,19 +25,45 @@ export function Person(props) {
 
     function getFileExtension(filename) {
         return filename.split('.').pop();
-
     }
 
     function isImage(filename) {
-        ;
         if (getFileExtension(filename) === "jpg" ||
             getFileExtension(filename) === "png") {
-            return true
+            return
         } else {
-            return false
+            return (
+                <div className="videoTeaser">
+                    <MediaComponent url={filename} width="auto" height="30px" />
+                </div>
+            )
         }
     }
-    console.log("is image " + isImage("https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"]));
+    //console.log("is image " + isImage("https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"]));
+
+    function hasContent(filename) {
+        if (filename) {
+            return console.log("filled")
+        }
+    }
+
+    function showMediaSnippets(filename) {
+        console.log(filename)
+        let fileExtension = filename.split('.').pop();
+        if (fileExtension === "jpg" || fileExtension === "png") {
+            return <img alt="" className="teaserImage" src={filename} />
+        } else if (fileExtension === "mp4") {
+            return (
+                <div className="videoTeaser">
+                    <MediaComponent url={filename} width="auto" height="50px" />
+                </div>
+            )
+        } else if (filename) {
+            return null
+        }
+
+
+    }
 
     return (
         <>
@@ -54,39 +80,39 @@ export function Person(props) {
 
                     <div className="teaserGallery">
                         <div className="flex-container">
-                            <div className="flex-item">
-                                <img alt="" className="teaserImage" src={props.projectMedia1} />
-                            </div>
-                            <div className="flex-item">
-                                <img alt="" className="teaserImage" src={props.projectMedia2} />
-                            </div>
-                            <div className="flex-item">
 
-                                <img alt="" className="teaserImage" src={props.projectMedia3} /> {/* png images won't be displayed */}
-
+                            <div className="flex-item">
+                                {showMediaSnippets(props.projectMedia1_0)}
                             </div>
+
+                            <div className="flex-item">
+                                {showMediaSnippets(props.projectMedia1_1)}
+                            </div>
+
+                            <div className="flex-item">
+                                {showMediaSnippets(props.projectMedia1_2)}
+                            </div>
+
                         </div>
                         <div className="flex-container">
 
                             {/* <div className="flex-item">
                             <source src={Media4} type="video/mp4" />
                         </div> */}
-                            {isImage("https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"])
-                                ?
-                                <img alt="" className="teaserImage" src={props.projectMedia1} />
-                                :
-                                <div className="mediafile mediafile1">
-                                    <MediaComponent url={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"]} />
-                                </div>
-                            }
+
                             <div className="flex-item">
-                                <img alt="" className="teaserImage" src={matchProjectToStudent(1, 1, CommunicationDesigners, ProjectData, 0)} />
+                                {showMediaSnippets(props.projectMedia2_0)}
+                            </div>
+
+                            <div className="flex-item">
+                                {showMediaSnippets(props.projectMedia2_1)}
                             </div>
                             <div className="flex-item">
-                                <img alt="" className="teaserImage" src="https://d18p28upkrc95t.cloudfront.net/testimage2.jpg" />
+                                {showMediaSnippets(props.projectMedia2_2)}
                             </div>
+
                             <div className="flex-item">
-                                <img alt="" className="teaserImage" src="https://d18p28upkrc95t.cloudfront.net/cat.jpg" />
+                                {showMediaSnippets(props.projectMedia3_0)}
                             </div>
                         </div>
                     </div>

@@ -6,19 +6,20 @@ const MediaComponent = (props) => {
   return (
     <div>
       <ReactPlayer
-          url={props.url}
-          controls
-          muted={true}
-          width="480px"
-          height="300px"
-          config={{
-              file: {
-                  attributes: {
-                    controlsList: 'nodownload noplaybackrate',
-                    disablepictureinpicture: 'true'
-                  }
-            }}}
-          onContextMenu={e => e.preventDefault()}
+        url={props.url}
+        controls
+        muted={true}
+        width={props.width}
+        height={props.height}
+        config={{
+          file: {
+            attributes: {
+              controlsList: 'nodownload noplaybackrate',
+              disablepictureinpicture: 'true'
+            }
+          }
+        }}
+        onContextMenu={e => e.preventDefault()}
       />
     </div>
   );

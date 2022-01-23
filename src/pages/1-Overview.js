@@ -8,6 +8,7 @@ import { matchProjectToStudent } from '../../src/components/matchProjectToStuden
 import { Cloudbutton } from "../components/cloudbutton";
 import { AnimatePresence, motion } from 'framer-motion/dist/framer-motion'
 import { currentMajor } from "../components/currentMajor";
+import FindProjectFromPerson from "../components/FindProjectFromPerson";
 
 
 export function Overview(props) {
@@ -41,7 +42,7 @@ export function Overview(props) {
         },
         closed: { opacity: 0, x: "-100%" },
     }
-
+    console.log("yeah testing " + FindProjectFromPerson(0, 0, props.selectedMajor)["Mediafile_1"])
 
 
     return (
@@ -61,14 +62,36 @@ export function Overview(props) {
                             id={user.virtualID}
                             key={user.virtualID}
                             position={"pos" + user.virtualID}
-                            projectMedia1={
-                                matchProjectToStudent(1, 1, currentMajor(props.selectedMajor), ProjectData, user.virtualID)
+
+                            // Uff
+                            projectMedia1_0={
+                                "https://d18p28upkrc95t.cloudfront.net/projects/" + FindProjectFromPerson(user.virtualID - 1, 0, props.selectedMajor)["Mediafile_1"]
                             }
-                            projectMedia2={
-                                matchProjectToStudent(1, 2, currentMajor(props.selectedMajor), ProjectData, user.virtualID)
+                            projectMedia1_1={
+                                "https://d18p28upkrc95t.cloudfront.net/projects/" + FindProjectFromPerson(user.virtualID - 1, 0, props.selectedMajor)["Mediafile_2"]
                             }
-                            projectMedia3={
-                                matchProjectToStudent(1, 3, currentMajor(props.selectedMajor), ProjectData, user.virtualID)
+                            projectMedia1_2={
+                                "https://d18p28upkrc95t.cloudfront.net/projects/" + FindProjectFromPerson(user.virtualID - 1, 0, props.selectedMajor)["Mediafile_3"]
+                            }
+                            // Imagine a smart function call here
+                            projectMedia2_0={
+                                "https://d18p28upkrc95t.cloudfront.net/projects/" + FindProjectFromPerson(user.virtualID - 1, 1, props.selectedMajor)["Mediafile_1"]
+                            }
+                            projectMedia2_1={
+                                "https://d18p28upkrc95t.cloudfront.net/projects/" + FindProjectFromPerson(user.virtualID - 1, 1, props.selectedMajor)["Mediafile_2"]
+                            }
+                            projectMedia2_2={
+                                "https://d18p28upkrc95t.cloudfront.net/projects/" + FindProjectFromPerson(user.virtualID - 1, 1, props.selectedMajor)["Mediafile_3"]
+                            }
+                            // copy the pasta the hell out of it 
+                            projectMedia3_0={
+                                "https://d18p28upkrc95t.cloudfront.net/projects/" + FindProjectFromPerson(user.virtualID - 1, 2, props.selectedMajor)["Mediafile_1"]
+                            }
+                            projectMedia3_1={
+                                "https://d18p28upkrc95t.cloudfront.net/projects/" + FindProjectFromPerson(user.virtualID - 1, 2, props.selectedMajor)["Mediafile_2"]
+                            }
+                            projectMedia3_2={
+                                "https://d18p28upkrc95t.cloudfront.net/projects/" + FindProjectFromPerson(user.virtualID - 1, 2, props.selectedMajor)["Mediafile_3"]
                             }
                             clickedID={user.virtualID}
                             selectedMajor={props.selectedMajor}

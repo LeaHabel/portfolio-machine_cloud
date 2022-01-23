@@ -24,6 +24,8 @@ import MediaComponent from '../components/MediaComponent';
 import { useLocation, useParams } from 'react-router-dom';
 import { currentMajor } from "../components/currentMajor";
 
+import FindProjectFromPerson from "../components/FindProjectFromPerson";
+
 export function Portfolio(props) {
     let { id } = useParams()
     let _id = id - 1
@@ -87,7 +89,7 @@ export function Portfolio(props) {
 
     console.log("filelink: " + "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"])
 
-
+    // console.log("yeah testing " + FindProjectFromPerson(_id, 0, props.selectedMajor)["PID"])
 
     //console.log("Projekte: " + data1.PROJECT_DETAILS[data.PERSONAL_DETAILS[_id].projects[0]].Project)
     return (
@@ -134,7 +136,11 @@ export function Portfolio(props) {
                         <div>
                             <div>
                                 <div className="mediafile mediafile1">
-                                    <MediaComponent url={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"]} />
+                                    <MediaComponent
+                                        url={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"]}
+                                        width="auto"
+                                        height="30%"
+                                    />
                                 </div>
                                 <img className="mediafile mediafile2" src={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_2"]} alt="Projectmedia" />
                             </div>
