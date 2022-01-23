@@ -23,7 +23,7 @@ import data1 from '../assets/data/projectDataV2.json';
 import MediaComponent from '../components/MediaComponent';
 import {useLocation, useParams} from 'react-router-dom';
 import FindProjectFromPerson from '../components/FindProjectFromPerson';
-import ReactSync from 'react-sync';
+
 
 export function Portfolio() {
     let { id } = useParams()
@@ -55,6 +55,9 @@ export function Portfolio() {
     const [imgPos2, setimgPos2] = useState(0)
     const [imgPos3, setimgPos3] = useState(0)
     var isLandscapeBoolean
+    var loadOnce = true
+    var loadOnce2
+    var loadOnce3
     const img1 = new Image();
     const img2 = new Image();
     const img3 = new Image();
@@ -62,62 +65,72 @@ export function Portfolio() {
 
     img1.src = "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"];
     img1.onload = () => {
-
+        console.log("Img1")
         if (img1.width / img1.height <= 1) {
             isLandscapeBoolean = false;
             setimgPos2(img1.src)
             console.log("Hochformatbild " + imgPos2)
         } else {
-                isLandscapeBoolean = true;
-                setimgPos1(img1.src)
-                console.log("Querformatbild 1 " + imgPos1)
-
-        }
-
-    };
-    img2.src = "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_2"];
-    img2.onload = () => {
-
-        if (img2.width / img2.height <= 1) {
-            isLandscapeBoolean = false;
-            setimgPos2(img2.src)
-            console.log("Hochformatbild " + imgPos2)
-        } else {
             isLandscapeBoolean = true;
-            if (imgPos1 == 0 ) {
-                setimgPos1(img2.src)
-                console.log("Querformatbild 1 " + imgPos1)
-            }
-            else {
-                setimgPos3(img2.src)
-                console.log("Querformatbild 3 " + imgPos3)
-            }
+            setimgPos1(img1.src)
+            console.log("Querformatbild 1 " + imgPos1)
+
         }
 
     };
 
+
+
+        console.log("Img2")
+        img2.src = "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_2"];
+        img2.onload = () => {
+
+            if (img2.width / img2.height <= 1) {
+                isLandscapeBoolean = false;
+                setimgPos2(img2.src)
+                console.log("Hochformatbild " + imgPos2)
+            } else {
+                isLandscapeBoolean = true;
+                if (imgPos1 == null) {
+                    setimgPos1(img2.src)
+                    console.log("Querformatbild 1 " + imgPos1)
+                } else {
+                    setimgPos3(img2.src)
+                    console.log("Querformatbild 3 " + imgPos3)
+                }
+            }
+
+        };
+
+
+if(loadOnce) {
+
+    console.log("Img3")
     img3.src = "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_3"];
     img3.onload = () => {
 
-        if (img3.width / img3.height <= 1) {
+        if (img3.width / img3.height <= 1 && loadOnce === true) {
             isLandscapeBoolean = false;
+            loadOnce = false;
             setimgPos2(img3.src)
             console.log("Hochformatbild " + imgPos2)
-        } else {
+        } else if (loadOnce === true) {
+            loadOnce = false;
             isLandscapeBoolean = true;
-            if (imgPos1 == 0 ) {
+            if (imgPos1 == null ) {
                 setimgPos1(img3.src)
-                console.log("Querformatbild 1 " + imgPos1)
+               console.log("Querformatbild 1 " + imgPos1)
             }
             else {
                 setimgPos3(img3.src)
-                console.log("Querformatbild 3 " + imgPos3)
+               console.log("Querformatbild 3 " + imgPos3)
             }
         }
-
+        loadOnce = false;
+        console.log("LoadOnce " + loadOnce)
     };
 
-
+}
 
 
 
@@ -127,7 +140,10 @@ export function Portfolio() {
         setcchoosenProject(choosenProject+1);
         console.log("New Next PROJECT: " + choosenProject);
         console.log("New Next PROJECT: " + data.PERSONAL_DETAILS[_id].projects[choosenProject+1]);
+        console.log("New Next PROJECT: " + results["Project"]);
+
         document.getElementById("prevButton").style.opacity = "1";
+
 
     }
     if (choosenProject == 3 || data.PERSONAL_DETAILS[_id].projects[choosenProject+1] == null){
