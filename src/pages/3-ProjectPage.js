@@ -128,6 +128,7 @@ export function Portfolio() {
         console.log("New Next PROJECT: " + choosenProject);
         console.log("New Next PROJECT: " + data.PERSONAL_DETAILS[_id].projects[choosenProject+1]);
         document.getElementById("prevButton").style.opacity = "1";
+
     }
     if (choosenProject == 3 || data.PERSONAL_DETAILS[_id].projects[choosenProject+1] == null){
             document.getElementById("nextButton").style.opacity = "0.5";
