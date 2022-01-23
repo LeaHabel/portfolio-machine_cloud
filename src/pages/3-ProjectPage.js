@@ -15,8 +15,8 @@ import { Cloudbutton } from "../components/cloudbutton";
 import { CloseButton } from "../components/closeButton";
 import Zoom from 'react-reveal/Zoom';
 import { AnimatePresence, motion } from 'framer-motion/dist/framer-motion'
-import data from '../assets/data/personDataV3-communication.json';
-import dataInteraction from '../assets/data/personDataV3-interaction.json';
+import data3 from '../assets/data/personDataV3-communication.json';
+import data from '../assets/data/personDataV3-interaction.json';
 import dataMedia from '../assets/data/personDataV3-media.json';
 import dataSound from '../assets/data/personDataV3-sound.json';
 import data1 from '../assets/data/projectDataV2.json';
@@ -121,7 +121,7 @@ if(loadOnce) {
                 setimgPos1(img3.src)
                console.log("Querformatbild 1 " + imgPos1)
             }
-            else {
+            else if (imgPos3 == null) {
                 setimgPos3(img3.src)
                console.log("Querformatbild 3 " + imgPos3)
             }
