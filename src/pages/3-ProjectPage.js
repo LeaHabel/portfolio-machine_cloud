@@ -87,30 +87,36 @@ export function Portfolio(props) {
 
     var isLandscapeBoolean
     var loadOnce = true
+    var videoPos1
     var loadOnce2
     var loadOnce3
     const img1 = new Image();
     const img2 = new Image();
     const img3 = new Image();
-
     const placeholder = new Image();
 
 
 
+
+    //wenn !videoPos1 -> wenn kein Video an 1. Stelle
     img1.src = "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"];
     img1.onload = () => {
         if (img1.width / img1.height <= 1) {
             isLandscapeBoolean = false;
-            setimgPos2(img1.src)
-            console.log("BLA imgpos2 " + imgPos2)
+            setimgPos2(img1.src) //is portrait -> pos2
+            // console.log("BLA imgpos2 " + imgPos2)
         } else {
             isLandscapeBoolean = true;
-            setimgPos1(img1.src)
-            console.log("BLA imgpos1 " + imgPos1)
+            setimgPos1(img1.src) //is landscape ->pos1
+            // console.log("BLA imgpos1 " + imgPos1)
 
         }
 
     };
+    if (videoPos1) {
+        setimgPos1(placeholder)
+    }
+
 
 
     img2.src = "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_2"];
@@ -118,18 +124,20 @@ export function Portfolio(props) {
 
         if (img2.width / img2.height <= 1) {
             isLandscapeBoolean = false;
-            setimgPos2(img2.src)
+            setimgPos2(img2.src) //is portrait -> pos2
         } else {
-            isLandscapeBoolean = true;
-            if (imgPos1 == null) {
-                setimgPos1(img2.src)
+            isLandscapeBoolean = true; //is landscape
+            if (imgPos1 == null) { //if pos1 is still empty
+                setimgPos1(img2.src)  //pos1
 
             } else {
-                setimgPos3(img2.src)
+                setimgPos3(img2.src) //else pos3
             }
         }
 
     };
+
+
 
 
     // choosenProject++;
@@ -137,31 +145,30 @@ export function Portfolio(props) {
     // document.getElementById("mediafile2").src;
 
 
-
-    console.log("Img3")
     img3.src = "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_3"];
     img3.onload = () => {
 
-        if (img3.width / img3.height <= 1 && loadOnce === true) {
+        if (img3.width / img3.height <= 1 && loadOnce === true) { //first iteration
             isLandscapeBoolean = false;
             loadOnce = false;
-            setimgPos2(img3.src)
-            console.log("Hochformatbild " + imgPos2)
-        } else if (loadOnce === true) {
+            setimgPos2(img3.src) //is portrait -> pos2
+        } else if (loadOnce === true) { //first iteration
             loadOnce = false;
-            isLandscapeBoolean = true;
+            isLandscapeBoolean = true; //is landscape
             if (imgPos1 == null) {
-                setimgPos1(img3.src)
-                console.log("Querformatbild 1 " + imgPos1)
+                setimgPos1(img3.src) //if pos1 empty -> pos1
             }
             else if (imgPos3 == null) {
-                setimgPos3(img3.src)
-                console.log("Querformatbild 3 " + imgPos3)
+                setimgPos3(img3.src) //if pos3 empty -> pos3 
             }
         }
         loadOnce = false;
-        console.log("LoadOnce " + loadOnce)
     };
+
+    if (imgPos2 === null) {
+
+    }
+
 
 
 
@@ -184,16 +191,15 @@ export function Portfolio(props) {
 
     //console.log("Projekte: " + data1.PROJECT_DETAILS[data.PERSONAL_DETAILS[_id].projects[0]].Project)
 
-    function showRightContent(checkFile) {
+    function checkForVideo(checkFile) {
         let fileExtension = checkFile.split('.').pop();
         let projectIndex = checkFile.split('-').pop();
         projectIndex = projectIndex.charAt(0);
 
 
         if (fileExtension === "mp4" || fileExtension === "mov") {
-            //setimgPos1(placeholder)
+            videoPos1 = true;
             return (<div className="mediafile mediafile1">
-
                 <MediaComponent
                     url={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"]}
                     width="auto"
@@ -202,10 +208,14 @@ export function Portfolio(props) {
             </div>
             )
         } else if (fileExtension === "jpg" || fileExtension === "png") {
-            return <img className="mediafile mediafile1" src={imgPos1} alt="Projectmedia" />
+            return <img id="changePos" className="mediafile mediafile1" src={imgPos1} alt="Projectmedia" />
+        } else if (!checkFile) {
+            return null
         }
-
     }
+
+
+
     return (
         <div className="Portfolio">
             <motion.div variants={bodyVariants} initial="hidden" animate="visible" exit={"exit"} className="overflow">
@@ -249,18 +259,15 @@ export function Portfolio(props) {
                         </div>
 
                         <div>
+                            <div className="mediaRow">
 
-                            <div>
-                                <div className="">
-                                    {showRightContent(results["Mediafile_1"])}
-                                    {/* <MediaComponent
-                                        url={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"]}
-                                        width="auto"
-                                        height="300px"
-                                    /> */}
-                                    {/* <img className="mediafile mediafile1" src={imgPos1} alt="Projectmedia" /> */}
-                                </div>
-                                <img className="mediafile mediafile2" src={imgPos2} alt="Projectmedia" />
+                                {checkForVideo(results["Mediafile_1"])}
+
+                                {imgPos2 ?
+                                    <img className="mediafile mediafile2" src={imgPos2} alt="Projectmedia" />
+                                    :
+                                    null
+                                }
                             </div>
                             <img className=" mediafile mediafile3" src={imgPos3} alt="Projectmedia" />
                         </div>
