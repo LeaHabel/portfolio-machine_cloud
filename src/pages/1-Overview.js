@@ -14,7 +14,18 @@ import $ from "jquery"
 export function Overview(props) {
     useEffect(() => {
         startThreeJS();
-    })
+
+        const script = document.createElement('script');
+
+        script.src = "https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js";
+        script.async = true;
+
+        document.body.appendChild(script);
+
+        return () => {
+            document.body.removeChild(script);
+        }
+    }, []);
 
     const [isOpen, setIsOpen] = useState(false)
 
@@ -43,7 +54,22 @@ export function Overview(props) {
         closed: { opacity: 0, x: "-100%" },
     }
 
+    // var tilesize = 18, tilecount = 15;
+    // var gRows = Math.floor($(".container").innerWidth() / tilesize);
+    // var gCols = Math.floor($('.container').innerHeight() / tilesize);
 
+    // var vals = _.shuffle(_.range(tilecount));
+    // var xpos = _.shuffle(_.range(gRows));
+    // var ypos = _.shuffle(_.range(gCols));
+
+    // _.each(vals, function (d, i) {
+    //     var $newdiv = $('<div/>').addClass("tile");
+    //     $newdiv.css({
+    //         'position': 'absolute',
+    //         'left': (xpos[i] * tilesize) + 'px',
+    //         'top': (ypos[i] * tilesize) + 'px'
+    //     }).appendTo('.container').html(d);
+    // });
 
     return (
         <>
