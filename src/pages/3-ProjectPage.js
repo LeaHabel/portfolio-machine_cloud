@@ -181,17 +181,20 @@ export function Portfolio(props) {
 
     //console.log("Projekte: " + data1.PROJECT_DETAILS[data.PERSONAL_DETAILS[_id].projects[0]].Project)
 
-    function showRightContent(temp) {
-        let fileExtension = temp.split('.').pop();
-
-        if (fileExtension === "mp4") {
+    function showRightContent(checkFile) {
+        let fileExtension = checkFile.split('.').pop();
+        if (fileExtension === "jpg") {
+            return <img className="mediafile mediafile2" src={imgPos1} alt="Projectmedia" />
+        }
+        else if (fileExtension === "mp4") {
             return (<MediaComponent
                 url={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"]}
                 width="auto"
                 height="300px"
             />)
-        } else {
-            return <img className="mediafile mediafile2" src={imgPos1} alt="Projectmedia" />
+
+        } else if (!checkFile) {
+            return null
         }
 
     }
