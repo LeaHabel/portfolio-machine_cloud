@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { matchProjectToStudent } from '../../src/components/matchProjectToStudent.js'
 import ProjectData from '../assets/data/projectDataV2.json'
 import CommunicationDesigners from '../assets/data/personDataV3-communication.json'
-import MediaComponent from '../components/MediaComponent';
+import MediaComponentSnippet from '../components/MediaComponentSnippet';
 import { currentMajor } from "../components/currentMajor";
 
 import data from '../assets/data/personDataV3-communication.json';
@@ -34,7 +34,7 @@ export function Person(props) {
         } else {
             return (
                 <div className="videoTeaser">
-                    <MediaComponent url={filename} width="auto" height="30px" />
+                    <MediaComponentSnippet url={filename} width="auto" height="30px" />
                 </div>
             )
         }
@@ -56,7 +56,7 @@ export function Person(props) {
         } else if (fileExtension === "mp4") {
             return (
                 <div className="videoTeaser">
-                    <MediaComponent url={filename} width="auto" height="50px" />
+                    <MediaComponentSnippet url={filename} width="auto" height="50px" />
                 </div>
             )
         } else if (filename) {
@@ -94,6 +94,7 @@ export function Person(props) {
                                 {showMediaSnippets(props.projectMedia1_2)}
                             </div>
 
+
                         </div>
                         <div className="flex-container">
 
@@ -115,6 +116,10 @@ export function Person(props) {
                             <div className="flex-item">
                                 {showMediaSnippets(props.projectMedia3_0)}
                             </div>
+                            <div className="flex-item">
+                                {showMediaSnippets(props.projectMedia3_1)}
+                            </div>
+
                         </div>
                     </div>
 
