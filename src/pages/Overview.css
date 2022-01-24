@@ -99,10 +99,8 @@ h4{
 .container {
     position: relative;
 }
-.test tile {
+.tile {
     width: 16px;
     height: 16px;
     text-align:center;
-    background: steelblue;
-    margin:1px;
 }
