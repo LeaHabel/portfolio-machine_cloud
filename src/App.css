@@ -152,10 +152,10 @@ h4{
 
 /* ------ Person ------ */
 .big{
-  width: 17vw;
+  width: 22vw;
   height: 16vw;
-      position: relative;
-      float: left;
+  position: relative;
+  float: left;
 }
 
 .person {
@@ -178,6 +178,7 @@ h4{
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+
 
 .bubbleName {
   margin: 0;
@@ -233,7 +234,7 @@ h4{
 }
 
 .maskingShape {
-  transform: scale(0.3);
+  transform: scale(0.9);
 }
 #clip {
 
