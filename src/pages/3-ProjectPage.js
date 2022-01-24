@@ -29,6 +29,7 @@ import FindProjectFromPerson from "../components/FindProjectFromPerson";
 export function Portfolio(props) {
     let { id } = useParams()
     let _id = id - 1
+
     //nächstes Proejct
     const nextProject = () => {
         if (choosenProject < 3 && currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].projects[choosenProject + 1] !== null) {
@@ -36,12 +37,14 @@ export function Portfolio(props) {
             document.getElementById("prevButton").style.opacity = "1";
             document.getElementById("prevButton").style.pointerEvents = "initial";
             console.log("BLAA " + img1.src)
+            setimgPos1(null)
+            setimgPos2(null)
+            setimgPos3(null)
             if (choosenProject == 1 || currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].projects[choosenProject + 2] == null) {
                 document.getElementById("nextButton").style.opacity = "0";
                 document.getElementById("nextButton").style.pointerEvents = "none";
             }
         }
-
 
         // document.getElementById("mediafile2").src;
     }
@@ -51,7 +54,9 @@ export function Portfolio(props) {
             setcchoosenProject(choosenProject - 1);
             document.getElementById("nextButton").style.opacity = "1";
             document.getElementById("nextButton").style.pointerEvents = "initial";
-
+            setimgPos1(null)
+            setimgPos2(null)
+            setimgPos3(null)
             if (choosenProject == 1) {
                 document.getElementById("prevButton").style.opacity = "0";
                 document.getElementById("prevButton").style.pointerEvents = "none";
@@ -100,6 +105,8 @@ export function Portfolio(props) {
 
     //wenn !videoPos1 -> wenn kein Video an 1. Stelle
     img1.src = "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"];
+
+
     img1.onload = () => {
         if (img1.width / img1.height <= 1) {
             isLandscapeBoolean = false;
@@ -113,6 +120,7 @@ export function Portfolio(props) {
         }
 
     };
+
     if (videoPos1) {
         setimgPos1(placeholder)
     }
@@ -120,6 +128,7 @@ export function Portfolio(props) {
 
 
     img2.src = "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_2"];
+
     img2.onload = () => {
 
         if (img2.width / img2.height <= 1) {
@@ -137,15 +146,11 @@ export function Portfolio(props) {
 
     };
 
-
-
-
-    // choosenProject++;
-    // console.log("COSSENPROJECT: " + choosenProject);
-    // document.getElementById("mediafile2").src;
-
-
     img3.src = "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_3"];
+    if (img3.src == null) {
+        console.log("Pos imgPos2 ist null")
+
+    }
     img3.onload = () => {
 
         if (img3.width / img3.height <= 1 && loadOnce === true) { //first iteration
@@ -163,16 +168,18 @@ export function Portfolio(props) {
             }
         }
         loadOnce = false;
+
     };
 
-    if (imgPos2 === null) {
-
-    }
 
 
 
 
-
+/*
+    if ( currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].projects[choosenProject + 1] == null) {
+        document.getElementById("nextButton").style.opacity = "0";
+        document.getElementById("nextButton").style.pointerEvents = "none";
+    }*/
 
 
 
@@ -199,16 +206,17 @@ export function Portfolio(props) {
 
         if (fileExtension === "mp4" || fileExtension === "mov") {
             videoPos1 = true;
-            return (<div className="mediafile mediafile1">
+            return (<motion.div exit={{ opacity: 0 }} initial={{opacity: 0 }} animate={{opacity: 1}} className="mediafile mediafile1">
+
                 <MediaComponent
                     url={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"]}
                     width="auto"
                     height="300px"
                 />
-            </div>
+            </motion.div>
             )
         } else if (fileExtension === "jpg" || fileExtension === "png") {
-            return <img id="changePos" className="mediafile mediafile1" src={imgPos1} alt="Projectmedia" />
+            return       <AnimatePresence> <motion.img exit={{ opacity: 0 }} initial={{opacity: 0 }} animate={{opacity: 1}} id="changePos" className="mediafile mediafile1" src={imgPos1} alt="Projectmedia" />      </AnimatePresence>
         } else if (!checkFile) {
             return null
         }
@@ -262,19 +270,21 @@ export function Portfolio(props) {
                             <div className="mediaRow">
 
                                 {checkForVideo(results["Mediafile_1"])}
-
+                                <AnimatePresence>
                                 {imgPos2 ?
-                                    <img className="mediafile mediafile2" src={imgPos2} alt="Projectmedia" />
+                                    <motion.img exit={{ opacity: 0 }} initial={{opacity: 0 }} animate={{opacity: 1}} className="mediafile mediafile2" id={"mediafile2"} src={imgPos2} alt="Projectmedia" />
                                     :
                                     null
                                 }
+                                </AnimatePresence>
                             </div>
-
+                            <AnimatePresence>
                             {imgPos3 ?
-                                <img className=" mediafile mediafile3" src={imgPos3} alt="Projectmedia" />
+                                <motion.img exit={{ opacity: 0 }} initial={{opacity: 0 }} animate={{opacity: 1}} className=" mediafile mediafile3" id={"mediafile3"} src={imgPos3} alt="Projectmedia" />
                                 :
                                 null
                             }
+                            </AnimatePresence>
                         </div>
                     </>
                 </Zoom>
