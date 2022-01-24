@@ -3,8 +3,6 @@ import '../../src/App.css';
 import { Person } from "../components/Person";
 import './Overview.css';
 import { startThreeJS } from "../components/threejs/three";
-import ProjectData from '../assets/data/projectDataV2.json'
-import { matchProjectToStudent } from '../../src/components/matchProjectToStudent.js'
 import { Cloudbutton } from "../components/cloudbutton";
 import { AnimatePresence, motion } from 'framer-motion/dist/framer-motion'
 import { currentMajor } from "../components/currentMajor";
@@ -54,27 +52,29 @@ export function Overview(props) {
         closed: { opacity: 0, x: "-100%" },
     }
 
-    // var tilesize = 18, tilecount = 15;
-    // var gRows = Math.floor($(".container").innerWidth() / tilesize);
-    // var gCols = Math.floor($('.container').innerHeight() / tilesize);
+    var _ = require('underscore');
 
-    // var vals = _.shuffle(_.range(tilecount));
-    // var xpos = _.shuffle(_.range(gRows));
-    // var ypos = _.shuffle(_.range(gCols));
+    var tilesize = 18, tilecount = 15;
+    var gRows = Math.floor($(".container").innerWidth() / tilesize);
+    var gCols = Math.floor($('.container').innerHeight() / tilesize);
 
-    // _.each(vals, function (d, i) {
-    //     var $newdiv = $('<div/>').addClass("tile");
-    //     $newdiv.css({
-    //         'position': 'absolute',
-    //         'left': (xpos[i] * tilesize) + 'px',
-    //         'top': (ypos[i] * tilesize) + 'px'
-    //     }).appendTo('.container').html(d);
-    // });
+    var vals = _.shuffle(_.range(tilecount));
+    var xpos = _.shuffle(_.range(gRows));
+    var ypos = _.shuffle(_.range(gCols));
+
+    _.each(vals, function (d, i) {
+    var $newdiv = $('<div/>').addClass("test tile");
+    $newdiv.css({
+            'position': 'absolute',
+             'left': (xpos[i] * tilesize) + 'px',
+             'top': (ypos[i] * tilesize) + 'px'
+         }).appendTo('.container').html(d);
+     });
 
     return (
         <>
             <div className="component-display container">
-                <div id="three-js" className={"person-list "}>
+                <div id="three-js" className={"person-list"}>
                 </div>
                 <Cloudbutton onClick={() => setIsOpen(true)} />
                 {currentMajor(props.selectedMajor).PERSONAL_DETAILS.map((user) => (

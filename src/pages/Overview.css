@@ -95,3 +95,14 @@ h4{
 .react-reveal {
     animation-fill-mode: both !important;
 }
+
+.container {
+    position: relative;
+}
+.test tile {
+    width: 16px;
+    height: 16px;
+    text-align:center;
+    background: steelblue;
+    margin:1px;
+}
