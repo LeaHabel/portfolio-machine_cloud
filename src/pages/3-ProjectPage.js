@@ -99,8 +99,8 @@ export function Portfolio(props) {
     const img2 = new Image();
     const img3 = new Image();
     const placeholder = new Image();
-
-
+    const [nextBut, setnextBut] = useState(0)
+    var scndProject
 
 
     //wenn !videoPos1 -> wenn kein Video an 1. Stelle
@@ -175,12 +175,6 @@ export function Portfolio(props) {
 
 
 
-/*
-    if ( currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].projects[choosenProject + 1] == null) {
-        document.getElementById("nextButton").style.opacity = "0";
-        document.getElementById("nextButton").style.pointerEvents = "none";
-    }*/
-
 
 
 
@@ -197,7 +191,16 @@ export function Portfolio(props) {
     // console.log("yeah testing " + FindProjectFromPerson(_id, 0, props.selectedMajor)["PID"])
 
     //console.log("Projekte: " + data1.PROJECT_DETAILS[data.PERSONAL_DETAILS[_id].projects[0]].Project)
-
+    function checkScndProject(){
+        if (currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].projects[choosenProject + 1] !== null) {
+            scndProject = true;
+            return ( <img onClick={() => nextProject()}
+                          className="arrows"
+                          id={"nextButton"}
+                          src={Next}
+                          alt="Next" />)
+        }
+    }
     function checkForVideo(checkFile) {
         let fileExtension = checkFile.split('.').pop();
         let projectIndex = checkFile.split('-').pop();
@@ -259,11 +262,8 @@ export function Portfolio(props) {
                             <p className="paragraphb">{results["Team"]}</p>
                             <p className="arrows">
                                 <img id={"prevButton"} onClick={() => prevProject()} className="arrows" src={Previous} alt="Previous" />
-                                <img onClick={() => nextProject()}
-                                    className="arrows"
-                                    id={"nextButton"}
-                                    src={Next}
-                                    alt="Next" /></p>
+                                {checkScndProject()}
+                              </p>
                         </div>
 
                         <div>
