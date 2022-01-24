@@ -73,8 +73,8 @@ export function Overview(props) {
 
     return (
         <>
-            <div className="component-display ">
-                <div id="three-js" className={"person-list container"}>
+            <div className="component-display container">
+                <div id="three-js" className={"person-list "}>
                 </div>
                 <Cloudbutton onClick={() => setIsOpen(true)} />
                 {currentMajor(props.selectedMajor).PERSONAL_DETAILS.map((user) => (
