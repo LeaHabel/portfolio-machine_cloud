@@ -31,12 +31,12 @@ export function Portfolio(props) {
     let _id = id - 1
     //nächstes Proejct
     const nextProject = () => {
-        if (choosenProject < 3 && data.PERSONAL_DETAILS[_id].projects[choosenProject + 1] !== null) {
+        if (choosenProject < 3 && currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].projects[choosenProject + 1] !== null) {
             setcchoosenProject(choosenProject + 1);
             document.getElementById("prevButton").style.opacity = "1";
             document.getElementById("prevButton").style.pointerEvents = "initial";
             console.log("BLAA " + img1.src)
-            if (choosenProject == 1 || data.PERSONAL_DETAILS[_id].projects[choosenProject + 2] == null) {
+            if (choosenProject == 1 || currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].projects[choosenProject + 2] == null) {
                 document.getElementById("nextButton").style.opacity = "0";
                 document.getElementById("nextButton").style.pointerEvents = "none";
             }
@@ -78,7 +78,7 @@ export function Portfolio(props) {
     }
     const [choosenProject, setcchoosenProject] = useState(0);
     var results = [];
-    results = data1.PROJECT_DETAILS.find(record => record.PID === data.PERSONAL_DETAILS[_id].projects[choosenProject])
+    results = data1.PROJECT_DETAILS.find(record => record.PID === currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].projects[choosenProject])
 
 
     const [imgPos1, setimgPos1] = useState(0)
@@ -179,9 +179,9 @@ export function Portfolio(props) {
 
 
     var results = [];
-    results = data1.PROJECT_DETAILS.find(record => record.PID === data.PERSONAL_DETAILS[_id].projects[choosenProject])
+    results = data1.PROJECT_DETAILS.find(record => record.PID === currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].projects[choosenProject])
 
-    const length = data.PERSONAL_DETAILS[_id].projects.length;
+    const length = currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].projects.length;
     console.log("Array " + length)
     // console.log("Array "+ "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_3"])
 
@@ -223,18 +223,18 @@ export function Portfolio(props) {
                     <>
                         <img className="background-specs" src={PortfolioBG} alt="Portfolio Background" />
                         <div className="contact">
-                            <img className="profil" src={"https://d18p28upkrc95t.cloudfront.net/persons/" + data.PERSONAL_DETAILS[_id].profilepic} alt="Profil" />
-                            <h1 className="head1"> {data.PERSONAL_DETAILS[_id].FirstName} {data.PERSONAL_DETAILS[_id].Surname}</h1>
+                            <img className="profil" src={"https://d18p28upkrc95t.cloudfront.net/persons/" + currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].profilepic} alt="Profil" />
+                            <h1 className="head1"> {currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].FirstName} {currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].Surname}</h1>
                             <p className="head3">{currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].Major}</p>
                             <p className="paragraphw"><img className="icons" src={MAILicon}
-                                alt="Mail" />{data.PERSONAL_DETAILS[_id].Mail}
+                                alt="Mail" />{currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].Mail}
                             </p>
                             <p className="paragraphw"><img className="icons" src={IGicon}
-                                alt="Instagram" />{data.PERSONAL_DETAILS[_id].SocialMedia}</p>
+                                alt="Instagram" />{currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].SocialMedia}</p>
                             <p className="paragraphw"><img className="icons" src={WEBicon}
-                                alt="Website" />{data.PERSONAL_DETAILS[_id].Website}</p>
+                                alt="Website" />{currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].Website}</p>
                             <p className="head2">Skills</p>
-                            <p className="paragraphw">{data.PERSONAL_DETAILS[_id].Skills}</p>
+                            <p className="paragraphw">{currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].Skills}</p>
                             <img className="QR" src={QRmm} alt="QR Code" />
                             <p className="paragraphw">Save Details</p>
                         </div>
@@ -246,7 +246,7 @@ export function Portfolio(props) {
                             <p className="paragraphbold">{results["Year"]} |
                                 Sem {results["Semester"]}</p>
                             <p className="paragraphbold">Own role</p>
-                            <p className="paragraphb">{data.PERSONAL_DETAILS[_id].ownroles[choosenProject]}</p>
+                            <p className="paragraphb">{currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].ownroles[choosenProject]}</p>
                             <p className="paragraphbold">Team</p>
                             <p className="paragraphb">{results["Team"]}</p>
                             <p className="arrows">
@@ -269,7 +269,12 @@ export function Portfolio(props) {
                                     null
                                 }
                             </div>
-                            <img className=" mediafile mediafile3" src={imgPos3} alt="Projectmedia" />
+
+                            {imgPos3 ?
+                                <img className=" mediafile mediafile3" src={imgPos3} alt="Projectmedia" />
+                                :
+                                null
+                            }
                         </div>
                     </>
                 </Zoom>
