@@ -253,3 +253,17 @@ h4{
 }
 
 
+
+.react-player__preview {
+  background-color: black;
+  cursor:none;
+}
+.react-player__shadow {
+  background: none;
+
+}
+.react-player__play-icon{
+  
+}
+
+

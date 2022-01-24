@@ -2,7 +2,12 @@ import React from "react";
 // import { Video, ReactAudio} from "reactjs-media";
 import ReactPlayer from 'react-player'
 
+
+
 const MediaComponentSnippet = (props) => {
+    let filename = props.url.split('projects/').pop();
+    filename = filename.slice(0, -4);
+
     return (
         <div>
             <ReactPlayer
@@ -10,7 +15,7 @@ const MediaComponentSnippet = (props) => {
                 muted={true}
                 width={props.width}
                 height={props.height}
-                light="http://placekitten.com/200/300"
+                light={filename}
                 config={{
                     file: {
                         attributes: {

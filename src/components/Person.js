@@ -94,9 +94,6 @@ export function Person(props) {
                                 {showMediaSnippets(props.projectMedia1_2)}
                             </div>
 
-                            <div className="flex-item">
-                                {showMediaSnippets(props.projectMedia3_2)}
-                            </div>
 
                         </div>
                         <div className="flex-container">
