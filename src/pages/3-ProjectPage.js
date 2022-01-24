@@ -93,6 +93,9 @@ export function Portfolio(props) {
     const img2 = new Image();
     const img3 = new Image();
 
+    const placeholder = new Image();
+
+
 
     img1.src = "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"];
     img1.onload = () => {
@@ -181,17 +184,25 @@ export function Portfolio(props) {
 
     //console.log("Projekte: " + data1.PROJECT_DETAILS[data.PERSONAL_DETAILS[_id].projects[0]].Project)
 
-    function showRightContent(temp) {
-        let fileExtension = temp.split('.').pop();
+    function showRightContent(checkFile) {
+        let fileExtension = checkFile.split('.').pop();
+        let projectIndex = checkFile.split('-').pop();
+        projectIndex = projectIndex.charAt(0);
 
-        if (fileExtension === "mp4") {
-            return (<MediaComponent
-                url={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"]}
-                width="auto"
-                height="300px"
-            />)
-        } else {
-            return <img className="mediafile mediafile2" src={imgPos1} alt="Projectmedia" />
+
+        if (fileExtension === "mp4" || fileExtension === "mov") {
+            //setimgPos1(placeholder)
+            return (<div className="mediafile mediafile1">
+
+                <MediaComponent
+                    url={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"]}
+                    width="auto"
+                    height="300px"
+                />
+            </div>
+            )
+        } else if (fileExtension === "jpg" || fileExtension === "png") {
+            return <img className="mediafile mediafile1" src={imgPos1} alt="Projectmedia" />
         }
 
     }
@@ -240,7 +251,7 @@ export function Portfolio(props) {
                         <div>
 
                             <div>
-                                <div className="mediafile mediafile1">
+                                <div className="">
                                     {showRightContent(results["Mediafile_1"])}
                                     {/* <MediaComponent
                                         url={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"]}
