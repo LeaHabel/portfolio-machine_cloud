@@ -152,7 +152,7 @@ h4{
 
 /* ------ Person ------ */
 .big{
-  width: 15vw;
+  width: 17vw;
   height: 16vw;
       position: relative;
       float: left;
@@ -169,11 +169,12 @@ h4{
 }
 
 #personName{
-  text-align: center;
+  text-align: left;
+  left: 30%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 50%;
+  width: 70%;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
