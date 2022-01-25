@@ -46,6 +46,7 @@ var scndProject
             }
         }
 
+
         // document.getElementById("mediafile2").src;
     }
     //vorheriges Proejct
@@ -100,6 +101,8 @@ var scndProject
     const img2 = new Image();
     const img3 = new Image();
     const placeholder = new Image();
+    const [nextBut, setnextBut] = useState(0)
+    var scndProject
 
     function ifQRCode() {
         if(currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].qr !== null) {
@@ -109,8 +112,6 @@ var scndProject
     }
     //wenn !videoPos1 -> wenn kein Video an 1. Stelle
     img1.src = "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"];
-
-
     img1.onload = () => {
         if (img1.width / img1.height <= 1) {
             isLandscapeBoolean = false;
@@ -132,7 +133,6 @@ var scndProject
 
 
     img2.src = "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_2"];
-
     img2.onload = () => {
 
         if (img2.width / img2.height <= 1) {
@@ -168,7 +168,7 @@ var scndProject
                 setimgPos1(img3.src) //if pos1 empty -> pos1
             }
             else if (imgPos3 == null) {
-                setimgPos3(img3.src) //if pos3 empty -> pos3 
+                setimgPos3(img3.src) //if pos3 empty -> pos3
             }
         }
         loadOnce = false;
@@ -218,10 +218,8 @@ var scndProject
         } else if (!checkFile) {
             return null
         }
+
     }
-
-
-
     return (
         <div className="Portfolio">
             <motion.div variants={bodyVariants} initial="hidden" animate="visible" exit={"exit"} className="overflow">
