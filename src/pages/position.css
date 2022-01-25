@@ -1,11 +1,11 @@
 
 .pos1 {
-    top: 50px;
-    left: 150px !important;
+    top: 250px;
+    left:250px !important;
 }
 .pos2{
-    top: 500px;
-    left: -100px !important;
+    top: 400px;
+    left: -250px !important;
 }
 .pos3 {
     top: 30px;
@@ -20,13 +20,13 @@
     left:120px !important;
 }
 .pos6 {
-    top: 330px;
-    left: -720px !important;
+    top: 200px;
+    left: 250px !important;
 }
 
 .pos7 {
     top: -350px;
-    left: 500px !important;
+    left: 250px !important;
 }
 .pos8{
     top: -20px;
@@ -41,31 +41,31 @@
     left: 100px!important;
 }
 .pos11{
-    top: -400px;
-    left: 360px!important;
+    top: -450px;
+    left: 460px!important;
 }
 .pos12 {
-    top: -10px;
-    left: 80px!important;
+    top: -200px;
+    left: 180px!important;
 }
 .pos13 {
-    top: -250px;
-    left: 0px !important;
+    top: -100px;
+    left: 180px !important;
 }
 .pos14{
-    top: -80px;
+    top: -380px;
     left: 100px !important;
 }
 .pos15 {
-    top: -40px;
-    left: 80px !important;
+    top: -140px;
+    left: 130px !important;
 }
 .pos16 {
-    top: -680px;
-    left: 200px!important;
+    top: -840px;
+    left: 30px!important;
 }
 .pos17{
-    top: -100px;
-    left: 180px!important;
+    top: -1000px;
+    left: 28px!important;
 }
 
