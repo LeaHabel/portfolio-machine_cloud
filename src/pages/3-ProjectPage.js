@@ -179,6 +179,10 @@ export function Portfolio(props) {
 
 
 
+
+
+
+
     var results = [];
     results = data1.PROJECT_DETAILS.find(record => record.PID === currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].projects[choosenProject])
 
