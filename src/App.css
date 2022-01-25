@@ -17,6 +17,9 @@
 .icon{
   height: 100%;
 }
+.icon-big{
+  height: 130%;
+}
 .icon-close{
   bottom: 0;
   height: 17%;
