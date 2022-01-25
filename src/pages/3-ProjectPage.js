@@ -224,8 +224,22 @@ export function Portfolio(props) {
         }
     }
 
+    function showRightContent(checkFile) {
+        let fileExtension = checkFile.split('.').pop();
+        if (fileExtension === "jpg") {
+            return <img className="mediafile mediafile2" src={imgPos1} alt="Projectmedia" />
+        }
+        else if (fileExtension === "mp4") {
+            return (<MediaComponent
+                url={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"]}
+                width="auto"
+                height="300px"
+            />)
 
-
+        } else if (!checkFile) {
+            return null
+        }
+    }
     return (
         <div className="Portfolio">
             <motion.div variants={bodyVariants} initial="hidden" animate="visible" exit={"exit"} className="overflow">
@@ -239,8 +253,8 @@ export function Portfolio(props) {
                             <p className="paragraphw"><img className="icons" src={MAILicon}
                                 alt="Mail" />{currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].Mail}
                             </p>
-                            <p className="paragraphw"><img className="icons" src={IGicon}
-                                alt="Instagram" />{currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].SocialMedia}</p>
+                            <p className="paragraphw"><img className="icons1" src={IGicon}
+                                alt="Instagram" />{data.PERSONAL_DETAILS[_id].SocialMedia}</p>
                             <p className="paragraphw"><img className="icons" src={WEBicon}
                                 alt="Website" />{currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].Website}</p>
                             <p className="head2">Skills</p>

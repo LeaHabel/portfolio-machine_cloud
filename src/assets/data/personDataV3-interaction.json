@@ -1,8 +1,6 @@
 {
   "PERSONAL_DETAILS": [
-
     {
-
       "virtualID": 1,
       "ID": 8,
       "Surname": "Franz",
@@ -25,7 +23,6 @@
       "profilepic": "8-pp.jpg"
     },
     {
-
       "virtualID": 2,
       "ID": 9,
       "Surname": "Fresser",
@@ -47,8 +44,6 @@
       ],
       "profilepic": "9-pp.jpg"
     },
-
-
     {
       "virtualID": 3,
       "ID": 13,
@@ -93,7 +88,6 @@
       ],
       "profilepic": "14-pp.jpg"
     },
-
     {
       "virtualID": 5,
       "ID": 18,
@@ -116,7 +110,6 @@
       ],
       "profilepic": "18-pp.jpg"
     },
-
     {
       "virtualID": 6,
       "ID": 20,
@@ -139,8 +132,6 @@
       ],
       "profilepic": "20-pp.jpg"
     },
-
-
     {
       "virtualID": 7,
       "ID": 24,
@@ -185,7 +176,6 @@
       ],
       "profilepic": "25-pp.jpg"
     },
-
     {
       "virtualID": 9,
       "ID": 30,
@@ -231,7 +221,6 @@
       "profilepic": "31-pp.jpg"
     },
     {
-
       "virtualID": 11,
       "ID": 32,
       "Surname": "Schart",
@@ -276,7 +265,6 @@
       "profilepic": "33-pp.jpg"
     },
     {
-
       "virtualID": 13,
       "ID": 35,
       "Surname": "Schwazer",
@@ -298,7 +286,6 @@
       ],
       "profilepic": "35-pp.jpg"
     },
-
     {
       "virtualID": 14,
       "ID": 37,
@@ -321,7 +308,6 @@
       ],
       "profilepic": "37-pp.jpg"
     },
-
     {
       "virtualID": 15,
       "ID": 46,
@@ -344,7 +330,6 @@
       ],
       "profilepic": "46-pp.jpg"
     },
-
     {
       "virtualID": 16,
       "ID": 48,
