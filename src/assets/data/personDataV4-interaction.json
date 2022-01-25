@@ -1,6 +1,8 @@
 {
   "PERSONAL_DETAILS": [
+
     {
+
       "virtualID": 1,
       "ID": 8,
       "Surname": "Franz",
@@ -20,9 +22,11 @@
         "research, concept, development, industrial design, app design",
         "research, concept, development, industrial design, sensor prototyping"
       ],
-      "profilepic": "8-pp.jpg"
+      "profilepic": "8-pp.jpg",
+      "qr": "8-qr.png"
     },
     {
+
       "virtualID": 2,
       "ID": 9,
       "Surname": "Fresser",
@@ -40,11 +44,13 @@
       "ownroles": [
         "ui design, concept",
         "concept, design, development",
-        "arduino, coding, concept, video"
+        "arduino, development, concelt, video"
       ],
       "profilepic": "9-pp.jpg",
-      "qr": "9-qr.jpg"
+      "qr": "9-qr.png"
     },
+
+
     {
       "virtualID": 3,
       "ID": 13,
@@ -65,7 +71,8 @@
         "concept, interaction design, video production",
         "concept, interaction design, media integration"
       ],
-      "profilepic": "13-pp.jpg"
+      "profilepic": "13-pp.jpg",
+      "qr": "13-qr.png"
     },
     {
       "virtualID": 4,
@@ -87,8 +94,10 @@
         "research, concept, ui\/ux design, prototyping, implementation with html\/css\/js and unity ",
         null
       ],
-      "profilepic": "14-pp.jpg"
+      "profilepic": "14-pp.jpg",
+      "qr": "14-qr.png"
     },
+
     {
       "virtualID": 5,
       "ID": 18,
@@ -109,8 +118,10 @@
         "concept, design, print, author",
         "digital book design"
       ],
-      "profilepic": "18-pp.jpg"
+      "profilepic": "18-pp.jpg",
+      "qr": "18-qr.png"
     },
+
     {
       "virtualID": 6,
       "ID": 20,
@@ -131,8 +142,11 @@
         "concept\/storytelling, animation, sounddesign",
         "concept, photography, branding"
       ],
-      "profilepic": "20-pp.jpg"
+      "profilepic": "20-pp.jpg",
+      "qr": "20-qr.png"
     },
+
+
     {
       "virtualID": 7,
       "ID": 24,
@@ -153,7 +167,8 @@
         null,
         null
       ],
-      "profilepic": "24-pp.jpg"
+      "profilepic": "24-pp.jpg",
+      "qr": "24-qr.png"
     },
     {
       "virtualID": 8,
@@ -175,8 +190,10 @@
         null,
         null
       ],
-      "profilepic": "25-pp.jpg"
+      "profilepic": "25-pp.jpg",
+      "qr": "25-qr.png"
     },
+
     {
       "virtualID": 9,
       "ID": 30,
@@ -197,7 +214,8 @@
         "interactive survey, interaction design, exhibition design",
         "corporate identity, web design, app design, interface design"
       ],
-      "profilepic": "30-pp.jpg"
+      "profilepic": "30-pp.jpg",
+      "qr": "30-qr.png"
     },
     {
       "virtualID": 10,
@@ -219,9 +237,11 @@
         "app design, app development, ux\/ui designer, software development",
         "app design, app development, ux\/ui designer, branding"
       ],
-      "profilepic": "31-pp.jpg"
+      "profilepic": "31-pp.jpg",
+      "qr": "31-qr.png"
     },
     {
+
       "virtualID": 11,
       "ID": 32,
       "Surname": "Schart",
@@ -241,7 +261,8 @@
         "concept, 3d, storytelling",
         "concept, programming, prototype, app design"
       ],
-      "profilepic": "32-pp.jpg"
+      "profilepic": "32-pp.jpg",
+      "qr": "32-qr.png"
     },
     {
       "virtualID": 12,
@@ -263,9 +284,11 @@
         " user interface, prototype, usability, corporate identity",
         "lighting concept, arduino programming, sensor integration"
       ],
-      "profilepic": "33-pp.jpg"
+      "profilepic": "33-pp.jpg",
+      "qr": "33-qr.png"
     },
     {
+
       "virtualID": 13,
       "ID": 35,
       "Surname": "Schwazer",
@@ -285,8 +308,10 @@
         "concept, lighting control, code",
         "concept, app design, prototype"
       ],
-      "profilepic": "35-pp.jpg"
+      "profilepic": "35-pp.jpg",
+      "qr": "35-qr.png"
     },
+
     {
       "virtualID": 14,
       "ID": 37,
@@ -307,8 +332,10 @@
         "ideation, concept, app design, prototype",
         "concept, programming, prototype, app design"
       ],
-      "profilepic": "37-pp.jpg"
+      "profilepic": "37-pp.jpg",
+      "qr": "37-qr.png"
     },
+
     {
       "virtualID": 15,
       "ID": 46,
@@ -329,8 +356,10 @@
         null,
         null
       ],
-      "profilepic": "46-pp.jpg"
+      "profilepic": "46-pp.jpg",
+      "qr": "46-qr.png"
     },
+
     {
       "virtualID": 16,
       "ID": 48,
@@ -351,7 +380,8 @@
         "concept, story, design, filmmaker, programmer",
         "concept, projec tmanagement, programming"
       ],
-      "profilepic": "48-pp.jpg"
+      "profilepic": "48-pp.jpg",
+      "qr": "48-qr.png"
     },
     {
       "virtualID": 17,
@@ -373,7 +403,8 @@
         "idea, concept, ui design, programming, interaction design",
         null
       ],
-      "profilepic": "49-pp.jpg"
+      "profilepic": "49-pp.jpg",
+      "qr": "49-qr.png"
     }
   ]
 }

@@ -1,0 +1,234 @@
+{
+  "PERSONAL_DETAILS": [
+    {
+      "virtualID": 1,
+      "ID": 6,
+      "Surname": "Dostal",
+      "FirstName": "Niklas",
+      "Major": "Media Design",
+      "Mail": "info@niklasdostal.at",
+      "Website": "niklasdostal.at",
+      "SocialMedia": "instagram niklasdostal",
+      "Skills": "film, storytelling, media design",
+      "projects": [
+        "P6",
+        "P7",
+        "P8"
+      ],
+      "ownroles": [
+        "scriptwriting, video production",
+        "video production",
+        "video production"
+      ],
+      "profilepic": "6-pp.jpg",
+      "qr": "6-qr.png"
+    },
+    {
+      "virtualID": 2,
+      "ID": 7,
+      "Surname": "Eskandari",
+      "FirstName": "Yasaman",
+      "Major": "Media Design",
+      "Mail": "jasmineskandari@gmail.com",
+      "Website": "yasamaneskandari.myportfolio.com",
+      "SocialMedia": "instagram _yasi_e_",
+      "Skills": "communication design, illustration, motion graphics, storytelling",
+      "projects": [
+        "P90",
+        null,
+        null
+      ],
+      "ownroles": [
+        "motion graphics, post production",
+        null,
+        null
+      ],
+      "profilepic": "7-pp.jpg",
+      "qr": "7-qr.png"
+    },
+    {
+      "virtualID": 3,
+      "ID": 12,
+      "Surname": "Gruber",
+      "FirstName": "Carolin",
+      "Major": "Media Design",
+      "Mail": "hello@carolinhelga.at",
+      "Website": "carolinhelga.at",
+      "SocialMedia": "instagram helgolin_",
+      "Skills": "art direction, direction, set design, colorgrading, photo, retouch",
+      "projects": [
+        "P71",
+        "P72",
+        "P73"
+      ],
+      "ownroles": [
+        "art direction, set desin, concept",
+        "art direction, set desing, color grading concept",
+        "art direction, set desing, concept"
+      ],
+      "profilepic": "12-pp.jpg",
+      "qr": "12-qr.png"
+    },
+    {
+      "virtualID": 4,
+      "ID": 15,
+      "Surname": "Jobst",
+      "FirstName": "Eva",
+      "Major": "Media Design",
+      "Mail": "evajobst@gmx.at",
+      "Website": "eva-jobst.myportfolio.com",
+      "SocialMedia": "–",
+      "Skills": "film, graphic design, animation, storytelling",
+      "projects": [
+        "P56",
+        "P57",
+        "P58"
+      ],
+      "ownroles": [
+        "graphic design, concept, editing",
+        "concept, production, post production",
+        "animation"
+      ],
+      "profilepic": "15-pp.jpg",
+      "qr": "15-qr.png"
+    },
+    {
+      "virtualID": 5,
+      "ID": 16,
+      "Surname": "Kardel",
+      "FirstName": "Theresa",
+      "Major": "Media Design",
+      "Mail": "mail@theresakardel.de",
+      "Website": "theresakardel.de",
+      "SocialMedia": "–",
+      "Skills": "graphic design, animation, communication, media",
+      "projects": [
+        "P93",
+        null,
+        null
+      ],
+      "ownroles": [
+        "concept, animation",
+        null,
+        null
+      ],
+      "profilepic": "16-pp.jpg",
+      "qr": "16-qr.png"
+    },
+    {
+      "virtualID": 6,
+      "ID": 23,
+      "Surname": "Meierhofer",
+      "FirstName": "Karoline",
+      "Major": "Media Design",
+      "Mail": "karoline.meierhofer@gmail.com",
+      "Website": "–",
+      "SocialMedia": "instagram karo_meierhofer",
+      "Skills": "game design, game development, character design, digital art, 3d modeling, illustration, animation",
+      "projects": [
+        "P13",
+        "P67",
+        "P68"
+      ],
+      "ownroles": [
+        "pame design, art direction, character design, animation",
+        "character design, modeling, shading, rendering",
+        "illustration"
+      ],
+      "profilepic": "23-pp.jpg",
+      "qr": "23-qr.png"
+    },
+    {
+      "virtualID": 7,
+      "ID": 26,
+      "Surname": "Probst",
+      "FirstName": "Sabine",
+      "Major": "Media Design",
+      "Mail": "sabinemprobst@gmx.at",
+      "Website": "sabinemprobst.com",
+      "SocialMedia": "instagram sabinemprobst",
+      "Skills": "documentary film, underwater cinematography, ocean conservation, storytelling",
+      "projects": [
+        "P36",
+        "P37",
+        null
+      ],
+      "ownroles": [
+        "film maker",
+        "filmmaker",
+        null
+      ],
+      "profilepic": "26-pp.jpg",
+      "qr": "26-qr.png"
+    },
+    {
+      "virtualID": 8,
+      "ID": 27,
+      "Surname": "Reidl",
+      "FirstName": "Julian",
+      "Major": "Media Design",
+      "Mail": "julian@arcane.tv",
+      "Website": "julianreidl.com",
+      "SocialMedia": "instagram julianrevenga",
+      "Skills": "film, storytelling, media design",
+      "projects": [
+        "P27",
+        "P28",
+        "P29"
+      ],
+      "ownroles": [
+        "director, producer",
+        "director, producer",
+        "director, producer"
+      ],
+      "profilepic": "27-pp.jpg",
+      "qr": "27-qr.png"
+    },
+    {
+      "virtualID": 9,
+      "ID": 40,
+      "Surname": "Thum",
+      "FirstName": "Maximilian",
+      "Major": "Media Design",
+      "Mail": "max@clipped.at",
+      "Website": "–",
+      "SocialMedia": "instagram clippedmedia",
+      "Skills": "photography, 3D, film, animation",
+      "projects": [
+        "P91",
+        null,
+        null
+      ],
+      "ownroles": [
+        "photography, retouching",
+        null,
+        null
+      ],
+      "profilepic": "40-pp.jpg",
+      "qr": "40-qr.png"
+    },
+    {
+      "virtualID": 10,
+      "ID": 42,
+      "Surname": "Weber",
+      "FirstName": "Markus",
+      "Major": "Media Design",
+      "Mail": "austrianofficial@gmail.com",
+      "Website": "youtube.com\/austrianofficial",
+      "SocialMedia": "instagram darealdrogi",
+      "Skills": "animation, character animation, storytelling, vfx",
+      "projects": [
+        "P59",
+        null,
+        null
+      ],
+      "ownroles": [
+        "animation, video production, vfx, sound",
+        null,
+        null
+      ],
+      "profilepic": "42-pp.jpg",
+      "qr": "42-qr.png"
+    }
+  ]
+}

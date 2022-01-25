@@ -22,7 +22,7 @@
       "Team": "Tobias Bettke",
       "description": "Ambisonics Projekt zur Vertonung des alten Videos (Kopfhörer)",
       "Keywords": "ambisonics, dubstep, immersive",
-      "Mediafile_1": "P02-1.mov",
+      "Mediafile_1": "",
       "Mediafile_2": null,
       "Mediafile_3": null
     },
@@ -464,8 +464,8 @@
       "Team": "Sabine Probst",
       "description": "Bachelor Film\/  A marine scientist is showing her connection to the ocean and her ways to conserve it. ",
       "Keywords": "documentary film, ocean conservation, diving, surf",
-      "Mediafile_1": "P36-1.mp4",
-      "Mediafile_2": "P36-2.jpg",
+      "Mediafile_1": "P36-2.mp4",
+      "Mediafile_2": "P36-1.jpg",
       "Mediafile_3": null
     },
     {
@@ -907,8 +907,8 @@
       "description": "This project was created during my part time employment at Gehmacher, a furniture, fashion outdoor department store and café in Salzburg. Due to the strong expansion, it became necessary to revise the website and map the new stores. In cooperation with the agency Endlosweit, the site was implemented under my guidance and according to my design specifications.",
       "Keywords": "interface design, website design, ui\/ux, website architecture",
       "Mediafile_1": "P70-1.mp4",
-      "Mediafile_2": "P70-2.mp4",
-      "Mediafile_3": "P70-3.jpg"
+      "Mediafile_2": "P70-3.jpg",
+      "Mediafile_3": null
     },
     {
       "PID": "P71",
@@ -997,9 +997,9 @@
       "Team": "Christof Geramb",
       "description": "KUMO is an art, design and travel magazine based on the idea of rediscovering our environment by abstracting it into vertical meters. KUMO is a bilingual magazine, so it offers English as the main language as well as a German translation in the same magazine.",
       "Keywords": "magazine, editorial, book, photography, ux design, webdesign, communication design, print",
-      "Mediafile_1": "P77-1.jpg",
-      "Mediafile_2": "P77-2.jpg",
-      "Mediafile_3": "P77-3.jpg"
+      "Mediafile_1": "P77-2.jpg",
+      "Mediafile_2": "P77-3.jpg",
+      "Mediafile_3": "P77-1.jpg"
     },
     {
       "PID": "P78",
