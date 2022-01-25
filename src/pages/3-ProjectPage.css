@@ -30,7 +30,7 @@
     z-index: 2;
     position: absolute;
     top: 15%;
-    left: 8%;
+    left: 7%;
     width: 14.5%;
 }
 
@@ -43,7 +43,7 @@
     align-items: flex-start;
     z-index: 2;
     position: absolute;
-    top: 38.5%;
+    top: 33%;
     left: 25%;
     width: 19.8%;
 }
@@ -121,52 +121,55 @@
 
 .head1 {
     font-family: 'Roboto', sans-serif;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     color: white;
+    margin-bottom: 0.3rem;
 }
 
 .head2 {
     font-family: 'Roboto', sans-serif;
-    font-size: 1.2rem;
+    font-size: 2.5rem;
     color: white;
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-bottom: 0.3rem;
 }
 
 .head3 {
     font-family: 'Roboto', sans-serif;
-    font-size: 1.2rem;
+    font-size: 2rem;
     color: #E17A43;
+    margin-top: 0.3rem;
     margin-bottom: 2rem;
     font-weight: lighter;
 }
 
 .head4 {
     font-family: 'Roboto', sans-serif;
-    font-size: 1.5rem;
+    font-size: 3rem;
+    margin-bottom: 0.3rem;
     color: black;
 }
 
 .paragraphw {
     font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: white;
     font-weight: lighter;
 }
 
 .paragraphb {
     font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: black;
     font-weight: lighter;
 }
 
 .paragraphbold {
     font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: black;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
     margin-bottom: 0.3rem;
 }
 
@@ -178,17 +181,18 @@
 .icons {
     padding-top: 0.1rem;
     padding-right: 0.8rem;
-    width: 16px;
+    width: 20px;
 }
 
 .icons1 {
     padding-top: 0.1rem;
     padding-right: 0.3rem;
-    width: 25px;
+    width: 40px;
 }
 
 
 .arrows {
+    width: 150px;
     padding-top: 1.2rem;
     padding-right: 1rem;
     padding-left: 1rem;
@@ -199,7 +203,7 @@
 .closebtn {
     z-index: 3;
     position: fixed;
-    top: 84%;
+    top: 95%;
     left: 43.5%;
 }
 
