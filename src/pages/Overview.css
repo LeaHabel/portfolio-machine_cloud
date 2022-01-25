@@ -70,6 +70,8 @@ h4{
 #personName{
     margin-top: 10%;
     padding: 3%;
+    left: -300px;
+
 }
 
 #idletext{
