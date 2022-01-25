@@ -29,7 +29,7 @@ export function Overview(props) {
         }
     }, []);
 
-    const [isOpen, setIsOpen] = useState(false)
+
 
     const variants = {
         hidden: {
@@ -40,13 +40,10 @@ export function Overview(props) {
             transition: { delay: 1.5, duration: 1.5 }
         },
         exit: {
-            y: '200vh',
-            x: '100vw',
-            transition: { ease: 'easeInOut' },
-            scale: 5
+            opacity: 1
         },
         cloud: {
-            y: '200vh',
+            y: '-200vh',
             transition: { ease: 'easeInOut', duration: .6 },
             scale: 0.1
         },
@@ -56,19 +53,37 @@ export function Overview(props) {
         closed: { opacity: 0, x: "-100%" },
     }
 
+   var isOpen = false
+    var personOpen = false
+    console.log("Cloud " + isOpen)
+    function cloudClick(){
+        if( isOpen = false){
+            isOpen = true;
+        }
 
+        console.log("Cloud " + isOpen)
+    }
+    function PersonClick(){
+        if( personOpen = false){
+            personOpen = true;
+        }
+
+        console.log("Cloud " + isOpen)
+    }const[y, setExit] = useState(0)
     return (
         <>
             <div className="component-display container">
                 <div id="three-js" className={"person-list"}>
                 </div>
-                <Cloudbutton onClick={() => setIsOpen(true)} />
+                <Cloudbutton/>
                 <div className={"people"}>
                 {currentMajor(props.selectedMajor).PERSONAL_DETAILS.map((user) => (
 
-                    <motion.div exit={"exit"}
-                        animate={isOpen ? "open" : "visible"}
-                        variants={variants} className="test">
+                    <motion.div
+                        exit="exit"
+                        animate="visible"
+                        variants={variants}
+                        className="test">
 
                         <Person className={"personPosition"}
 

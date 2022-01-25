@@ -89,20 +89,24 @@ export function Portfolio(props) {
     const [imgPos1, setimgPos1] = useState(0)
     const [imgPos2, setimgPos2] = useState(0)
     const [imgPos3, setimgPos3] = useState(0)
-
+    const [QR, setQR] = useState(0)
     var isLandscapeBoolean
     var loadOnce = true
     var videoPos1
     var loadOnce2
     var loadOnce3
+    var ifQrCode
     const img1 = new Image();
     const img2 = new Image();
     const img3 = new Image();
     const placeholder = new Image();
 
-
-
-
+    function ifQRCode() {
+        if(currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].qr !== null) {
+             ifQrCode = true;
+            console.log("QR " + ifQrCode)
+        }
+    }
     //wenn !videoPos1 -> wenn kein Video an 1. Stelle
     img1.src = "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"];
 
@@ -175,28 +179,9 @@ export function Portfolio(props) {
 
 
 
-/*
-    if ( currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].projects[choosenProject + 1] == null) {
-        document.getElementById("nextButton").style.opacity = "0";
-        document.getElementById("nextButton").style.pointerEvents = "none";
-    }*/
-
-
-
-
-
     var results = [];
     results = data1.PROJECT_DETAILS.find(record => record.PID === currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].projects[choosenProject])
 
-    const length = currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].projects.length;
-    console.log("Array " + length)
-    // console.log("Array "+ "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_3"])
-
-    //  console.log("filelink: " + "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"])
-
-    // console.log("yeah testing " + FindProjectFromPerson(_id, 0, props.selectedMajor)["PID"])
-
-    //console.log("Projekte: " + data1.PROJECT_DETAILS[data.PERSONAL_DETAILS[_id].projects[0]].Project)
 
     function checkForVideo(checkFile) {
         let fileExtension = checkFile.split('.').pop();
@@ -243,8 +228,16 @@ export function Portfolio(props) {
                                 alt="Website" />{currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].Website}</p>
                             <p className="head2">Skills</p>
                             <p className="paragraphw">{currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].Skills}</p>
-                            <img className="QR" src={QRmm} alt="QR Code" />
-                            <p className="paragraphw">Save Details</p>
+                            {ifQRCode()}
+                            {ifQrCode ?
+                                <>
+                                <img className="QR" id={"QR"} src={"https://d18p28upkrc95t.cloudfront.net/qr/" + currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].qr} alt="QR Code" />
+                                    <p className="paragraphw">Save Details</p>
+                                </>
+                                :
+                                null
+                            }
+
                         </div>
 
                         <div className="projectinfo">
