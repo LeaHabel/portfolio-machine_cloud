@@ -65,33 +65,33 @@ export function Overview(props) {
 
                             // Uff
                             projectMedia1_0={
-                                "https://d18p28upkrc95t.cloudfront.net/projects/" + FindProjectFromPerson(user.virtualID - 1, 0, props.selectedMajor)["Mediafile_1"]
+                                FindProjectFromPerson(user.virtualID - 1, 0, props.selectedMajor)["Mediafile_1"]
                             }
                             projectMedia1_1={
-                                "https://d18p28upkrc95t.cloudfront.net/projects/" + FindProjectFromPerson(user.virtualID - 1, 0, props.selectedMajor)["Mediafile_2"]
+                                FindProjectFromPerson(user.virtualID - 1, 0, props.selectedMajor)["Mediafile_2"]
                             }
                             projectMedia1_2={
-                                "https://d18p28upkrc95t.cloudfront.net/projects/" + FindProjectFromPerson(user.virtualID - 1, 0, props.selectedMajor)["Mediafile_3"]
+                                FindProjectFromPerson(user.virtualID - 1, 0, props.selectedMajor)["Mediafile_3"]
                             }
                             // Imagine a smart function call here
                             projectMedia2_0={
-                                "https://d18p28upkrc95t.cloudfront.net/projects/" + FindProjectFromPerson(user.virtualID - 1, 1, props.selectedMajor)["Mediafile_1"]
+                                FindProjectFromPerson(user.virtualID - 1, 1, props.selectedMajor)["Mediafile_1"]
                             }
                             projectMedia2_1={
-                                "https://d18p28upkrc95t.cloudfront.net/projects/" + FindProjectFromPerson(user.virtualID - 1, 1, props.selectedMajor)["Mediafile_2"]
+                                FindProjectFromPerson(user.virtualID - 1, 1, props.selectedMajor)["Mediafile_2"]
                             }
                             projectMedia2_2={
-                                "https://d18p28upkrc95t.cloudfront.net/projects/" + FindProjectFromPerson(user.virtualID - 1, 1, props.selectedMajor)["Mediafile_3"]
+                                FindProjectFromPerson(user.virtualID - 1, 1, props.selectedMajor)["Mediafile_3"]
                             }
                             // copy the pasta the hell out of it 
                             projectMedia3_0={
-                                "https://d18p28upkrc95t.cloudfront.net/projects/" + FindProjectFromPerson(user.virtualID - 1, 2, props.selectedMajor)["Mediafile_1"]
+                                FindProjectFromPerson(user.virtualID - 1, 2, props.selectedMajor)["Mediafile_1"]
                             }
                             projectMedia3_1={
-                                "https://d18p28upkrc95t.cloudfront.net/projects/" + FindProjectFromPerson(user.virtualID - 1, 2, props.selectedMajor)["Mediafile_2"]
+                                FindProjectFromPerson(user.virtualID - 1, 2, props.selectedMajor)["Mediafile_2"]
                             }
                             projectMedia3_2={
-                                "https://d18p28upkrc95t.cloudfront.net/projects/" + FindProjectFromPerson(user.virtualID - 1, 2, props.selectedMajor)["Mediafile_3"]
+                                FindProjectFromPerson(user.virtualID - 1, 2, props.selectedMajor)["Mediafile_3"]
                             }
                             clickedID={user.virtualID}
                             selectedMajor={props.selectedMajor}
