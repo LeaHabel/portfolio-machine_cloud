@@ -31,12 +31,15 @@ export function Portfolio(props) {
     let _id = id - 1
     //nächstes Proejct
     const nextProject = () => {
-        if (choosenProject < 3 && data.PERSONAL_DETAILS[_id].projects[choosenProject + 1] !== null) {
+        if (choosenProject < 3 && currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].projects[choosenProject + 1] !== null) {
             setcchoosenProject(choosenProject + 1);
             document.getElementById("prevButton").style.opacity = "1";
             document.getElementById("prevButton").style.pointerEvents = "initial";
             console.log("BLAA " + img1.src)
-            if (choosenProject == 1 || data.PERSONAL_DETAILS[_id].projects[choosenProject + 2] == null) {
+            setimgPos1(null)
+            setimgPos2(null)
+            setimgPos3(null)
+            if (choosenProject == 1 || currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].projects[choosenProject + 2] == null) {
                 document.getElementById("nextButton").style.opacity = "0";
                 document.getElementById("nextButton").style.pointerEvents = "none";
             }
@@ -51,7 +54,9 @@ export function Portfolio(props) {
             setcchoosenProject(choosenProject - 1);
             document.getElementById("nextButton").style.opacity = "1";
             document.getElementById("nextButton").style.pointerEvents = "initial";
-
+            setimgPos1(null)
+            setimgPos2(null)
+            setimgPos3(null)
             if (choosenProject == 1) {
                 document.getElementById("prevButton").style.opacity = "0";
                 document.getElementById("prevButton").style.pointerEvents = "none";
@@ -78,7 +83,7 @@ export function Portfolio(props) {
     }
     const [choosenProject, setcchoosenProject] = useState(0);
     var results = [];
-    results = data1.PROJECT_DETAILS.find(record => record.PID === data.PERSONAL_DETAILS[_id].projects[choosenProject])
+    results = data1.PROJECT_DETAILS.find(record => record.PID === currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].projects[choosenProject])
 
 
     const [imgPos1, setimgPos1] = useState(0)
@@ -87,27 +92,37 @@ export function Portfolio(props) {
 
     var isLandscapeBoolean
     var loadOnce = true
+    var videoPos1
     var loadOnce2
     var loadOnce3
     const img1 = new Image();
     const img2 = new Image();
     const img3 = new Image();
+    const placeholder = new Image();
 
 
+
+
+    //wenn !videoPos1 -> wenn kein Video an 1. Stelle
     img1.src = "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"];
     img1.onload = () => {
         if (img1.width / img1.height <= 1) {
             isLandscapeBoolean = false;
-            setimgPos2(img1.src)
-            console.log("BLA imgpos2 " + imgPos2)
+            setimgPos2(img1.src) //is portrait -> pos2
+            // console.log("BLA imgpos2 " + imgPos2)
         } else {
             isLandscapeBoolean = true;
-            setimgPos1(img1.src)
-            console.log("BLA imgpos1 " + imgPos1)
+            setimgPos1(img1.src) //is landscape ->pos1
+            // console.log("BLA imgpos1 " + imgPos1)
 
         }
 
     };
+
+    if (videoPos1) {
+        setimgPos1(placeholder)
+    }
+
 
 
     img2.src = "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_2"];
@@ -115,49 +130,38 @@ export function Portfolio(props) {
 
         if (img2.width / img2.height <= 1) {
             isLandscapeBoolean = false;
-            setimgPos2(img2.src)
+            setimgPos2(img2.src) //is portrait -> pos2
         } else {
-            isLandscapeBoolean = true;
-            if (imgPos1 == null) {
-                setimgPos1(img2.src)
+            isLandscapeBoolean = true; //is landscape
+            if (imgPos1 == null) { //if pos1 is still empty
+                setimgPos1(img2.src)  //pos1
 
             } else {
-                setimgPos3(img2.src)
+                setimgPos3(img2.src) //else pos3
             }
         }
 
     };
 
-
-    // choosenProject++;
-    // console.log("COSSENPROJECT: " + choosenProject);
-    // document.getElementById("mediafile2").src;
-
-
-
-    console.log("Img3")
     img3.src = "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_3"];
     img3.onload = () => {
 
-        if (img3.width / img3.height <= 1 && loadOnce === true) {
+        if (img3.width / img3.height <= 1 && loadOnce === true) { //first iteration
             isLandscapeBoolean = false;
             loadOnce = false;
-            setimgPos2(img3.src)
-            console.log("Hochformatbild " + imgPos2)
-        } else if (loadOnce === true) {
+            setimgPos2(img3.src) //is portrait -> pos2
+        } else if (loadOnce === true) { //first iteration
             loadOnce = false;
-            isLandscapeBoolean = true;
+            isLandscapeBoolean = true; //is landscape
             if (imgPos1 == null) {
-                setimgPos1(img3.src)
-                console.log("Querformatbild 1 " + imgPos1)
+                setimgPos1(img3.src) //if pos1 empty -> pos1
             }
             else if (imgPos3 == null) {
-                setimgPos3(img3.src)
-                console.log("Querformatbild 3 " + imgPos3)
+                setimgPos3(img3.src) //if pos3 empty -> pos3
             }
         }
         loadOnce = false;
-        console.log("LoadOnce " + loadOnce)
+
     };
 
 
@@ -169,30 +173,28 @@ export function Portfolio(props) {
 
 
     var results = [];
-    results = data1.PROJECT_DETAILS.find(record => record.PID === data.PERSONAL_DETAILS[_id].projects[choosenProject])
+    results = data1.PROJECT_DETAILS.find(record => record.PID === currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].projects[choosenProject])
 
-    const length = data.PERSONAL_DETAILS[_id].projects.length;
-    console.log("Array " + length)
-    // console.log("Array "+ "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_3"])
 
-    //  console.log("filelink: " + "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"])
-
-    // console.log("yeah testing " + FindProjectFromPerson(_id, 0, props.selectedMajor)["PID"])
-
-    //console.log("Projekte: " + data1.PROJECT_DETAILS[data.PERSONAL_DETAILS[_id].projects[0]].Project)
-
-    function showRightContent(checkFile) {
+    function checkForVideo(checkFile) {
         let fileExtension = checkFile.split('.').pop();
-        if (fileExtension === "jpg") {
-            return <img className="mediafile mediafile2" src={imgPos1} alt="Projectmedia" />
-        }
-        else if (fileExtension === "mp4") {
-            return (<MediaComponent
-                url={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"]}
-                width="auto"
-                height="300px"
-            />)
+        let projectIndex = checkFile.split('-').pop();
+        projectIndex = projectIndex.charAt(0);
 
+
+        if (fileExtension === "mp4" || fileExtension === "mov") {
+            videoPos1 = true;
+            return (<motion.div exit={{ opacity: 0 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mediafile mediafile1">
+
+                <MediaComponent
+                    url={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"]}
+                    width="auto"
+                    height="300px"
+                />
+            </motion.div>
+            )
+        } else if (fileExtension === "jpg" || fileExtension === "png") {
+            return <AnimatePresence> <motion.img exit={{ opacity: 0 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} id="changePos" className="mediafile mediafile1" src={imgPos1} alt="Projectmedia" />      </AnimatePresence>
         } else if (!checkFile) {
             return null
         }
@@ -205,18 +207,18 @@ export function Portfolio(props) {
                     <>
                         <img className="background-specs" src={PortfolioBG} alt="Portfolio Background" />
                         <div className="contact">
-                            <img className="profil" src={"https://d18p28upkrc95t.cloudfront.net/persons/" + data.PERSONAL_DETAILS[_id].profilepic} alt="Profil" />
-                            <h1 className="head1"> {data.PERSONAL_DETAILS[_id].FirstName} {data.PERSONAL_DETAILS[_id].Surname}</h1>
+                            <img className="profil" src={"https://d18p28upkrc95t.cloudfront.net/persons/" + currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].profilepic} alt="Profil" />
+                            <h1 className="head1"> {currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].FirstName} {currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].Surname}</h1>
                             <p className="head3">{currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].Major}</p>
                             <p className="paragraphw"><img className="icons" src={MAILicon}
-                                alt="Mail" />{data.PERSONAL_DETAILS[_id].Mail}
+                                alt="Mail" />{currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].Mail}
                             </p>
-                            <p className="paragraphw"><img className="icons1" src={IGicon}
-                                alt="Instagram" />{data.PERSONAL_DETAILS[_id].SocialMedia}</p>
+                            <p className="paragraphw"><img className="icons" src={IGicon}
+                                alt="Instagram" />{currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].SocialMedia}</p>
                             <p className="paragraphw"><img className="icons" src={WEBicon}
-                                alt="Website" />{data.PERSONAL_DETAILS[_id].Website}</p>
+                                alt="Website" />{currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].Website}</p>
                             <p className="head2">Skills</p>
-                            <p className="paragraphw">{data.PERSONAL_DETAILS[_id].Skills}</p>
+                            <p className="paragraphw">{currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].Skills}</p>
                             <img className="QR" src={QRmm} alt="QR Code" />
                             <p className="paragraphw">Save Details</p>
                         </div>
@@ -228,7 +230,7 @@ export function Portfolio(props) {
                             <p className="paragraphbold">{results["Year"]} |
                                 Sem {results["Semester"]}</p>
                             <p className="paragraphbold">Own role</p>
-                            <p className="paragraphb">{data.PERSONAL_DETAILS[_id].ownroles[choosenProject]}</p>
+                            <p className="paragraphb">{currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].ownroles[choosenProject]}</p>
                             <p className="paragraphbold">Team</p>
                             <p className="paragraphb">{results["Team"]}</p>
                             <p className="arrows">
@@ -241,20 +243,24 @@ export function Portfolio(props) {
                         </div>
 
                         <div>
+                            <div className="mediaRow">
 
-                            <div>
-                                <div className="mediafile mediafile1">
-                                    {showRightContent(results["Mediafile_1"])}
-                                    {/* <MediaComponent
-                                        url={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"]}
-                                        width="auto"
-                                        height="300px"
-                                    /> */}
-                                    {/* <img className="mediafile mediafile1" src={imgPos1} alt="Projectmedia" /> */}
-                                </div>
-                                <img className="mediafile mediafile2" src={imgPos2} alt="Projectmedia" />
+                                {checkForVideo(results["Mediafile_1"])}
+                                <AnimatePresence>
+                                    {imgPos2 ?
+                                        <motion.img exit={{ opacity: 0 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mediafile mediafile2" id={"mediafile2"} src={imgPos2} alt="Projectmedia" />
+                                        :
+                                        null
+                                    }
+                                </AnimatePresence>
                             </div>
-                            <img className=" mediafile mediafile3" src={imgPos3} alt="Projectmedia" />
+                            <AnimatePresence>
+                                {imgPos3 ?
+                                    <motion.img exit={{ opacity: 0 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} className=" mediafile mediafile3" id={"mediafile3"} src={imgPos3} alt="Projectmedia" />
+                                    :
+                                    null
+                                }
+                            </AnimatePresence>
                         </div>
                     </>
                 </Zoom>

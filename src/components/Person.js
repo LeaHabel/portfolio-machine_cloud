@@ -1,15 +1,17 @@
 import React from "react";
 import '../pages/Overview.css';
+import '../pages/position.css';
 import { Link } from "react-router-dom";
 import { matchProjectToStudent } from '../../src/components/matchProjectToStudent.js'
 import ProjectData from '../assets/data/projectDataV2.json'
 import CommunicationDesigners from '../assets/data/personDataV3-communication.json'
-import MediaComponent from '../components/MediaComponent';
+import MediaComponentSnippet from '../components/MediaComponentSnippet';
 import { currentMajor } from "../components/currentMajor";
 
 import data from '../assets/data/personDataV3-communication.json';
 
 import data1 from '../assets/data/projectDataV2.json';
+import random from "utils.random";
 
 
 export function Person(props) {
@@ -22,7 +24,7 @@ export function Person(props) {
     results = data1.PROJECT_DETAILS.find(record => record.PID === currentMajor(props.selectedMajor).PERSONAL_DETAILS[0].projects[choosenProject])
 
     const length = currentMajor(props.selectedMajor).PERSONAL_DETAILS[0].projects.length;
-
+    let positionRandom = random(25, 35);
     function getFileExtension(filename) {
         return filename.split('.').pop();
     }
@@ -34,7 +36,7 @@ export function Person(props) {
         } else {
             return (
                 <div className="videoTeaser">
-                    <MediaComponent url={filename} width="auto" height="30px" />
+                    <MediaComponentSnippet url={filename} width="auto" height="30px" />
                 </div>
             )
         }
@@ -48,7 +50,7 @@ export function Person(props) {
     }
 
     function showMediaSnippets(filename) {
-        console.log(filename)
+      //  console.log(filename)
         let fileExtension = filename.split('.').pop();
 
         if (fileExtension === "jpg" || fileExtension === "png") {
@@ -56,7 +58,7 @@ export function Person(props) {
         } else if (fileExtension === "mp4") {
             return (
                 <div className="videoTeaser">
-                    <MediaComponent url={filename} width="auto" height="50px" />
+                    <MediaComponentSnippet url={filename} width="auto" height="50px" />
                 </div>
             )
         } else if (filename) {
@@ -71,7 +73,7 @@ export function Person(props) {
             <Link to={{
                 pathname: "/profil/" + Id,
                 state: { _id: 3 }// your data array of objects
-            }} className={`big maskBubble box  ${props.position}`} id={Id}>
+            }} className={`big maskBubble box  ${props.position}`} style={{left: `${props.randomPosition + '%'}`}} id={Id}>
                 <div className="person box" >
                     <div id="personName">
                         <h1 className="bubbleName">{props.name} {props.surname}</h1>
@@ -94,6 +96,7 @@ export function Person(props) {
                                 {showMediaSnippets(props.projectMedia1_2)}
                             </div>
 
+
                         </div>
                         <div className="flex-container">
 
@@ -115,6 +118,10 @@ export function Person(props) {
                             <div className="flex-item">
                                 {showMediaSnippets(props.projectMedia3_0)}
                             </div>
+                            <div className="flex-item">
+                                {showMediaSnippets(props.projectMedia3_1)}
+                            </div>
+
                         </div>
                     </div>
 

@@ -110,16 +110,6 @@ h4{
 }
 
 
-.pos1 {
-  top: 5%;
-  left: 2%;
-}
-
-.pos4 {
-  top: 1%;
-  left: 3%;
-}
-
 
 
 
@@ -235,9 +225,7 @@ h4{
 .maskingShape {
   transform: scale(0.3);
 }
-#clip {
 
-}
 .maskSVG{
   position: absolute;
   top: 0;
@@ -255,6 +243,20 @@ h4{
 
 a:-webkit-any-link {
   text-decoration: none !important;
+}
+
+
+
+.react-player__preview {
+  background-color: black;
+  cursor:none;
+}
+.react-player__shadow {
+  background: none;
+
+}
+.react-player__play-icon{
+  
 }
 
 

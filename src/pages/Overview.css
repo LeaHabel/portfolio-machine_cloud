@@ -95,3 +95,21 @@ h4{
 .react-reveal {
     animation-fill-mode: both !important;
 }
+
+.container {
+    position: relative;
+}
+.tile {
+    width: 160px;
+    height: 160px;
+    text-align:center;
+    margin: 100px;
+    background-color: #21496D;
+}
+.people{
+    width:90%;
+    align-self: center;
+    padding-top: 10%;
+    padding-left:5% !important;
+
+}
