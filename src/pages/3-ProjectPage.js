@@ -211,7 +211,7 @@ export function Portfolio(props) {
                             <p className="paragraphw"><img className="icons" src={MAILicon}
                                 alt="Mail" />{data.PERSONAL_DETAILS[_id].Mail}
                             </p>
-                            <p className="paragraphw"><img className="icons" src={IGicon}
+                            <p className="paragraphw"><img className="icons1" src={IGicon}
                                 alt="Instagram" />{data.PERSONAL_DETAILS[_id].SocialMedia}</p>
                             <p className="paragraphw"><img className="icons" src={WEBicon}
                                 alt="Website" />{data.PERSONAL_DETAILS[_id].Website}</p>

@@ -105,7 +105,7 @@
 .profil {
     border-style: solid;
     border-width: 3px;
-    border-color: #EABA19;
+    border-color: #E17A43;
     border-radius: 50%;
     margin-bottom: 5%;
     width: 70%;
@@ -136,7 +136,7 @@
 .head3 {
     font-family: 'Roboto', sans-serif;
     font-size: 1.2rem;
-    color: #EABA19;
+    color: #E17A43;
     margin-bottom: 2rem;
     font-weight: lighter;
 }
@@ -176,9 +176,17 @@
 }
 
 .icons {
-    padding-top: 0.3rem;
-    padding-right: 0.3rem;
+    padding-top: 0.1rem;
+    padding-right: 0.8rem;
+    width: 16px;
 }
+
+.icons1 {
+    padding-top: 0.1rem;
+    padding-right: 0.3rem;
+    width: 25px;
+}
+
 
 .arrows {
     padding-top: 1.2rem;
