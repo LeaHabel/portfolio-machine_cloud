@@ -1,7 +1,7 @@
-import CommunicationDesigners from '../assets/data/personDataV3-communication.json'
-import MediaDesigners from '../assets/data/personDataV3-media.json'
-import SoundDesigners from '../assets/data/personDataV3-sound.json'
-import InteractionDesigners from '../assets/data/personDataV3-interaction.json'
+import CommunicationDesigners from '../assets/data/personDataV4-communication.json'
+import MediaDesigners from '../assets/data/personDataV4-media.json'
+import SoundDesigners from '../assets/data/personDataV4-sound.json'
+import InteractionDesigners from '../assets/data/personDataV4-interaction.json'
 
 export const currentMajor = (selectedMajor) => {
 

@@ -1,0 +1,234 @@
+{
+  "PERSONAL_DETAILS": [
+    {
+      "virtualID": 1,
+      "ID": 1,
+      "Surname": "Adams",
+      "FirstName": "Jan",
+      "Major": "Communication Design",
+      "Mail": "office@adamsjan.com",
+      "Website": "adamsjan.com ",
+      "SocialMedia": "instagram adamsjan_com",
+      "Skills": "communication design, creative coding, conception ",
+      "projects": [
+        "P53",
+        "P54",
+        "P55"
+      ],
+      "ownroles": [
+        "poster design, concept, print design",
+        "immersive, sound design, experimental, creative coding, processing",
+        "poster design, concept, print design"
+      ],
+      "profilepic": "1-pp.jpg",
+      "qr": "1-qr.png"
+    },
+    {
+      "virtualID": 2,
+      "ID": 4,
+      "Surname": "Bunjaku",
+      "FirstName": "Leonora",
+      "Major": "Communication Design",
+      "Mail": "leonora@bunjaku.at",
+      "Website": "–",
+      "SocialMedia": "–",
+      "Skills": "graphic design, editorial design, typography, corporate design, communication design",
+      "projects": [
+        "P61",
+        "P63",
+        null
+      ],
+      "ownroles": [
+        "website design, screen design",
+        "posterdesign, photography, concept",
+        null
+      ],
+      "profilepic": "4-pp.jpg",
+      "qr": null
+    },
+    {
+      "virtualID": 3,
+      "ID": 5,
+      "Surname": "Dachauer",
+      "FirstName": "Theresa",
+      "Major": "Communication Design",
+      "Mail": "theresa.dachauer@gmail.com",
+      "Website": "–",
+      "SocialMedia": "instagram eselcorn",
+      "Skills": "illustration, communication design, graphic design, digital arts, information design",
+      "projects": [
+        "P74",
+        "P75",
+        "P76"
+      ],
+      "ownroles": [
+        "illustration, type design, art",
+        "illustration, concept",
+        "illustration, graphic design, concept"
+      ],
+      "profilepic": "5-pp.jpg",
+      "qr": "5-qr.png"
+    },
+    {
+      "virtualID": 4,
+      "ID": 10,
+      "Surname": "Geiregger",
+      "FirstName": "Lena",
+      "Major": "Communication Design",
+      "Mail": "l.geiregger@hotmail.com",
+      "Website": "lena-geiregger.com",
+      "SocialMedia": "instagram lena.geiregger",
+      "Skills": "illustration, communication and graphic design, digital arts",
+      "projects": [
+        "P39",
+        "P41",
+        "P40"
+      ],
+      "ownroles": [
+        "graphic design, illustration",
+        "graphic design, illustration",
+        "concept, design, development"
+      ],
+      "profilepic": "10-pp.jpg",
+      "qr": "10-qr.png"
+    },
+    {
+      "virtualID": 5,
+      "ID": 11,
+      "Surname": "Geramb",
+      "FirstName": "Christof",
+      "Major": "Communication Design",
+      "Mail": "christof.geramb@gmail.com",
+      "Website": "christofgeramb.com",
+      "SocialMedia": "instragram christofg",
+      "Skills": "branding, art direction, corporate design, editorial design, publishing, photography",
+      "projects": [
+        "P77",
+        null,
+        null
+      ],
+      "ownroles": [
+        "puplishing, editorial, photography, production, wrinting",
+        null,
+        null
+      ],
+      "profilepic": "11-pp.jpg",
+      "qr": "11-qr.png"
+    },
+    {
+      "virtualID": 6,
+      "ID": 28,
+      "Surname": "Reischl",
+      "FirstName": "Kristina",
+      "Major": "Communication Design",
+      "Mail": "info@issyrey.com",
+      "Website": "issyrey.com",
+      "SocialMedia": "instagram issyrey",
+      "Skills": "art direction, brand identity, digital arts, graphic design, illustration, animation, social media",
+      "projects": [
+        "P17",
+        "P18",
+        "P19"
+      ],
+      "ownroles": [
+        "conception, writing, brand design, book design",
+        "graphic design, processing",
+        "conception, editorial design"
+      ],
+      "profilepic": "28-pp.jpg",
+      "qr": "28-qr.png"
+    },
+    {
+      "virtualID": 7,
+      "ID": 29,
+      "Surname": "Rest",
+      "FirstName": "Viktoria",
+      "Major": "Communication Design",
+      "Mail": "viktoria.rest@gmx.at",
+      "Website": "viktoriarest.com",
+      "SocialMedia": "–",
+      "Skills": "graphic design, interior design, architecture, concept",
+      "projects": [
+        "P52",
+        null,
+        null
+      ],
+      "ownroles": [
+        "concept development, brand design, interior design",
+        null,
+        null
+      ],
+      "profilepic": "29-pp.jpg",
+      "qr": "29-qr.png"
+    },
+    {
+      "virtualID": 8,
+      "ID": 36,
+      "Surname": "Sorko",
+      "FirstName": "Viktoria",
+      "Major": "Communication Design",
+      "Mail": "viktoria.sorko@gmail.com",
+      "Website": "–",
+      "SocialMedia": "–",
+      "Skills": "illustration, graphic design, art, communication design ",
+      "projects": [
+        "P39",
+        "P41",
+        null
+      ],
+      "ownroles": [
+        "graphic design, illustration",
+        "illustration, graphic design",
+        null
+      ],
+      "profilepic": "36-pp.jpg",
+      "qr": null
+    },
+    {
+      "virtualID": 9,
+      "ID": 45,
+      "Surname": "Zechner",
+      "FirstName": "Sonja",
+      "Major": "Communication Design",
+      "Mail": "sonja.zechner@gmx.at",
+      "Website": "sonjazechner.com",
+      "SocialMedia": "instagram sonja.zechner",
+      "Skills": "packaging design, graphic design, logo design",
+      "projects": [
+        "P30",
+        "P31",
+        "P32"
+      ],
+      "ownroles": [
+        "concept, packaging design, print",
+        "idea, concept, graphic design",
+        "idea, concept, graphic design"
+      ],
+      "profilepic": "45-pp.jpg",
+      "qr": "45-qr.png"
+    },
+    {
+      "virtualID": 10,
+      "ID": 47,
+      "Surname": "Zus",
+      "FirstName": "Marcelino",
+      "Major": "Communication Design",
+      "Mail": "mail@marcelinozus.com",
+      "Website": "marcelinozus.com",
+      "SocialMedia": "instagram marcelinozus",
+      "Skills": "graphic design, print production, illustration, typography, package design",
+      "projects": [
+        "P20",
+        "P21",
+        null
+      ],
+      "ownroles": [
+        "concept, graphic design, packaging and print",
+        "concept, design, print",
+        null
+      ],
+      "profilepic": "47-pp.jpg",
+      "qr": "47-qr.png"
+    }
+  ]
+}

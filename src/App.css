@@ -110,21 +110,6 @@ h4{
 }
 
 
-.pos1 {
-  /* top: 150px;
-  left: 120px; */
-}
-
-.pos2 {
-  /* top: 250px;
-  left: 170px; */
-}
-
-.pos4 {
-  /* top: 1%;
-  left: 3%; */
-}
-
 
 
 
@@ -242,9 +227,7 @@ h4{
 .maskingShape {
   transform: scale(0.9);
 }
-#clip {
 
-}
 .maskSVG{
   position: absolute;
   top: 0;

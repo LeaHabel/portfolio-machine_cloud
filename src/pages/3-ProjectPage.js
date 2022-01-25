@@ -29,7 +29,6 @@ import FindProjectFromPerson from "../components/FindProjectFromPerson";
 export function Portfolio(props) {
     let { id } = useParams()
     let _id = id - 1
-
     //nächstes Proejct
     const nextProject = () => {
         if (choosenProject < 3 && currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].projects[choosenProject + 1] !== null) {
@@ -45,6 +44,7 @@ export function Portfolio(props) {
                 document.getElementById("nextButton").style.pointerEvents = "none";
             }
         }
+
 
         // document.getElementById("mediafile2").src;
     }
@@ -105,8 +105,6 @@ export function Portfolio(props) {
 
     //wenn !videoPos1 -> wenn kein Video an 1. Stelle
     img1.src = "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"];
-
-
     img1.onload = () => {
         if (img1.width / img1.height <= 1) {
             isLandscapeBoolean = false;
@@ -128,7 +126,6 @@ export function Portfolio(props) {
 
 
     img2.src = "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_2"];
-
     img2.onload = () => {
 
         if (img2.width / img2.height <= 1) {
@@ -147,10 +144,6 @@ export function Portfolio(props) {
     };
 
     img3.src = "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_3"];
-    if (img3.src == null) {
-        console.log("Pos imgPos2 ist null")
-
-    }
     img3.onload = () => {
 
         if (img3.width / img3.height <= 1 && loadOnce === true) { //first iteration
@@ -164,7 +157,7 @@ export function Portfolio(props) {
                 setimgPos1(img3.src) //if pos1 empty -> pos1
             }
             else if (imgPos3 == null) {
-                setimgPos3(img3.src) //if pos3 empty -> pos3 
+                setimgPos3(img3.src) //if pos3 empty -> pos3
             }
         }
         loadOnce = false;
@@ -223,23 +216,6 @@ export function Portfolio(props) {
             return null
         }
     }
-
-    function showRightContent(checkFile) {
-        let fileExtension = checkFile.split('.').pop();
-        if (fileExtension === "jpg") {
-            return <img className="mediafile mediafile2" src={imgPos1} alt="Projectmedia" />
-        }
-        else if (fileExtension === "mp4") {
-            return (<MediaComponent
-                url={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"]}
-                width="auto"
-                height="300px"
-            />)
-
-        } else if (!checkFile) {
-            return null
-        }
-    }
     return (
         <div className="Portfolio">
             <motion.div variants={bodyVariants} initial="hidden" animate="visible" exit={"exit"} className="overflow">
@@ -253,8 +229,8 @@ export function Portfolio(props) {
                             <p className="paragraphw"><img className="icons" src={MAILicon}
                                 alt="Mail" />{currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].Mail}
                             </p>
-                            <p className="paragraphw"><img className="icons1" src={IGicon}
-                                alt="Instagram" />{data.PERSONAL_DETAILS[_id].SocialMedia}</p>
+                            <p className="paragraphw"><img className="icons" src={IGicon}
+                                alt="Instagram" />{currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].SocialMedia}</p>
                             <p className="paragraphw"><img className="icons" src={WEBicon}
                                 alt="Website" />{currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].Website}</p>
                             <p className="head2">Skills</p>
