@@ -1,24 +1,15 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import './3-ProjectPage.css'
-import MaxMuster from "../assets/MaxMuster.png";
 import PortfolioBG from "../assets/PortfolioBG.png";
-import QRmm from "../assets/QRmm.png";
 import MAILicon from "../assets/MAILicon.png"
 import IGicon from "../assets/IGicon.png"
 import WEBicon from "../assets/WEBicon.png"
-import projIMG1 from "../assets/projIMG1.png"
-import projIMG2 from "../assets/projIMG2.png"
-// import projIMG3 from "../assets/projIMG3.png"
 import Next from "../assets/Next.svg"
 import Previous from "../assets/Previous.svg"
 import { Cloudbutton } from "../components/cloudbutton";
 import { CloseButton } from "../components/closeButton";
 import Zoom from 'react-reveal/Zoom';
 import { AnimatePresence, motion } from 'framer-motion/dist/framer-motion'
-import data from '../assets/data/personDataV3-communication.json';
-import dataInteraction from '../assets/data/personDataV3-interaction.json';
-import dataMedia from '../assets/data/personDataV3-media.json';
-import dataSound from '../assets/data/personDataV3-sound.json';
 import data1 from '../assets/data/projectDataV2.json';
 import MediaComponent from '../components/MediaComponent';
 import { useLocation, useParams } from 'react-router-dom';
@@ -27,47 +18,64 @@ import { currentMajor } from "../components/currentMajor";
 import FindProjectFromPerson from "../components/FindProjectFromPerson";
 
 export function Portfolio(props) {
+    const [imgPos1, setimgPos1] = useState(0)
+    const [imgPos2, setimgPos2] = useState(0)
+    const [imgPos3, setimgPos3] = useState(0)
+    const [QR, setQR] = useState(0)
+    const [backButton, setBackButton] = useState(false)
+    const [nextButton, setNextButton] = useState(1)
+    var isLandscapeBoolean
+    var loadOnce = true
+    var videoPos1
+    var loadOnce2
+    var loadOnce3
+    var ifQrCode
+    const img1 = new Image();
+    const img2 = new Image();
+    const img3 = new Image();
+    const placeholder = new Image();
+    const [nextBut, setnextBut] = useState(0)
+    var scndProject
     let { id } = useParams()
     let _id = id - 1
 var scndProject
+
+
     //nächstes Proejct
     const nextProject = () => {
         if (choosenProject < 3 && currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].projects[choosenProject + 1] !== null) {
             setcchoosenProject(choosenProject + 1);
-            document.getElementById("prevButton").style.opacity = "1";
-            document.getElementById("prevButton").style.pointerEvents = "initial";
+            setBackButton(true)
             console.log("BLAA " + img1.src)
             setimgPos1(null)
             setimgPos2(null)
             setimgPos3(null)
+            console.log("Button nächstes Projekt 1 " + backButton)
             if (choosenProject == 1 || currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].projects[choosenProject + 2] == null) {
-                document.getElementById("nextButton").style.opacity = "0";
-                document.getElementById("nextButton").style.pointerEvents = "none";
+                setNextButton(0)
+                console.log("Button nächstes Projekt 2 " +nextButton)
             }
         }
 
-
-        // document.getElementById("mediafile2").src;
     }
     //vorheriges Proejct
     const prevProject = () => {
         if (choosenProject > 0) {
             setcchoosenProject(choosenProject - 1);
-            document.getElementById("nextButton").style.opacity = "1";
-            document.getElementById("nextButton").style.pointerEvents = "initial";
+            setNextButton(1)
             setimgPos1(null)
             setimgPos2(null)
             setimgPos3(null)
+            console.log("Button nächstes Projekt 1 " + nextButton)
             if (choosenProject == 1) {
-                document.getElementById("prevButton").style.opacity = "0";
-                document.getElementById("prevButton").style.pointerEvents = "none";
+                setBackButton(false)
+                console.log("Button letztes Projekt 2 " + backButton)
             }
         }
 
     }
 
-    console.log("State: " + id)
-    console.log("State2: " + _id)
+    //animatiion
     const bodyVariants = {
         hidden: {
             opacity: 0,
@@ -82,27 +90,12 @@ var scndProject
             scale: 0.1
         }
     }
+
+    // richtiges Projekt zu passendem Student finden
     const [choosenProject, setcchoosenProject] = useState(0);
     var results = [];
     results = data1.PROJECT_DETAILS.find(record => record.PID === currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].projects[choosenProject])
 
-
-    const [imgPos1, setimgPos1] = useState(0)
-    const [imgPos2, setimgPos2] = useState(0)
-    const [imgPos3, setimgPos3] = useState(0)
-    const [QR, setQR] = useState(0)
-    var isLandscapeBoolean
-    var loadOnce = true
-    var videoPos1
-    var loadOnce2
-    var loadOnce3
-    var ifQrCode
-    const img1 = new Image();
-    const img2 = new Image();
-    const img3 = new Image();
-    const placeholder = new Image();
-    const [nextBut, setnextBut] = useState(0)
-    var scndProject
 
     function ifQRCode() {
         if(currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].qr !== null) {
@@ -110,7 +103,8 @@ var scndProject
             console.log("QR " + ifQrCode)
         }
     }
-    //wenn !videoPos1 -> wenn kein Video an 1. Stelle
+
+    // Bilder richtig positionieren
     img1.src = "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"];
     img1.onload = () => {
         if (img1.width / img1.height <= 1) {
@@ -129,8 +123,6 @@ var scndProject
     if (videoPos1) {
         setimgPos1(placeholder)
     }
-
-
 
     img2.src = "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_2"];
     img2.onload = () => {
@@ -176,31 +168,11 @@ var scndProject
     };
 
 
-
-
-
-    function checkScndProject() {
-        if (currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].projects[choosenProject + 1] !== null) {
-            scndProject = true;
-            return (<img onClick={() => nextProject()}
-                         className="arrows"
-                         id={"nextButton"}
-                         src={Next}
-                         alt="Next" />)
-        }
-    }
-
-
-
-    var results = [];
-    results = data1.PROJECT_DETAILS.find(record => record.PID === currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].projects[choosenProject])
-
-
+    //wenn !videoPos1 -> wenn kein Video an 1. Stelle
     function checkForVideo(checkFile) {
         let fileExtension = checkFile.split('.').pop();
         let projectIndex = checkFile.split('-').pop();
         projectIndex = projectIndex.charAt(0);
-
 
         if (fileExtension === "mp4" || fileExtension === "mov") {
             videoPos1 = true;
@@ -262,8 +234,23 @@ var scndProject
                             <p className="paragraphbold">Team</p>
                             <p className="paragraphb">{results["Team"]}</p>
                             <p className="arrows">
-                                <img id={"prevButton"} onClick={() => prevProject()} className="arrows" src={Previous} alt="Previous" />
-                                {checkScndProject()}</p>
+                               {/* {useEffect()}*/}
+                                {backButton ?
+                                    <img id={"prevButton"} onClick={() => prevProject()} className="arrows" src={Previous} alt="Previous" />
+                                    :
+                                    <img id={"null"} onClick={() => prevProject()} className="arrows" src={Previous} alt="Previous" />
+                                }
+                                {nextButton ?
+                                    <img onClick={() => nextProject()}
+                                         className="arrows"
+                                         id={"nextButton"}
+                                         src={Next}
+                                         alt="Next" />
+                                    :
+                                    null
+                                }
+                                </p>
+
                         </div>
 
                         <div>
