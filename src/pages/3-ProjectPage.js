@@ -29,7 +29,7 @@ import FindProjectFromPerson from "../components/FindProjectFromPerson";
 export function Portfolio(props) {
     let { id } = useParams()
     let _id = id - 1
-
+var scndProject
     //nächstes Proejct
     const nextProject = () => {
         if (choosenProject < 3 && currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].projects[choosenProject + 1] !== null) {
@@ -179,7 +179,16 @@ export function Portfolio(props) {
 
 
 
-
+    function checkScndProject() {
+        if (currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].projects[choosenProject + 1] !== null) {
+            scndProject = true;
+            return (<img onClick={() => nextProject()}
+                         className="arrows"
+                         id={"nextButton"}
+                         src={Next}
+                         alt="Next" />)
+        }
+    }
 
 
 
@@ -256,11 +265,7 @@ export function Portfolio(props) {
                             <p className="paragraphb">{results["Team"]}</p>
                             <p className="arrows">
                                 <img id={"prevButton"} onClick={() => prevProject()} className="arrows" src={Previous} alt="Previous" />
-                                <img onClick={() => nextProject()}
-                                    className="arrows"
-                                    id={"nextButton"}
-                                    src={Next}
-                                    alt="Next" /></p>
+                                {checkScndProject()}</p>
                         </div>
 
                         <div>
