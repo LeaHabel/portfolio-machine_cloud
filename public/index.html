@@ -8,38 +8,93 @@
   <meta name="theme-color" content="#000000" />
   <meta name="description" content="Web site created using create-react-app" />
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-  <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js">
   </script>
-  <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
   <title>React App</title>
+
+  <!-- Javascript - Simple Serial -->
+  <script lang="text/javascript" src="/src/js/simple-serial.min.js"></script>
 </head>
 
 <body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <!-- React is inside root element -->
   <div id="root"></div>
-  <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+  <!-- Javascript – Simple Serial Functions -->
+  <script type="text/javascript">
+    /* variables */
+    let toggle = false;
+    var baud = 57600;
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    /* CHANGE IDS HERE */
+    var cdID = 0; // Communication Design ID
+    var mdID = 1; // Media Design ID
+    var sdID = 2; // Sound Design ID
+    var idID = 3; // Interaction Design ID
+    var sensorRelease = 5; // Additional Value when you release the sensor
+
+    /* connect button IN */
+    const connection = SimpleSerial.connect({
+      baudRate: baud, // baud settings for the serial connection
+      requestButton: "permissionElement", // link to the id of the button that needs to be clicked
+      requestAccessOnPageLoad: false, // if true - it will change to a modal instead of a normal button with the some functionality
+      //logOutgoingSerialData: true, // log outgoing data in console
+      //logIncomingSerialData: true, // log incoming data in console
+    })
+
+    async function connect() {
+      port = await navigator.serial.requestPort();
+    }
+
+    /* listening to events from the arduino */
+    connection.on("value", function (data) {
+
+      //output of received data
+      //console.log('Received value from arduino is: ' + data)
+      if (data == cdID) {
+        console.log("Communication Design")
+        // localStorage.clear();
+        // data = 0;
+        localStorage.setItem('data', data)
+      }
+      else if (data == mdID) {
+        console.log("Media Design")
+      }
+      else if (data == sdID) {
+        console.log("Sound Design")
+      }
+      else if (data == idID) {
+        console.log("Interaction Design")
+      }
+
+    });
+
+    /* sending data to the arduino */
+    async function toggleLights() {
+      if (toggle == false) {
+        await connection.send("event", 1);
+        toggle = true;
+
+        console.log("Lights ON");
+      }
+      else {
+        await connection.send("event", 0);
+        toggle = false;
+
+        console.log("Lights OFF");
+      }
+    }
+    // localStorage.clear();
+    data = 2;
+    localStorage.setItem('data', data)
+
+    //window._DEFAULT_DATA = 2;
+
+
+  </script>
+
+
 </body>
 
 </html>

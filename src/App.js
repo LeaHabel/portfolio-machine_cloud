@@ -15,12 +15,19 @@ import {
     useLocation
 } from "react-router-dom";
 import { AnimatePresence, motion } from 'framer-motion/dist/framer-motion'
+//import * as publicHTML from './cloudConnect.js'
 
 
 function App() {
     var Id;
     const location = useLocation();
     const [selectedMajor, setSelectedMajor] = useState(0); //this number has to change when Input comes from cloud
+
+    //localStorage.clear()
+    let data = localStorage.getItem('data')
+    console.log("data " + data)
+
+    //console.log("myvar" + window._DEFAULT_DATA)
     return (
         <>
             <AnimatePresence exitBeforeEnter>
