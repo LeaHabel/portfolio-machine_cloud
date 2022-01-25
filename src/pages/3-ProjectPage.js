@@ -191,14 +191,14 @@ export function Portfolio(props) {
     // console.log("yeah testing " + FindProjectFromPerson(_id, 0, props.selectedMajor)["PID"])
 
     //console.log("Projekte: " + data1.PROJECT_DETAILS[data.PERSONAL_DETAILS[_id].projects[0]].Project)
-    function checkScndProject(){
+    function checkScndProject() {
         if (currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].projects[choosenProject + 1] !== null) {
             scndProject = true;
-            return ( <img onClick={() => nextProject()}
-                          className="arrows"
-                          id={"nextButton"}
-                          src={Next}
-                          alt="Next" />)
+            return (<img onClick={() => nextProject()}
+                className="arrows"
+                id={"nextButton"}
+                src={Next}
+                alt="Next" />)
         }
     }
     function checkForVideo(checkFile) {
@@ -209,8 +209,7 @@ export function Portfolio(props) {
 
         if (fileExtension === "mp4" || fileExtension === "mov") {
             videoPos1 = true;
-            return (<motion.div exit={{ opacity: 0 }} initial={{opacity: 0 }} animate={{opacity: 1}} className="mediafile mediafile1">
-
+            return (<motion.div exit={{ opacity: 0 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mediafile mediafile1">
                 <MediaComponent
                     url={"https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"]}
                     width="auto"
@@ -219,7 +218,7 @@ export function Portfolio(props) {
             </motion.div>
             )
         } else if (fileExtension === "jpg" || fileExtension === "png") {
-            return       <AnimatePresence> <motion.img exit={{ opacity: 0 }} initial={{opacity: 0 }} animate={{opacity: 1}} id="changePos" className="mediafile mediafile1" src={imgPos1} alt="Projectmedia" />      </AnimatePresence>
+            return <AnimatePresence> <motion.img exit={{ opacity: 0 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} id="changePos" className="mediafile mediafile1" src={imgPos1} alt="Projectmedia" />      </AnimatePresence>
         } else if (!checkFile) {
             return null
         }
@@ -263,7 +262,7 @@ export function Portfolio(props) {
                             <p className="arrows">
                                 <img id={"prevButton"} onClick={() => prevProject()} className="arrows" src={Previous} alt="Previous" />
                                 {checkScndProject()}
-                              </p>
+                            </p>
                         </div>
 
                         <div>
@@ -271,19 +270,19 @@ export function Portfolio(props) {
 
                                 {checkForVideo(results["Mediafile_1"])}
                                 <AnimatePresence>
-                                {imgPos2 ?
-                                    <motion.img exit={{ opacity: 0 }} initial={{opacity: 0 }} animate={{opacity: 1}} className="mediafile mediafile2" id={"mediafile2"} src={imgPos2} alt="Projectmedia" />
-                                    :
-                                    null
-                                }
+                                    {imgPos2 ?
+                                        <motion.img exit={{ opacity: 0 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mediafile mediafile2" id={"mediafile2"} src={imgPos2} alt="Projectmedia" />
+                                        :
+                                        null
+                                    }
                                 </AnimatePresence>
                             </div>
                             <AnimatePresence>
-                            {imgPos3 ?
-                                <motion.img exit={{ opacity: 0 }} initial={{opacity: 0 }} animate={{opacity: 1}} className=" mediafile mediafile3" id={"mediafile3"} src={imgPos3} alt="Projectmedia" />
-                                :
-                                null
-                            }
+                                {imgPos3 ?
+                                    <motion.img exit={{ opacity: 0 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} className=" mediafile mediafile3" id={"mediafile3"} src={imgPos3} alt="Projectmedia" />
+                                    :
+                                    null
+                                }
                             </AnimatePresence>
                         </div>
                     </>
