@@ -102,7 +102,6 @@ export function Portfolio(props) {
 
 
 
-
     //wenn !videoPos1 -> wenn kein Video an 1. Stelle
     img1.src = "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"];
     img1.onload = () => {
