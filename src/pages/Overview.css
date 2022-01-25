@@ -100,7 +100,16 @@ h4{
     position: relative;
 }
 .tile {
-    width: 16px;
-    height: 16px;
+    width: 160px;
+    height: 160px;
     text-align:center;
+    margin: 100px;
+    background-color: #21496D;
+}
+.people{
+    width:90%;
+    align-self: center;
+    padding-top: 10%;
+    padding-left:5% !important;
+
 }

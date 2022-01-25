@@ -1,15 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import '../../src/App.css';
 import { Person } from "../components/Person";
 import './Overview.css';
+import '../pages/position.css';
 import { startThreeJS } from "../components/threejs/three";
 import { Cloudbutton } from "../components/cloudbutton";
 import { AnimatePresence, motion } from 'framer-motion/dist/framer-motion'
 import { currentMajor } from "../components/currentMajor";
 import FindProjectFromPerson from "../components/FindProjectFromPerson";
 import $ from "jquery"
+import { Range } from 'react-range';
+import random from 'utils.random';
 
 export function Overview(props) {
+   let size = random(0,25);
     useEffect(() => {
         startThreeJS();
 
@@ -52,24 +56,6 @@ export function Overview(props) {
         closed: { opacity: 0, x: "-100%" },
     }
 
-    var _ = require('underscore');
-
-    var tilesize = 18, tilecount = 15;
-    var gRows = Math.floor($(".container").innerWidth() / tilesize);
-    var gCols = Math.floor($('.container').innerHeight() / tilesize);
-
-    var vals = _.shuffle(_.range(tilecount));
-    var xpos = _.shuffle(_.range(gRows));
-    var ypos = _.shuffle(_.range(gCols));
-
-    _.each(vals, function (d, i) {
-    var $newdiv = $('<div/>').addClass("test tile");
-    $newdiv.css({
-            'position': 'absolute',
-             'left': (xpos[i] * tilesize) + 'px',
-             'top': (ypos[i] * tilesize) + 'px'
-         }).appendTo('.container').html(d);
-     });
 
     return (
         <>
@@ -77,18 +63,22 @@ export function Overview(props) {
                 <div id="three-js" className={"person-list"}>
                 </div>
                 <Cloudbutton onClick={() => setIsOpen(true)} />
+                <div className={"people"}>
                 {currentMajor(props.selectedMajor).PERSONAL_DETAILS.map((user) => (
-                    <motion.div exit={"exit"}
 
+                    <motion.div exit={"exit"}
                         animate={isOpen ? "open" : "visible"}
-                        variants={variants} className="test tile">
+                        variants={variants} className="test">
+
                         <Person className={"personPosition"}
+
                             name={user.FirstName}
                             surname={user.Surname}
                             major={user.Major}
                             id={user.virtualID}
                             key={user.virtualID}
                             position={"pos" + user.virtualID}
+                            randomPosition={size}
 
                             // Uff
                             projectMedia1_0={
@@ -125,6 +115,7 @@ export function Overview(props) {
                         />
                     </motion.div>
                 ))}
+                </div>
             </div>
         </>
     );

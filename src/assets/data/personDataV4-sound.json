@@ -1,0 +1,165 @@
+{
+  "PERSONAL_DETAILS": [
+    {
+      "virtualID": 1,
+      "ID": 3,
+      "Surname": "Bettke",
+      "FirstName": "Tobias",
+      "Major": "Sound Design",
+      "Mail": "tobias.bettke@googlemail.com",
+      "Website": "–",
+      "SocialMedia": "instagram tobibettke",
+      "Skills": "sound design, audio engineering, music production, electronic music, coding",
+      "projects": [
+        "P1",
+        "P2",
+        "P3"
+      ],
+      "ownroles": [
+        "music production, installation, concept, performance",
+        "music production, ambisonics mixdown",
+        "music production, mastering, artwork"
+      ],
+      "profilepic": "3-pp.jpg",
+      "qr": "3-qr.png"
+    },
+    {
+      "virtualID": 2,
+      "ID": 19,
+      "Surname": "Kotecki",
+      "FirstName": "Philipp",
+      "Major": "Sound Design",
+      "Mail": "info@philippkotecki.com",
+      "Website": "philippkotecki.com",
+      "SocialMedia": "instagram hitekki",
+      "Skills": "sound design, audio engineering, music production, coding",
+      "projects": [
+        "P43",
+        "P44",
+        "P45"
+      ],
+      "ownroles": [
+        "sound design, sound integration, scripting",
+        "composition, sound design, mixing",
+        "song writing, performance, production, cover art"
+      ],
+      "profilepic": "19-pp.jpg",
+      "qr": "19-qr.png"
+    },
+    {
+      "virtualID": 3,
+      "ID": 21,
+      "Surname": "Kurbegovic",
+      "FirstName": "Esma",
+      "Major": "Sound Design",
+      "Mail": "e.kurbegovic@outlook.com",
+      "Website": "–",
+      "SocialMedia": "instagram enoltralive",
+      "Skills": "sound design, electronic music, soundscapes, soundtracks, audiovisual, interdisciplinary",
+      "projects": [
+        "P91",
+        "P92",
+        null
+      ],
+      "ownroles": [
+        "sound design, animation",
+        "sound design, mixing\/mastering",
+        null
+      ],
+      "profilepic": "21-pp.jpg",
+      "qr": "21-qr.png"
+    },
+    {
+      "virtualID": 4,
+      "ID": 22,
+      "Surname": "Lechner",
+      "FirstName": "Johannes",
+      "Major": "Sound Design",
+      "Mail": "its@johannes-lechner.com",
+      "Website": "johannes-lechner.com",
+      "SocialMedia": "linkedin johanneslechner",
+      "Skills": "sound design, music production, coding, web design, 3d design, 2d design, game design, multitalent",
+      "projects": [
+        "P47",
+        "P83",
+        "P84"
+      ],
+      "ownroles": [
+        "music production, sound design, coding",
+        "everything (music production, mixing, mastering)",
+        "2d design, 3d design"
+      ],
+      "profilepic": "22-pp.jpg",
+      "qr": "22-qr.png"
+    },
+    {
+      "virtualID": 5,
+      "ID": 38,
+      "Surname": "Stuhlpfarrer",
+      "FirstName": "Christoph",
+      "Major": "Sound Design",
+      "Mail": "christoph.stuhlpfarrer@inode.at",
+      "Website": "vimeo.com\/christophstuhlpfarrer",
+      "SocialMedia": "linkedin christoph-stuhlpfarrer",
+      "Skills": "sound design, music production, composition, audio mixing, spatial audio",
+      "projects": [
+        "P80",
+        "P81",
+        "P82"
+      ],
+      "ownroles": [
+        "composition, sound design, mixing, mastering",
+        "composition, sound design, mixing, mastering",
+        "composition, sound design, mixing, mastering"
+      ],
+      "profilepic": "38-pp.jpg",
+      "qr": "38-qr.png"
+    },
+    {
+      "virtualID": 6,
+      "ID": 39,
+      "Surname": "Taormina",
+      "FirstName": "Giuseppe",
+      "Major": "Sound Design",
+      "Mail": "giuseppe.taorm@gmail.com",
+      "Website": "–",
+      "SocialMedia": "–",
+      "Skills": "sound design, music production, composition, sound coding, audio mixing",
+      "projects": [
+        "P78",
+        "P79",
+        null
+      ],
+      "ownroles": [
+        "composition, sound design, binaural mix, master",
+        "sound design, composition, mix, master",
+        null
+      ],
+      "profilepic": "39-pp.jpg",
+      "qr": null
+    },
+    {
+      "virtualID": 7,
+      "ID": 44,
+      "Surname": "Witting",
+      "FirstName": "Isabel",
+      "Major": "Sound Design",
+      "Mail": "isabel.witting@hotmail.com",
+      "Website": "–",
+      "SocialMedia": "–",
+      "Skills": "sound design, audio visual, multimedia allrounder",
+      "projects": [
+        "P54",
+        "P85",
+        "P86"
+      ],
+      "ownroles": [
+        "sound design, concept",
+        "sound design, concept",
+        "sound design, concept"
+      ],
+      "profilepic": "44-pp.jpg",
+      "qr": null
+    }
+  ]
+}

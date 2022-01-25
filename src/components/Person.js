@@ -1,5 +1,6 @@
 import React from "react";
 import '../pages/Overview.css';
+import '../pages/position.css';
 import { Link } from "react-router-dom";
 import { matchProjectToStudent } from '../../src/components/matchProjectToStudent.js'
 import ProjectData from '../assets/data/projectDataV2.json'
@@ -10,6 +11,7 @@ import { currentMajor } from "../components/currentMajor";
 import data from '../assets/data/personDataV3-communication.json';
 
 import data1 from '../assets/data/projectDataV2.json';
+import random from "utils.random";
 
 
 export function Person(props) {
@@ -22,7 +24,7 @@ export function Person(props) {
     results = data1.PROJECT_DETAILS.find(record => record.PID === currentMajor(props.selectedMajor).PERSONAL_DETAILS[0].projects[choosenProject])
 
     const length = currentMajor(props.selectedMajor).PERSONAL_DETAILS[0].projects.length;
-
+    let positionRandom = random(25, 35);
     function getFileExtension(filename) {
         return filename.split('.').pop();
     }
@@ -71,7 +73,7 @@ export function Person(props) {
             <Link to={{
                 pathname: "/profil/" + Id,
                 state: { _id: 3 }// your data array of objects
-            }} className={`big maskBubble box  ${props.position}`} id={Id}>
+            }} className={`big maskBubble box  ${props.position}`} style={{left: `${props.randomPosition + '%'}`}} id={Id}>
                 <div className="person box" >
                     <div id="personName">
                         <h1 className="bubbleName">{props.name} {props.surname}</h1>
