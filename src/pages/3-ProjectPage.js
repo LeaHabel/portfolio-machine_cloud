@@ -29,7 +29,6 @@ import FindProjectFromPerson from "../components/FindProjectFromPerson";
 export function Portfolio(props) {
     let { id } = useParams()
     let _id = id - 1
-
     //nächstes Proejct
     const nextProject = () => {
         if (choosenProject < 3 && currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].projects[choosenProject + 1] !== null) {
@@ -45,6 +44,7 @@ export function Portfolio(props) {
                 document.getElementById("nextButton").style.pointerEvents = "none";
             }
         }
+
 
         // document.getElementById("mediafile2").src;
     }
@@ -105,8 +105,6 @@ export function Portfolio(props) {
 
     //wenn !videoPos1 -> wenn kein Video an 1. Stelle
     img1.src = "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"];
-
-
     img1.onload = () => {
         if (img1.width / img1.height <= 1) {
             isLandscapeBoolean = false;
@@ -128,7 +126,6 @@ export function Portfolio(props) {
 
 
     img2.src = "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_2"];
-
     img2.onload = () => {
 
         if (img2.width / img2.height <= 1) {
@@ -147,10 +144,6 @@ export function Portfolio(props) {
     };
 
     img3.src = "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_3"];
-    if (img3.src == null) {
-        console.log("Pos imgPos2 ist null")
-
-    }
     img3.onload = () => {
 
         if (img3.width / img3.height <= 1 && loadOnce === true) { //first iteration
@@ -164,7 +157,7 @@ export function Portfolio(props) {
                 setimgPos1(img3.src) //if pos1 empty -> pos1
             }
             else if (imgPos3 == null) {
-                setimgPos3(img3.src) //if pos3 empty -> pos3 
+                setimgPos3(img3.src) //if pos3 empty -> pos3
             }
         }
         loadOnce = false;
@@ -175,12 +168,6 @@ export function Portfolio(props) {
 
 
 
-/*
-    if ( currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].projects[choosenProject + 1] == null) {
-        document.getElementById("nextButton").style.opacity = "0";
-        document.getElementById("nextButton").style.pointerEvents = "none";
-    }*/
-
 
 
 
@@ -188,15 +175,6 @@ export function Portfolio(props) {
     var results = [];
     results = data1.PROJECT_DETAILS.find(record => record.PID === currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].projects[choosenProject])
 
-    const length = currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].projects.length;
-    console.log("Array " + length)
-    // console.log("Array "+ "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_3"])
-
-    //  console.log("filelink: " + "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_1"])
-
-    // console.log("yeah testing " + FindProjectFromPerson(_id, 0, props.selectedMajor)["PID"])
-
-    //console.log("Projekte: " + data1.PROJECT_DETAILS[data.PERSONAL_DETAILS[_id].projects[0]].Project)
 
     function checkForVideo(checkFile) {
         let fileExtension = checkFile.split('.').pop();
@@ -220,10 +198,8 @@ export function Portfolio(props) {
         } else if (!checkFile) {
             return null
         }
+
     }
-
-
-
     return (
         <div className="Portfolio">
             <motion.div variants={bodyVariants} initial="hidden" animate="visible" exit={"exit"} className="overflow">
