@@ -22,7 +22,7 @@ function App() {
     const location = useLocation();
     const [selectedMajor, setSelectedMajor] = useState(3); //this number has to change when Input comes from cloud
     return (
-        <>
+        <body>
             <AnimatePresence exitBeforeEnter>
                 <Routes location={location} key={location.key}>
                     <Route path="/" element={<Idle />} />
@@ -32,7 +32,7 @@ function App() {
                 </Routes>
             </AnimatePresence>
 
-        </>
+        </body>
     );
 }
 
