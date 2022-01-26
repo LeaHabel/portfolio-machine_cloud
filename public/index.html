@@ -34,7 +34,7 @@
     var idID = 3; // Interaction Design ID
     var sensorRelease = 5; // Additional Value when you release the sensor
 
-    localStorage.setItem('data', 3)
+
 
     /* connect button IN */
     const connection = SimpleSerial.connect({
@@ -56,9 +56,7 @@
       //console.log('Received value from arduino is: ' + data)
       if (data == cdID) {
         console.log("Communication Design")
-        // localStorage.clear();
-        // data = 0;
-        localStorage.setItem('data', data)
+
       }
       else if (data == mdID) {
         console.log("Media Design")
@@ -69,6 +67,7 @@
       else if (data == idID) {
         console.log("Interaction Design")
       }
+      localStorage.setItem('data', data)
 
     });
 
