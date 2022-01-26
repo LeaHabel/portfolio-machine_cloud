@@ -27,7 +27,7 @@ export function Portfolio(props) {
     var isLandscapeBoolean
     var loadOnce = true
     var videoPos1
-    var loadOnce2
+    var loadOnce2 = true
     var loadOnce3
     var ifQrCode
     const img1 = new Image();
@@ -39,7 +39,6 @@ export function Portfolio(props) {
     let { id } = useParams()
     let _id = id - 1
 var scndProject
-
 
     //nächstes Proejct
     const nextProject = () => {
@@ -111,11 +110,14 @@ var scndProject
             isLandscapeBoolean = false;
             setimgPos2(img1.src) //is portrait -> pos2
             // console.log("BLA imgpos2 " + imgPos2)
-        } else {
+        } else if (img1.width / img1.height > 1) {
             isLandscapeBoolean = true;
             setimgPos1(img1.src) //is landscape ->pos1
             // console.log("BLA imgpos1 " + imgPos1)
 
+        }else{
+            loadOnce2 = false
+            console.log("return null")
         }
 
     };
@@ -130,7 +132,7 @@ var scndProject
         if (img2.width / img2.height <= 1) {
             isLandscapeBoolean = false;
             setimgPos2(img2.src) //is portrait -> pos2
-        } else {
+        } else if (img2.width / img2.height > 1){
             isLandscapeBoolean = true; //is landscape
             if (imgPos1 == null) { //if pos1 is still empty
                 setimgPos1(img2.src)  //pos1
@@ -138,8 +140,10 @@ var scndProject
             } else {
                 setimgPos3(img2.src) //else pos3
             }
+        }else{
+            return null
+            console.log("return null")
         }
-
     };
 
     img3.src = "https://d18p28upkrc95t.cloudfront.net/projects/" + results["Mediafile_3"];
@@ -166,7 +170,10 @@ var scndProject
         loadOnce = false;
 
     };
+if(imgPos1 == null){
+    console.log("return null")
 
+}
 
     //wenn !videoPos1 -> wenn kein Video an 1. Stelle
     function checkForVideo(checkFile) {
@@ -188,6 +195,7 @@ var scndProject
         } else if (fileExtension === "jpg" || fileExtension === "png") {
             return       <AnimatePresence> <motion.img exit={{ opacity: 0 }} initial={{opacity: 0 }} animate={{opacity: 1}} id="changePos" className="mediafile mediafile1" src={imgPos1} alt="Projectmedia" />      </AnimatePresence>
         } else if (!checkFile) {
+            console.log("return null")
             return null
         }
 
