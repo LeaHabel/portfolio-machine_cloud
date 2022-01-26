@@ -8,7 +8,7 @@ export function Cloudbutton (){
         <Link to="/">
         <div id="majorButton" className={"icon-major"}>
 
-            <img className="icon" src={CloudIcon}/>
+            <img className="icon-big" src={CloudIcon}/>
             <h2 className={"major"}>Major</h2>
 
         </div>
