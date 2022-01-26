@@ -51,22 +51,16 @@ console.log("selectedMajor" + selectedMajor)
         setPrevSelectedMajor(data);
     }
 
-    function calledFromStorage (data) {
-        if (selectedMajor !== prevSelectedMajor) {
-            data = parseInt(data);
-            console.log("SELECTED MAJOR != PREVMAJOR")
-            setSelectedMajor(data);
-            calledOnce = true;
-            setPrevSelectedMajor(data);
-        }
-    }
-React.useEffect(() => {
-   // window.addEventListener('storage', () => {
+//React.useEffect(() => {
+    window.addEventListener('storage', () => {
     console.log("in use effect funct")
-        calledFromStorage();
+   //  calledFromStorage();
         console.log("LOCAL STORAGE " + localStorage.getItem('data'));
-    //})
-},[])
+        data = parseInt(localStorage.getItem('data'));
+        setSelectedMajor(data);
+        console.log("hello " + selectedMajor)
+    })
+//},[])
 
 
 
@@ -84,8 +78,8 @@ React.useEffect(() => {
 
                 <Routes location={location} key={location.key}>
                     <Route path="/" element={<Idle />} />
-                    <Route path="/overview" element={<Overview selectedMajor={selectedMajor} />} />
-                    <Route path={"/profil/:id"} element={<Portfolio selectedMajor={selectedMajor} />} />
+                    <Route path="/overview" element={<Overview selectedMajor={selectedMajor-1} />} />
+                    <Route path={"/profil/:id"} element={<Portfolio selectedMajor={selectedMajor-1} />} />
 
                 </Routes>
             </AnimatePresence>
