@@ -269,5 +269,6 @@ a:-webkit-any-link {
 }
 #null{
   opacity: 0;
+  pointer-events: none;
 }
 

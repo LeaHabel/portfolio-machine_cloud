@@ -23,7 +23,7 @@ export function Portfolio(props) {
     const [imgPos3, setimgPos3] = useState(0)
     const [QR, setQR] = useState(0)
     const [backButton, setBackButton] = useState(false)
-    const [nextButton, setNextButton] = useState(1)
+    const [nextButton, setNextButton] = useState(3)
     var isLandscapeBoolean
     var loadOnce = true
     var videoPos1
@@ -49,23 +49,25 @@ var scndProject
             setimgPos1(null)
             setimgPos2(null)
             setimgPos3(null)
-            console.log("Button nächstes Projekt 1 " + backButton)
+            console.log("Button choosen" + choosenProject)
             if (choosenProject == 1 || currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].projects[choosenProject + 2] == null) {
                 setNextButton(0)
-                console.log("Button nächstes Projekt 2 " +nextButton)
+                console.log("Button LETZTES PROJEKT setNextButton " + nextButton)
             }
         }
 
     }
+
     //vorheriges Proejct
     const prevProject = () => {
         if (choosenProject > 0) {
+            console.log("Button Zurück PROJEKT setNextButton " + nextButton)
             setcchoosenProject(choosenProject - 1);
             setNextButton(1)
             setimgPos1(null)
             setimgPos2(null)
             setimgPos3(null)
-            console.log("Button nächstes Projekt 1 " + nextButton)
+            console.log("Button choosen" + choosenProject)
             if (choosenProject == 1) {
                 setBackButton(false)
                 console.log("Button letztes Projekt 2 " + backButton)
@@ -174,7 +176,14 @@ if(imgPos1 == null){
     console.log("return null")
 
 }
+    if(nextButton == 3){
 
+     if(currentMajor(props.selectedMajor).PERSONAL_DETAILS[_id].projects[choosenProject + 1] == null) {
+
+        setNextButton(0)
+         console.log("Button next State " + nextButton)
+    }
+    }
     //wenn !videoPos1 -> wenn kein Video an 1. Stelle
     function checkForVideo(checkFile) {
         let fileExtension = checkFile.split('.').pop();
@@ -200,6 +209,7 @@ if(imgPos1 == null){
         }
 
     }
+
     return (
         <div className="Portfolio">
             <motion.div variants={bodyVariants} initial="hidden" animate="visible" exit={"exit"} className="overflow">
@@ -251,7 +261,7 @@ if(imgPos1 == null){
                                 {nextButton ?
                                     <img onClick={() => nextProject()}
                                          className="arrows"
-                                         id={"nextButton"}
+                                         id={"nextButton null"}
                                          src={Next}
                                          alt="Next" />
                                     :
