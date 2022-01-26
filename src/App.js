@@ -59,6 +59,7 @@ console.log("selectedMajor" + selectedMajor)
         data = parseInt(localStorage.getItem('data'));
         setSelectedMajor(data);
         console.log("hello " + selectedMajor)
+        window.location.href ="http://localhost:3000/overview";
     })
 //},[])
 
