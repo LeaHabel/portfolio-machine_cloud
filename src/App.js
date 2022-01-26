@@ -15,19 +15,71 @@ import {
     useLocation
 } from "react-router-dom";
 import { AnimatePresence, motion } from 'framer-motion/dist/framer-motion'
+//import * as publicHTML from './cloudConnect.js'
 
 
 function App() {
-    var Id;
+    // constructor(props) {
+    // super(props);
+    // this.state = { date: new Date() };
+
+    let Id;
+    const  [prevSelectedMajor, setPrevSelectedMajor]  =useState(6);
     const location = useLocation();
-    const [selectedMajor, setSelectedMajor] = useState(3); //this number has to change when Input comes from cloud
+
+    const [selectedMajor, setSelectedMajor] = useState(6)
+
+let calledOnce = false
+
+
+    // React.useEffect(() => {
+    //     //localStorage.setItem('myData', JSON.stringify(data))
+    // })
+
+
+    let data = localStorage.getItem('data')
+    //localStorage.setItem('data', data) //for testing
+    console.log("prevMajort" + prevSelectedMajor)
+
+console.log("selectedMajor" + selectedMajor)
+    console.log("data" + data)
+    if (selectedMajor == 6) {
+        data = parseInt(data);
+        console.log("First time")
+        setSelectedMajor(data);
+        calledOnce = true;
+        setPrevSelectedMajor(data);
+    }
+
+//React.useEffect(() => {
+    window.addEventListener('storage', () => {
+    console.log("in use effect funct")
+   //  calledFromStorage();
+        console.log("LOCAL STORAGE " + localStorage.getItem('data'));
+        data = parseInt(localStorage.getItem('data'));
+        setSelectedMajor(data);
+        console.log("hello " + selectedMajor)
+    })
+//},[])
+
+
+
+
+
     return (
         <body>
             <AnimatePresence exitBeforeEnter>
+                {/* <Routes location={} key={.key}>
+                        <Route path="/" element={<Idle />} />
+                        <Route path="/overview" element={<Overview selectedMajor={0} />} />
+                        <Route path={"/profil/:id"} element={<Portfolio selectedMajor={0} />} />
+
+                    </Routes> */}
+
                 <Routes location={location} key={location.key}>
                     <Route path="/" element={<Idle />} />
-                    <Route path="/overview" element={<Overview selectedMajor={selectedMajor} />} />
-                    <Route path={"/profil/:id"} element={<Portfolio selectedMajor={selectedMajor} />} />
+                    <Route path="/overview" element={<Overview selectedMajor={selectedMajor-1} />} />
+                    <Route path={"/profil/:id"} element={<Portfolio selectedMajor={selectedMajor-1} />} />
 
                 </Routes>
             </AnimatePresence>
