@@ -35,9 +35,10 @@ function App() {
     //     //localStorage.setItem('myData', JSON.stringify(data))
     // })
 
-    localStorage.setItem('data', 2) //for testing
+
 
     let data = localStorage.getItem('data')
+    //localStorage.setItem('data', data) //for testing
     console.log("data ----", data)
 
     if (!selectedMajor) {

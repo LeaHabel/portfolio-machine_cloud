@@ -51,7 +51,9 @@
 
     /* listening to events from the arduino */
     connection.on("value", function (data) {
-
+      localStorage.setItem('data', data)
+      console.log(data)
+      console.log("testestste")
       //output of received data
       //console.log('Received value from arduino is: ' + data)
       if (data == cdID) {
@@ -67,9 +69,10 @@
       else if (data == idID) {
         console.log("Interaction Design")
       }
-      localStorage.setItem('data', data)
+
 
     });
+
 
 
     /* sending data to the arduino */
