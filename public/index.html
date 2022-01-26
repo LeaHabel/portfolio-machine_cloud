@@ -21,6 +21,8 @@
   <!-- React is inside root element -->
   <div id="root"></div>
 
+  <button id="permissionElement">Connect Serial Port</button>
+
   <!-- Javascript – Simple Serial Functions -->
   <script type="text/javascript">
     /* variables */
@@ -28,10 +30,10 @@
     var baud = 57600;
 
     /* CHANGE IDS HERE */
-    var cdID = 0; // Communication Design ID
-    var mdID = 1; // Media Design ID
-    var sdID = 2; // Sound Design ID
-    var idID = 3; // Interaction Design ID
+    var cdID = 1; // Communication Design ID
+    var mdID = 2; // Media Design ID
+    var sdID = 3; // Sound Design ID
+    var idID = 4; // Interaction Design ID
     var sensorRelease = 5; // Additional Value when you release the sensor
 
 
@@ -49,26 +51,32 @@
       port = await navigator.serial.requestPort();
     }
 
+
     /* listening to events from the arduino */
     connection.on("value", function (data) {
-      localStorage.setItem('data', data)
-      console.log(data)
-      console.log("testestste")
+      console.log(data);
+      console.log("testestste");
+
       //output of received data
       //console.log('Received value from arduino is: ' + data)
       if (data == cdID) {
-        console.log("Communication Design")
-
+        console.log("Communication Design");
+        localStorage.setItem('data', 1);
       }
       else if (data == mdID) {
-        console.log("Media Design")
+        console.log("Media Design");
+        localStorage.setItem('data', 2);
       }
       else if (data == sdID) {
-        console.log("Sound Design")
+        console.log("Sound Design");
+        localStorage.setItem('data', 3);
       }
       else if (data == idID) {
-        console.log("Interaction Design")
+        console.log("Interaction Design");
+        localStorage.setItem('data', 4);
       }
+
+
 
 
     });
@@ -90,12 +98,6 @@
         console.log("Lights OFF");
       }
     }
-    // localStorage.clear();
-
-
-    //window._DEFAULT_DATA = 2;
-
-    //localStorage.setItem('data2', 3)
 
 
 

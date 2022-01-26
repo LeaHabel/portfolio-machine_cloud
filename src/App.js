@@ -24,11 +24,12 @@ function App() {
     // this.state = { date: new Date() };
 
     let Id;
+    const  [prevSelectedMajor, setPrevSelectedMajor]  =useState(6);
     const location = useLocation();
 
-    const [selectedMajor, setSelectedMajor] = useState(0)
+    const [selectedMajor, setSelectedMajor] = useState(6)
 
-
+let calledOnce = false
 
 
     // React.useEffect(() => {
@@ -36,15 +37,39 @@ function App() {
     // })
 
 
-
     let data = localStorage.getItem('data')
     //localStorage.setItem('data', data) //for testing
-    console.log("data ----", data)
+    console.log("prevMajort" + prevSelectedMajor)
 
-    if (!selectedMajor) {
-        data = parseInt(data)
-        setSelectedMajor(data)
+console.log("selectedMajor" + selectedMajor)
+    console.log("data" + data)
+    if (selectedMajor == 6) {
+        data = parseInt(data);
+        console.log("First time")
+        setSelectedMajor(data);
+        calledOnce = true;
+        setPrevSelectedMajor(data);
     }
+
+    function calledFromStorage (data) {
+        if (selectedMajor !== prevSelectedMajor) {
+            data = parseInt(data);
+            console.log("SELECTED MAJOR != PREVMAJOR")
+            setSelectedMajor(data);
+            calledOnce = true;
+            setPrevSelectedMajor(data);
+        }
+    }
+React.useEffect(() => {
+   // window.addEventListener('storage', () => {
+    console.log("in use effect funct")
+        calledFromStorage();
+        console.log("LOCAL STORAGE " + localStorage.getItem('data'));
+    //})
+},[])
+
+
+
 
 
     return (
