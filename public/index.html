@@ -34,6 +34,8 @@
     var idID = 3; // Interaction Design ID
     var sensorRelease = 5; // Additional Value when you release the sensor
 
+    localStorage.setItem('data', 3)
+
     /* connect button IN */
     const connection = SimpleSerial.connect({
       baudRate: baud, // baud settings for the serial connection
@@ -70,6 +72,7 @@
 
     });
 
+
     /* sending data to the arduino */
     async function toggleLights() {
       if (toggle == false) {
@@ -86,10 +89,13 @@
       }
     }
     // localStorage.clear();
-    data = 2;
-    localStorage.setItem('data', data)
+
 
     //window._DEFAULT_DATA = 2;
+
+    //localStorage.setItem('data2', 3)
+
+
 
 
   </script>

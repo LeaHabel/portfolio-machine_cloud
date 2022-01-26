@@ -19,18 +19,43 @@ import { AnimatePresence, motion } from 'framer-motion/dist/framer-motion'
 
 
 function App() {
-    var Id;
+    // constructor(props) {
+    // super(props);
+    // this.state = { date: new Date() };
+
+    let Id;
     const location = useLocation();
-    const [selectedMajor, setSelectedMajor] = useState(0); //this number has to change when Input comes from cloud
 
-    //localStorage.clear()
+    const [selectedMajor, setSelectedMajor] = useState(0)
+
+
+
+
+    // React.useEffect(() => {
+    //     //localStorage.setItem('myData', JSON.stringify(data))
+    // })
+
+    localStorage.setItem('data', 2) //for testing
+
     let data = localStorage.getItem('data')
-    console.log("data " + data)
+    console.log("data ----", data)
 
-    //console.log("myvar" + window._DEFAULT_DATA)
+    if (!selectedMajor) {
+        data = parseInt(data)
+        setSelectedMajor(data)
+    }
+
+
     return (
         <>
             <AnimatePresence exitBeforeEnter>
+                {/* <Routes location={} key={.key}>
+                        <Route path="/" element={<Idle />} />
+                        <Route path="/overview" element={<Overview selectedMajor={0} />} />
+                        <Route path={"/profil/:id"} element={<Portfolio selectedMajor={0} />} />
+
+                    </Routes> */}
+
                 <Routes location={location} key={location.key}>
                     <Route path="/" element={<Idle />} />
                     <Route path="/overview" element={<Overview selectedMajor={selectedMajor} />} />
@@ -40,7 +65,9 @@ function App() {
             </AnimatePresence>
 
         </>
-    );
+    )
+
+
 }
 
 export default App;
