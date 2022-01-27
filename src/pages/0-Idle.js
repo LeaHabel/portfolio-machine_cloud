@@ -29,7 +29,7 @@ export function Idle (){
                 <Link to={"/overview"}>
                 <div className="idle-bubble absolute">
                     <div id="idletext">
-                        <h1 className={"idleFont"}>Have a look above you</h1>
+                        <h1 className={"idleFont"}>Have a look above you to choose a major</h1>
                     </div>
                 </div>
                 </Link>
