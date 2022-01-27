@@ -8,7 +8,7 @@ const MediaComponent = (props) => {
       <ReactPlayer
         url={props.url}
         controls
-        muted={true}
+        muted={false}
         width={props.width}
         height={props.height}
         config={{
